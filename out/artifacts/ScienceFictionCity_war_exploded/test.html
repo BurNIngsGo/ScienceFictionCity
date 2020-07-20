@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="test">ss</p>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var s;
+        $.ajax({
+            type:"get",
+            url:"/ScienceFictionCity/Tests?",
+            data:{"name":1},
+            dataType:"text",
+            success:function (data) {
+                $("#test").html(data);
+            },
+            error:function () {
+                alert();
+            }
+        })
+    })
+</script>
+</html>
