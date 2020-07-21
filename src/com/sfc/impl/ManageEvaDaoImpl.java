@@ -5,6 +5,7 @@ import com.sfc.dao.ManageEvaDao;
 import com.sfc.entity.ManageEva;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 public class ManageEvaDaoImpl extends BaseDao implements ManageEvaDao {
@@ -12,13 +13,33 @@ public class ManageEvaDaoImpl extends BaseDao implements ManageEvaDao {
         super(conn);
     }
 
-    @Override
-    public List<ManageEva> getManageEvaBysupId(int supId) {
-        return null;
+    /**
+     * 根据管理者id获取该管理者操作的评论
+     * @param supId
+     * @return
+     */
+    public List<ManageEva> getManageEvaBysupId(int supId) throws SQLException{
+        String strSql = "select * from ManageEva where supId = ?";
+        Object[] param = {supId};
+        try {
+            return this.getEntity(new ManageEva(), param, strSql);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
-    @Override
-    public int insertManageEva(ManageEva me) {
-        return 0;
+    /**
+     * 管理了一条评论
+     * @param me
+     * @return
+     */
+    public int insertManageEva(ManageEva me) throws SQLException{
+        String strSql = "insert into manageEva values(?,?)";
+        Object[] param = {me.getBeId(),me.getSupId()};
+        try {
+            return this.executeUpdate(strSql,param);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 }

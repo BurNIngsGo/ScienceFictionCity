@@ -13,7 +13,11 @@ public class OrdereDetailedDaoImpl extends BaseDao implements OrderDetailedDao {
         super(conn);
     }
 
-    @Override
+    /**
+     * 根据订单编号获取订单信息
+     * @param orderNo
+     * @return
+     */
     public OrderDetailed getOrderDetailedByOrderNo(String orderNo) throws SQLException{
         String strSql = "select * from OrderDetailed where oid = ?";
         Object[] param = {orderNo};
@@ -29,7 +33,11 @@ public class OrdereDetailedDaoImpl extends BaseDao implements OrderDetailedDao {
         }
     }
 
-    @Override
+    /**
+     * 添加一条订单
+     * @param od
+     * @return
+     */
     public int insertOrderDetailed(OrderDetailed od) throws SQLException{
         String strSql = "insert into OrderDetailed(orderNo,oCount,bid,oPrice,oBookName) values(?,?,?,?,?)";
         Object[] param = {od.getoRderNo(),od.getoCount(),od.getbId(),od.getoPrice(),od.getoBookName()};
@@ -40,7 +48,11 @@ public class OrdereDetailedDaoImpl extends BaseDao implements OrderDetailedDao {
         }
     }
 
-    @Override
+    /**
+     * 删除或取消订单
+     * @param id
+     * @return
+     */
     public int delOrderDetailed(int id) throws SQLException{
         String strSql = "delete from OrderDetailed where oid = ?";
         Object[] param = {id};
