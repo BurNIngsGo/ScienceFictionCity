@@ -61,7 +61,7 @@ public class BaseDao {
                         pList.add(rs.getObject(i+1));
                     }
                 }
-                pList.add(rs.getMetaData().getColumnCount());                      //
+                pList.add(rs.getMetaData().getColumnCount());                      //表列数
                 return pList;
             }
         } catch (SQLException e) {
