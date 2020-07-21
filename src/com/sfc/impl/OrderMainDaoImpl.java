@@ -33,7 +33,7 @@ public class OrderMainDaoImpl extends BaseDao implements OrderMainDao {
      * @return
      */
     public int insertOrderMain(OrderMain om) throws SQLException{
-        String strSql = "insert into OrderMain(uid,oMoney,aid,otime,oDone) values(?,?,?,?,?)";
+        String strSql = "insert into OrderMain(uid,oMoney,aid,oTime,oDone) values(?,?,?,?,?)";
         Object[] param = {om.getUid(),om.getoMoney(),om.getAid(),om.getoTime(),om.getoDone()};
         try {
             return this.executeUpdate(strSql,param);
