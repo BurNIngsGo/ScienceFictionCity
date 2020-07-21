@@ -14,7 +14,12 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
         super(conn);
     }
 
-    @Override
+    /**
+     * 实现用户登录
+     * @param uName
+     * @param uPwd
+     * @return UserInfo
+     */
     public UserInfo userLogin(String uName, String uPwd) throws SQLException{
         String strSql = "select * from userinfo where uName = ? and uPwd = ?";
         Object[] param = {uName, uPwd};
@@ -30,7 +35,11 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
         }
     }
 
-    @Override
+    /**
+     *
+     * @param ui
+     * @return int
+     */
     public int userRegist(UserInfo ui) throws SQLException{
         String strSql = "insert into userinfo(uName,uPwd,uSex) values(?,?,?)";
         Object[] param = {ui.getuName(),ui.getuPwd(),ui.getuSex()};
@@ -41,7 +50,10 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
         }
     }
 
-    @Override
+    /**
+     * 获取所有用户信息
+     * @return List<UserInfo>
+     */
     public List<UserInfo> getUserAll() throws SQLException{
         String strSql = "select * from userInfo";
         try {
@@ -51,28 +63,72 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
         }
     }
 
-    @Override
-    public int updateUser(UserInfo ui) {
-        return 0;
+    /**
+     * 更新用户信息
+     * @param ui
+     * @return int
+     */
+    public int updateUserByuId(UserInfo ui) throws SQLException{
+        String strSql = "update userinfo set uName = ?,uSex = ?,uEmail = ?,uCard = ?,uPhone = ?,uHeadImg where uId = ?";
+        Object[] param = {ui.getuName(),ui.getuSex(),ui.getuEmail(),ui.getuCard(),ui.getuPhone(),ui.getuHeadImg(),ui.getuId()};
+        try {
+            return this.executeUpdate(strSql,param);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
-    @Override
-    public UserInfo userRegister(int uId) {
-        return null;
+    /**
+     * 用户注册
+     * @param ui
+     * @return UserInfo
+     */
+    public int userRegister(UserInfo ui) throws SQLException{
+        String strSql = "insert into userinfo(uName,uPwd,uSex) values(?,?,?)";
+        Object[] param = {ui.getuName(),ui.getuPwd(),ui.getuSex()};
+        try {
+            return this.executeUpdate(strSql,param);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
-    @Override
-    public int updateUserLv(UserInfo ui) {
-        return 0;
+    /**
+     * 用户升级
+     * @param ui
+     * @return
+     */
+    public int updateUserLv(UserInfo ui) throws SQLException{
+        String strSql = "update userinfo set uLv = uLv + 1 where uid = ?";
+        Object[] param = {ui.getuId()};
+        try {
+            return this.executeUpdate(strSql,param);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
-    @Override
+    /**
+     * 用户会员操作
+     * @param ui
+     * @return
+     */
     public int updateUserMember(UserInfo ui) {
         return 0;
     }
 
-    @Override
-    public int updateUserRePassword(UserInfo ui) {
-        return 0;
+    /**
+     * 密码更改操作
+     * @param ui
+     * @return
+     */
+    public int updateUserRePassword(UserInfo ui) throws SQLException{
+        String strSql = "update userinfo set upwd = ? where uid = ?";
+        Object[] param = {ui.getuPwd(),ui.getuId()};
+        try {
+            return this.executeUpdate(strSql,param);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 }

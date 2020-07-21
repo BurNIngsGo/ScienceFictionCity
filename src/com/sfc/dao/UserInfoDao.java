@@ -32,14 +32,14 @@ public interface UserInfoDao {
      * @param ui
      * @return int
      */
-    public int updateUser(UserInfo ui) throws SQLException;
+    public int updateUserByuId(UserInfo ui) throws SQLException;
 
     /**
-     * 根据用户id获取用户信息
-     * @param uId
+     * 用户注册
+     * @param ui
      * @return UserInfo
      */
-    public UserInfo userRegister(int uId) throws SQLException;
+    public int userRegister(UserInfo ui) throws SQLException;
 
     /**
      * 用户升级
