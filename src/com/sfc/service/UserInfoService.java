@@ -13,14 +13,6 @@ public interface UserInfoService {
      * @return UserInfo
      */
     public UserInfo userLogin(String uName, String uPwd) throws SQLException;
-
-    /**
-     *
-     * @param ui
-     * @return int
-     */
-    public int userRegist(UserInfo ui) throws SQLException;
-
     /**
      * 获取所有用户信息
      * @return List<UserInfo>

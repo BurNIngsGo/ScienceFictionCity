@@ -14,12 +14,6 @@ public interface UserInfoDao {
      */
     public UserInfo userLogin(String uName, String uPwd) throws SQLException;
 
-    /**
-     *
-     * @param ui
-     * @return int
-     */
-    public int userRegist(UserInfo ui) throws SQLException;
 
     /**
      * 获取所有用户信息

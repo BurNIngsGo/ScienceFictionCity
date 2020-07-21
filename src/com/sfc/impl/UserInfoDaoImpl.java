@@ -36,21 +36,6 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
     }
 
     /**
-     *
-     * @param ui
-     * @return int
-     */
-    public int userRegist(UserInfo ui) throws SQLException{
-        String strSql = "insert into userinfo(uName,uPwd,uSex) values(?,?,?)";
-        Object[] param = {ui.getuName(),ui.getuPwd(),ui.getuSex()};
-        try {
-            return this.executeUpdate(strSql,param);
-        } catch (SQLException e) {
-            throw e;
-        }
-    }
-
-    /**
      * 获取所有用户信息
      * @return List<UserInfo>
      */

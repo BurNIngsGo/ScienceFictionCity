@@ -12,7 +12,12 @@ import java.util.Date;
 import java.util.List;
 
 public class ChatInfoServiceImpl implements ChatInfoService {
-    @Override
+    /**
+     * 获取聊天信息
+     * @param uId
+     * @param fId
+     * @return
+     */
     public List<ChatInfo> getChatInfoByUId(int uId, int fId) throws SQLException{
         Connection conn = BaseDaoUtil.getConnection();
         ChatInfoDao bookInfoDao = new ChatInfoDaoImpl(conn);
@@ -25,7 +30,12 @@ public class ChatInfoServiceImpl implements ChatInfoService {
         }
     }
 
-    @Override
+    /**
+     * 删除聊天信息
+     * @param date
+     * @return
+     * @throws SQLException
+     */
     public int delChatInfoByDate(Date date) throws SQLException{
         Connection conn = BaseDaoUtil.getConnection();
         ChatInfoDao bookInfoDao = new ChatInfoDaoImpl(conn);

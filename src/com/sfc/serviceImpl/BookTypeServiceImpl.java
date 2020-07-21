@@ -13,7 +13,10 @@ import java.util.List;
 
 public class BookTypeServiceImpl implements BookTypeService {
 
-    @Override
+    /**
+     * 获取所有图书类型
+     * @return
+     */
     public List<BookType> getBookTypeAll() throws SQLException {
         Connection conn = BaseDaoUtil.getConnection();
         BookTypeDao bookInfoDao = new BookTypeDaoImpl(conn);
@@ -26,7 +29,11 @@ public class BookTypeServiceImpl implements BookTypeService {
         }
     }
 
-    @Override
+    /**
+     * 根据类型id获取类型
+     * @param tId
+     * @return
+     */
     public BookInfo getBookTypeByTId(int tId) throws SQLException {
         Connection conn = BaseDaoUtil.getConnection();
         BookTypeDao bookInfoDao = new BookTypeDaoImpl(conn);
@@ -39,7 +46,11 @@ public class BookTypeServiceImpl implements BookTypeService {
         }
     }
 
-    @Override
+    /**
+     * 根据类型id删除类型
+     * @param tId
+     * @return
+     */
     public int delBookTypeByTId(int tId) throws SQLException {
         Connection conn = BaseDaoUtil.getConnection();
         BookTypeDao bookInfoDao = new BookTypeDaoImpl(conn);
@@ -52,7 +63,11 @@ public class BookTypeServiceImpl implements BookTypeService {
         }
     }
 
-    @Override
+    /**
+     * 根据类型名称删除类型
+     * @param tId
+     * @return
+     */
     public int delBookTypeByTName(String tId) throws SQLException {
         Connection conn = BaseDaoUtil.getConnection();
         BookTypeDao bookInfoDao = new BookTypeDaoImpl(conn);
@@ -65,7 +80,11 @@ public class BookTypeServiceImpl implements BookTypeService {
         }
     }
 
-    @Override
+    /**
+     * 添加类型信息
+     * @param bk
+     * @return
+     */
     public int insertBookType(BookType bk) throws SQLException {
         Connection conn = BaseDaoUtil.getConnection();
         BookTypeDao bookInfoDao = new BookTypeDaoImpl(conn);
@@ -78,7 +97,11 @@ public class BookTypeServiceImpl implements BookTypeService {
         }
     }
 
-    @Override
+    /**
+     * 更新图书类型信息
+     * @param bk
+     * @return
+     */
     public int updateBookTypeByTid(BookType bk) throws SQLException {
         Connection conn = BaseDaoUtil.getConnection();
         BookTypeDao bookInfoDao = new BookTypeDaoImpl(conn);

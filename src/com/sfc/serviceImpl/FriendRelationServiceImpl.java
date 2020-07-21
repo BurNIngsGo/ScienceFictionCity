@@ -1,28 +1,85 @@
 package com.sfc.serviceImpl;
 
+import com.sfc.connpool.BaseDaoUtil;
+import com.sfc.dao.FriendRelationDao;
+import com.sfc.dao.ManageEvaDao;
 import com.sfc.entity.FriendRelation;
+import com.sfc.impl.FriendRelationDaoImpl;
+import com.sfc.impl.ManageEvaDaoImpl;
 import com.sfc.service.FriendRelationService;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 public class FriendRelationServiceImpl implements FriendRelationService {
-    @Override
-    public List<FriendRelation> getFriendByUId(int uId) {
-        return null;
+    /**
+     * 获取好友列表
+     * @param uId
+     * @return
+     */
+    public List<FriendRelation> getFriendByUId(int uId) throws SQLException{
+        Connection conn =  BaseDaoUtil.getConnection();
+        FriendRelationDao friendRelationDao = new FriendRelationDaoImpl(conn);
+        try {
+            return friendRelationDao.getFriendByUId(uId);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            BaseDaoUtil.closeAll(null,null,conn);
+        }
     }
 
-    @Override
-    public int delFriendByUId(int uId, int fId) {
-        return 0;
+    /**
+     * 删除好友
+     * @param uId
+     * @param fId
+     * @return
+     */
+    public int delFriendByUId(int uId, int fId) throws SQLException{
+        Connection conn =  BaseDaoUtil.getConnection();
+        FriendRelationDao friendRelationDao = new FriendRelationDaoImpl(conn);
+        try {
+            return friendRelationDao.delFriendByUId(uId,fId);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            BaseDaoUtil.closeAll(null,null,conn);
+        }
     }
 
-    @Override
-    public int addFriendByUid(int uId, int fid) {
-        return 0;
+    /**
+     * 添加好友
+     * @param uId
+     * @param fid
+     * @return
+     */
+    public int addFriendByUid(int uId, int fid) throws SQLException{
+        Connection conn =  BaseDaoUtil.getConnection();
+        FriendRelationDao friendRelationDao = new FriendRelationDaoImpl(conn);
+        try {
+            return friendRelationDao.addFriendByUid(uId,fid);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            BaseDaoUtil.closeAll(null,null,conn);
+        }
     }
 
-    @Override
-    public int initFriendList(int uId) {
-        return 0;
+    /**
+     * 初始化好友列表是否有好友请求
+     * @param uId
+     * @return
+     */
+    public int initFriendList(int uId) throws SQLException{
+        Connection conn =  BaseDaoUtil.getConnection();
+        FriendRelationDao friendRelationDao = new FriendRelationDaoImpl(conn);
+        try {
+            return friendRelationDao.initFriendList(uId);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            BaseDaoUtil.closeAll(null,null,conn);
+        }
     }
 }
