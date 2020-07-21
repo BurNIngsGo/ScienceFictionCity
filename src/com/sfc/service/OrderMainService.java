@@ -1,4 +1,4 @@
 package com.sfc.service;
 
-public class OrderMainService {
+public interface OrderMainService {
 }

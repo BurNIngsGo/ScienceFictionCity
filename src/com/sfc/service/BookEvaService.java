@@ -1,4 +1,4 @@
 package com.sfc.service;
 
-public class BookEvaService {
+public interface BookEvaService {
 }

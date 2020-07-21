@@ -1,4 +1,4 @@
 package com.sfc.service;
 
-public class UserInfoService {
+public interface UserInfoService {
 }
