@@ -105,7 +105,7 @@ body{
 	position: relative;
 	left: 10px;
 	border-radius: 50px;
-	background: url(../assets/users.jpg);
+	background: url(../image/users.jpg);
 	background-size: contain;
 }
 

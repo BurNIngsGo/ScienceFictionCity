@@ -1,8 +1,8 @@
 window.onload=function(){                  		//网页加载时
     var imgArr=[
-        {"path":"assets/siximg.jpg"},           
-        {"path":"assets/timg.jpg"},		   
-        {"path":"assets/eightimg.jpg"}            
+        {"path":"../image/siximg.jpg"},
+        {"path":"../image/timg.jpg"},
+        {"path":"../image/eightimg.jpg"}
     ];                                          //利用数组对三张图片的路径进行保存
     
     var size=[
