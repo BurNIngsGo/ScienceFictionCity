@@ -2,6 +2,7 @@ package com.sfc.dao;
 
 import com.sfc.entity.ManageEva;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface ManageEvaDao {
@@ -10,14 +11,14 @@ public interface ManageEvaDao {
      * @param supId
      * @return
      */
-    public List<ManageEva> getManageEvaBysupId(int supId);
+    public List<ManageEva> getManageEvaBysupId(int supId) throws SQLException;
 
     /**
      * 管理了一条评论
      * @param me
      * @return
      */
-    public int insertManageEva(ManageEva me);
+    public int insertManageEva(ManageEva me) throws SQLException;
 
 
 }
