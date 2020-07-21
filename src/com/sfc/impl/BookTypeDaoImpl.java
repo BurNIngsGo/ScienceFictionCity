@@ -6,6 +6,7 @@ import com.sfc.entity.BookInfo;
 import com.sfc.entity.BookType;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
@@ -14,32 +15,72 @@ public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
     }
 
     @Override
-    public List<BookType> getBookTypeAll() {
-        return null;
+    public List<BookType> getBookTypeAll() throws SQLException{
+        String strSql="select * from bookType";
+        try {
+            return this.getEntity(new BookType(),null,strSql);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
     @Override
-    public BookInfo getBookTypeByTId(int tId) {
-        return null;
+    public BookInfo getBookTypeByTId(int tId) throws SQLException{
+        String strSql="select * from bookType where  tid=?";
+        Object[] param ={tId};
+        List<BookInfo> list = null;
+        try {
+            list = this.getEntity(new BookInfo(),param,strSql);
+            if (list.size()>0){
+                return list.get(0);
+            }
+            return null;
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
     @Override
-    public int delBookTypeByTId(int tId) {
-        return 0;
+    public int delBookTypeByTId(int tId) throws SQLException{
+        String strSql="delete  from bookType where tid=?";
+        Object[] param ={tId};
+        try {
+            return this.executeUpdate(strSql,param);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
     @Override
-    public int delBookTypeByTName(String tId) {
-        return 0;
+    public int delBookTypeByTName(String tId) throws  SQLException{
+        String strSql="delete from bookType where tName=?";
+        Object[] param ={tId};
+        try {
+            return this.executeUpdate(strSql,param);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
     @Override
-    public int insertBookType(BookType bk) {
-        return 0;
+    public int insertBookType(BookType bk) throws  SQLException{
+        String strSql="insert  bookType(tName) values(?)";
+        Object[] param ={bk.gettName()};
+        try {
+            return this.executeUpdate(strSql,param);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
     @Override
-    public int updateBookType(BookType bk) {
-        return 0;
+    public int updateBookTypeByTid(BookType bk) throws  SQLException{
+        String strSql="update  from bookType set tName=? where tid=?";
+        Object[] param ={bk.gettName(),bk.gettId()};
+        try {
+            return this.executeUpdate(strSql,param);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 }
