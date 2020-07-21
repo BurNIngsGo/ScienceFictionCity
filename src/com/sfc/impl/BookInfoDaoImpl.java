@@ -4,6 +4,7 @@ import com.sfc.dao.BaseDao;
 import com.sfc.dao.BookInfoDao;
 import com.sfc.entity.BookInfo;
 
+import java.awt.print.Book;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -56,10 +57,21 @@ public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
         }
     }
 
-    @Override
-    public List<BookInfo> getBookPage(int currentPage, int curtotalSize) {
-
-        return null;
+    /**
+     * 对图书信息进行分页
+     * @param pageNo
+     * @param pageSize
+     * @return
+     * @throws SQLException
+     */
+    public List<BookInfo> getBookPage(int pageNo, int pageSize) throws SQLException{
+        String strSql = "Select * from bookinfo order by bPress desc limit ?,?";
+        Object[] param = {(pageNo - 1) * pageSize, pageSize};
+        try {
+            return this.getEntity(new BookInfo(), param, strSql);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 
     /**
@@ -168,6 +180,17 @@ public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
         Object[] param={bi.getbName(),bi.getbType(),bi.getbPress(),bi.getbAuthor(),bi.getbPrice(),bi.getbImg(),bi.getbSales(),bi.getbTime(),bi.getbCount(),bi.getbContent()};
         try {
             return this.executeUpdate(strSql,param);
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+
+    @Override
+    public int getCount() throws SQLException {
+        String strSql = "select count(1) from bookInfo";
+        try {
+            Number num = (Number) this.executeQuery(strSql, null).get(0);
+            return num.intValue();
         } catch (SQLException e) {
             throw e;
         }

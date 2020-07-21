@@ -3,11 +3,13 @@ package com.sfc.serviceImpl;
 import com.sfc.connpool.BaseDaoUtil;
 import com.sfc.dao.BookInfoDao;
 import com.sfc.entity.BookInfo;
+import com.sfc.entitypage.Page;
 import com.sfc.impl.BookInfoDaoImpl;
 import com.sfc.service.BookInfoService;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookInfoServiceImpl implements BookInfoService {
@@ -63,11 +65,35 @@ public class BookInfoServiceImpl implements BookInfoService {
 
     /**
      * 对图书信息进行分页
-     * @param currentPage
-     * @param curtotalSize
+     * @param page
      * @return
+     * @throws SQLException
      */
-    public List<BookInfo> getBookPage(int currentPage, int curtotalSize) throws SQLException {
+    public List<BookInfo> getBookPage(Page<BookInfo> page) throws SQLException {
+        Connection conn = null;
+        try {
+            conn = BaseDaoUtil.getConnection();
+            BookInfoDao bookInfoDao = new BookInfoDaoImpl(conn);
+
+            int totalCount = bookInfoDao.getCount();
+            page.setTotalCount(totalCount);
+
+            if (totalCount > 0) {
+                if (page.getCurrPageNo() > page.getTotalPageCount())
+                    page.setCurrPageNo(page.getTotalPageCount());
+
+                List<BookInfo> bookList = bookInfoDao.getBookPage(page.getCurrPageNo(), page.getPageSize());
+                page.setAList(bookList);
+
+            } else {
+                page.setCurrPageNo(0);
+                page.setAList(new ArrayList<BookInfo>());
+            }
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            BaseDaoUtil.closeAll(null,null,conn);
+        }
         return null;
     }
 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>聊天</title>
+		<link rel="stylesheet" href="../styleFile/chatApp.css" />
+	</head>
+
+	<body>
+		<div class="AllContent">
+			<div class="AllCneter">
+				<div class="MsgHeader">
+					<span class="titleMsg">我的消息</span>
+				</div>
+
+				<div class="chatMain">
+					<div class="chatLeft">
+						<div class="leftTitle">
+							<span class="leftMsg">近期消息</span>
+						</div>
+						<div class="friendList">
+							<ul class="listUl">
+								<li class="itemList">
+									<div class="closeItem">
+										<a href="#">x</a>
+									</div>
+									<div class="headImg"></div>
+									<div class="nameBox">
+										<div class="userName">
+											林斯琦
+										</div>
+										<div class="lastword">
+											求你不要发消息了[流..
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="chatRight">
+						<div class="rightTitle">
+							<span class="leftMsg">我的消息</span>
+						</div>
+						<div class="chatList">
+							<div class="chatBody">
+
+							</div>
+							<div class="sendBox">
+								<div class="emotion">
+
+								</div>
+								<div class="inputBox">
+									<textarea maxlength="500" autofocus="autofocus" placeholder="赶快回复吧" class="chatText"></textarea>
+								</div>
+								<div class="sendButton">
+									<button class="enterButton">发送</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../javaScript/jquery-1.12.4.js" ></script>
+		<script type="text/javascript">
+			var uArr = ["张三", "李四", "王五"];
+			var iArr = ["assets/1.jpg", "assets/2.jpg", "assets/3.jpg"];
+			$(document).ready(function() {
+				$(".enterButton").click(function() {
+					var txt = $(".chatText").val().length < 30 ? $(".chatText").val() : chatStrBr($(".chatText").val());
+					var iNum = Math.floor(Math.random() * 3);
+					var headStr = "<div style='display:block; margin-right:10px; margin-top:10px;'><img src = " + iArr[iNum] + " style = 'width:50px;height:50px;border-radius:50%'/></div>";
+					var chatStr = "<div style='display:flex; align-items:center; margin-right:8px; margin-top: 20px;'>" + txt + "</div>";
+					var currentStr = "<section style = 'display:flex;justify-content: flex-end;'>" + chatStr + headStr + "</section>";
+					var str = $(".chatBody").html();
+					if($(".chatText").val().length != 0) {
+						$(".chatBody").html(str + currentStr);
+					}
+					$(".chatText").val("");
+					$(".chatBody div:even").addClass("conxt");
+				})
+			})
+			
+			function chatStrBr(str) {
+				var resultStr = '';
+				var length = str.length;
+				for(var i = 0; i < length; i+=30) {
+					if(length <= 30) {
+						resultStr = str;
+						break;
+					} else if(i % 30 == 0){
+						resultStr += str.substring(0,30)+"<br/>";
+						str = str.substring(30,str.length);
+					}
+				}
+				resultStr += str;
+				return resultStr;
+			}
+		</script>
+	</body>
+
+</html>

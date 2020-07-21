@@ -1,7 +1,9 @@
 package com.sfc.service;
 
 import com.sfc.entity.BookInfo;
+import com.sfc.entitypage.Page;
 
+import java.awt.print.Book;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -28,11 +30,11 @@ public interface BookInfoService {
 
     /**
      * 对图书信息进行分页
-     * @param currentPage
-     * @param curtotalSize
+     * @param page
      * @return
+     * @throws SQLException
      */
-    public List<BookInfo> getBookPage(int currentPage,int curtotalSize) throws SQLException;
+    public List<BookInfo> getBookPage(Page<BookInfo> page) throws SQLException;
 
     /**
      * 添加图书(图书上架)

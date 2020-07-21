@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>解忧科幻书城</title>
+		<link rel="stylesheet" href="../styleFile/viddw.css" type="text/css" />
+		<link rel="stylesheet" href="css/firstPage.css" />
+		<link rel="stylesheet" href="../styleFile/magic.min.css" />
+		<style>
+			body {
+				overflow-x: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="vidbacking">
+			<video autoplay muted loop style="width: 100%; margin: 0 auto;">
+				<source src="assets/KV-PC-final.mp4" type="video/mp4"></source>
+			</video>
+			<div id="test">
+				<div class="tuijian">
+					<div class="titleTui">
+						<div class="fontTitle">
+							<span>为你推荐</span>
+						</div>
+						<div class="tempButton">
+							<button name="temp" class="temp">换一批</button>
+						</div>
+					</div>
+					<div class="TjBox">
+						<div class="top_div">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+						<div class="button_div">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+					</div>
+				</div>
+				<div class="brief">
+					<div class="centerPai">
+						<div class="paiTitle"><span class="paitext">本站排行</span></div>
+						<div class="topComic">
+							<div class="bookPaiImg"></div>
+							<div class="contentPai">
+								<div class="conTit">
+									<div class="conleft">
+										<div class="titTxt">科幻</div>
+										<div class="athorTxt">某某人</div>
+									</div>
+									<div class="storeBook">
+										<div class="icon"></div>
+										<div class="storeTxt">收藏</div>
+									</div>
+								</div>
+								<div class="conTxt">
+									某某知名科幻小说，由某某编写10年完成，是当今科幻小说界当之无愧的掌上明珠。
+								</div>
+							</div>
+							<div class="PaiNumber">1</div>
+						</div>
+						<div class="others">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="menus">
+			<div id="menucon">
+				<div class="dianda">
+					<a class="ass" href="index1.html">首页</a>
+				</div>
+				<div class="dianda">
+					<a class="ass" href="index3.html">分类</a>
+				</div>
+				<div class="dianda">
+					<a class="ass" href="index4.html">排行</a>
+				</div>
+				<div class="dianda">
+					<a class="ass" href="#">最新科幻</a>
+				</div>
+				<div class="dianda">
+					<a class="ass" href="#">论坛</a>
+				</div>
+				<div id="marginbox">
+					<img src="assets/users.jpg" id="users">
+					<div id="userBox">
+						<div class="userlogin"><span>请登录</span></div>
+						<div class="userLv">等级6:<span>1600/20000</span></div>
+						<ul class="MyContext">
+							<li>个人中心</li>
+							<li>钱包管理</li>
+							<li>订单中心</li>
+							<li>购物车</li>
+							<li>退出登录</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../javaScript/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="../javaScript/index1.js"></script>
+		<script type="text/javascript">
+			$.ajax({
+				type:"get",
+				url:"test.json",
+				dataType:"json",
+				success:function(data){
+					var index = 0;
+					$(data).each(function(){
+						$(".top_div>div:eq("+index+")").css("background-image","url("+this.url+")");
+						index++;
+					})
+				}
+			});
+		</script>
+	</body>
+
+</html>
