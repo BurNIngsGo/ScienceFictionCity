@@ -35,7 +35,7 @@ public class ExpandToolDaoImpl implements ExpandToolDao {
                     (param)->((BookInfo)stu).setbType((int)param),
                     (param)->((BookInfo)stu).setbPress((int) param),
                     (param)->((BookInfo)stu).setbAuthor((String)param),
-                    (param)->((BookInfo)stu).setbPrice((double)param),
+                    (param)->((BookInfo)stu).setbPrice(Double.parseDouble(param.toString())),
                     (param)->((BookInfo)stu).setbPresent((String)param),
                     (param)->((BookInfo)stu).setbImg((String)param),
                     (param)->((BookInfo)stu).setbSales((int)param),

@@ -1,15 +1,17 @@
 package com.sfc.servlet;
 
-import com.sfc.connpool.BaseDaoUtil;
-import com.sfc.dao.AddressInfoDao;
-import com.sfc.entity.AddressInfo;
-import com.sfc.impl.AddressInfoDaoImpl;
+import com.alibaba.fastjson.JSON;
+import com.sfc.entity.BookInfo;
+import com.sfc.service.BookInfoService;
+import com.sfc.serviceImpl.BookInfoServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.print.Book;
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
@@ -22,18 +24,26 @@ public class Tests extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        AddressInfoDao addressInfoDao = new AddressInfoDaoImpl(BaseDaoUtil.getConnection());
-        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
-        List<AddressInfo> list = null;
+        BookInfoService bookInfoService = new BookInfoServiceImpl();
+        List<BookInfo> list = null;
         try {
-            list = addressInfoDao.getAllAdddress();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }finally {
-
+            list = bookInfoService.getBookAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        out.print(list.get(0).getaAddress()+list.get(0).getaCode()+list.get(0).getaPhone());
-        System.out.println(list.get(0).getaAddress());
+        String str = "[";
+        int i = 0;
+        for(BookInfo bookInfo : list) {
+            str += "{\"url\":\"image/"+bookInfo.getbImg()+"\"}";
+            if(i != list.size()-1) {
+                str += ",";
+            }
+            i++;
+        }
+        str += "]";
+        out.print(str);
     }
 }

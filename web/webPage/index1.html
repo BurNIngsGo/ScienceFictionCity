@@ -4,9 +4,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>解忧科幻书城</title>
-		<link rel="stylesheet" href="../styleFile/viddw.css" type="text/css" />
-		<link rel="stylesheet" href="css/firstPage.css" />
-		<link rel="stylesheet" href="../styleFile/magic.min.css" />
+		<link rel="stylesheet" href="styleFile/viddw.css" type="text/css" />
+		<link rel="stylesheet" href="styleFile/magic.min.css" />
 		<style>
 			body {
 				overflow-x: hidden;
@@ -17,7 +16,7 @@
 	<body>
 		<div class="vidbacking">
 			<video autoplay muted loop style="width: 100%; margin: 0 auto;">
-				<source src="../video/KV-PC-final.mp4" type="video/mp4"></source>
+				<source src="video/KV-PC-final.mp4" type="video/mp4"></source>
 			</video>
 			<div id="test">
 				<div class="tuijian">
@@ -118,19 +117,23 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript" src="../javaScript/jquery-1.12.4.js"></script>
-		<script type="text/javascript" src="../javaScript/index1.js"></script>
+		<script type="text/javascript" src="javaScript/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="javaScript/index1.js"></script>
 		<script type="text/javascript">
 			$.ajax({
 				type:"get",
-				url:"test.json",
+				url:"Tests",
 				dataType:"json",
 				success:function(data){
+					alert(data);
 					var index = 0;
 					$(data).each(function(){
 						$(".top_div>div:eq("+index+")").css("background-image","url("+this.url+")");
 						index++;
 					})
+				},
+				error:function () {
+					alert(1);
 				}
 			});
 		</script>
