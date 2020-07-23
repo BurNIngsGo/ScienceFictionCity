@@ -65,7 +65,7 @@ public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
      * @throws SQLException
      */
     public List<BookInfo> getBookPage(int pageNo, int pageSize) throws SQLException{
-        String strSql = "Select * from bookinfo order by bPress desc limit ?,?";
+        String strSql = "Select * from bookinfo limit ?,?";
         Object[] param = {(pageNo - 1) * pageSize, pageSize};
         try {
             return this.getEntity(new BookInfo(), param, strSql);

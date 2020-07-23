@@ -31,10 +31,9 @@ public interface BookInfoService {
     /**
      * 对图书信息进行分页
      * @param page
-     * @return
      * @throws SQLException
      */
-    public List<BookInfo> getBookPage(Page<BookInfo> page) throws SQLException;
+    public void getBookPage(Page<BookInfo> page) throws SQLException;
 
     /**
      * 添加图书(图书上架)

@@ -296,11 +296,11 @@
 				})
 			}
 
-			function pageFun(){
+			function pageFun(num){
 				$.ajax({
 					type:"get",
 					url:"/ScienceFictionCity/Tests",
-					data:{name:"bookShInfo"},
+					data:{name:"bookShInfo",index:num},
 					dataType:"json",
 					success:function(data){
 						var i = 0;
@@ -323,7 +323,23 @@
 			$(function () {
 				bookTypeFun();
 				pressFun();
-				pageFun();
+				pageFun(0);
+				var paegNo = 1;
+				$(".pageRight").click(function(){
+					if((paegNo < parseInt($(".pageNum:last-child").html()))) {
+						paegNo++;
+						pageFun(paegNo);
+						alert(paegNo);
+					}
+				})
+
+				$(".pageLeft").click(function(){
+					if(paegNo > 1) {
+						paegNo--;
+						pageFun(paegNo);
+						alert(paegNo);
+					}
+				})
 			})
 		</script>
 	</body>

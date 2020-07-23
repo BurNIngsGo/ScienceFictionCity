@@ -66,10 +66,9 @@ public class BookInfoServiceImpl implements BookInfoService {
     /**
      * 对图书信息进行分页
      * @param page
-     * @return
      * @throws SQLException
      */
-    public List<BookInfo> getBookPage(Page<BookInfo> page) throws SQLException {
+    public void getBookPage(Page<BookInfo> page) throws SQLException {
         Connection conn = null;
         try {
             conn = BaseDaoUtil.getConnection();
@@ -94,7 +93,6 @@ public class BookInfoServiceImpl implements BookInfoService {
         } finally {
             BaseDaoUtil.closeAll(null,null,conn);
         }
-        return null;
     }
 
     /**

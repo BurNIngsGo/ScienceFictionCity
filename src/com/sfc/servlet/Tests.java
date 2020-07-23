@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.sfc.entity.BookInfo;
 import com.sfc.entity.BookType;
 import com.sfc.entity.Press;
+import com.sfc.entitypage.Page;
 import com.sfc.service.BookInfoService;
 import com.sfc.service.BookTypeService;
 import com.sfc.service.PressService;
@@ -36,13 +37,18 @@ public class Tests extends HttpServlet {
         BookTypeService bookTypeService = new BookTypeServiceImpl();
         PressService pressService = new PressServiceImpl();
         String param = request.getParameter("name");
+        String pageNo = request.getParameter("index") != null ? request.getParameter("index"):"1";
         List<BookInfo> list = null;
         List<BookType> list1 = null;
         List<Press> list2 = null;
+        List<BookInfo> bookPageList = null;
+        Page<BookInfo> page = new Page<>();
+        page.setCurrPageNo(Integer.parseInt(pageNo));
         try {
             list = bookInfoService.getBookAll();
             list1 = bookTypeService.getBookTypeAll();
             list2 = pressService.getPressAll();
+            bookInfoService.getBookPage(page);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -104,13 +110,13 @@ public class Tests extends HttpServlet {
         } else if("bookShInfo".equals(param)) {
             String strJson = "[";
             int i = 0;
-            for(BookInfo bookInfo : list) {
+            for(BookInfo bookInfo : page.getAList()) {
                 strJson += "{\"bimg\":\""+bookInfo.getbImg()+"\"," +
                         "\"bName\":\""+bookInfo.getbName()+"\"," +
                         "\"author\":\""+bookInfo.getbAuthor()+"\"," +
                         "\"press\":\""+bookInfo.getbPress()+"\"," +
                         "\"price\":\""+bookInfo.getbPrice()+"\"}";
-                if(i != list.size() - 1) {
+                if(i != page.getAList().size() - 1) {
                     strJson += ",";
                 }
                 i++;

@@ -15,7 +15,7 @@ public class Page<T> {
     //总页数
     private int totalPageCount = 0;
     //每页的大小
-    private int pageSize = 5;
+    private int pageSize = 8;
     //所有有页面的总数据数量
     private int totalCount;
     //当前页码
