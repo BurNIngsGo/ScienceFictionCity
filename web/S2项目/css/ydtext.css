@@ -1,0 +1,166 @@
+body{
+	background-color:rgb(237,232,213) ;
+}
+#main{
+	background-color:rgb(250,247,237) ;
+	width: 850px;
+	height: 715px;
+	margin: 0 auto;
+}
+.text{
+	width: 150px;
+	height: 60px;
+	margin-top: 60px;
+	margin-left: 200px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 25px;
+}
+.text1{
+	width: 235px;
+	height: 140px;
+	margin-top: 50px;
+	margin-left: 230px;
+}
+.text1 li{
+	list-style: none;
+	margin-bottom: 10px;
+}
+.text2{
+	width: 235px;
+	height: 140px;
+	position: absolute;
+	margin-bottom: 50px;
+	bottom: 80px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+.text2 p:nth-of-type(1){
+	text-align: center;
+	margin-top: 10px;
+}
+.text2 p:nth-of-type(2){
+	text-align: center;
+	margin-top: 5px;
+}
+.text2 p:nth-of-type(3){
+	text-align: center;
+	margin-top: 25px;
+	font-family: "楷体";
+}
+      * {
+        padding: 0;
+        margin: 0;
+      }
+ 
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+ 
+      #magazine {
+        width: 750px;
+        height: 710px;
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        overflow: hidden; 
+      }
+ 
+      #pages {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      #pages div.turn-page{
+        background: #fff;
+      }
+      #content{
+        height: 0;
+        overflow: hidden;
+        width: 100%;
+      }
+      #contentText{
+        width: 100%;
+      }
+       
+      /* 这里是内容的样式,修改时候,一起修改 */
+      div.turn-page,#contentText{
+        white-space: pre-wrap;
+        box-sizing: border-box;
+        padding: 0 10px;
+        overflow: hidden;
+      }
+
+       
+      #alert{
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0,0,0,0.6);
+        border-radius: 4px;
+        color: #fff;
+        z-index: 10;
+        font-size: 12px;
+        padding: 6px 10px;
+        /*display: none;*/
+      }
+     .type1{
+     	position: absolute;
+     	top: 0;
+     	width: 90px;
+     	/*border: 1px solid red;*/
+     	margin-left: 40px;
+     	margin-top: 30px;
+     	background: url(../img/exit.png) no-repeat;
+     	background-size:18px;
+     	
+     	text-align: right;
+     }
+     a{
+     	text-decoration: none;
+     	color: rgb(147,161,161);
+     }
+    .type1:hover{
+     	background: url(../img/exit1.png) no-repeat;
+     	background-size:18px;
+     	color: black;
+     }
+     .type3{
+     	/*border: 1px solid red;*/
+     	width: 35px;
+     	height: 550px;
+     	position: absolute;
+     	top: 0;
+     	margin-top: 60px;
+     	background: url(../img/in.png) no-repeat;
+     	background-size: 35px;
+     	background-position-y: center;
+     	background-color: #EDE8D5;
+     }
+     .type3:hover{
+     	background: url(../img/out.png) no-repeat;
+     	background-size: 35px;
+     	background-position-y: center;
+     	background-color: #EDE8D5;
+     }
+     .buy{
+     	display: block;
+     	width: 140px;
+     	height: 40px;
+     	background-color: #EDE8D5;
+     	outline: none;
+     	border: none;
+     	border: 1px solid rgb(147,161,161);
+     	color: rgb(147,161,161);
+     	margin: 0 auto;
+     	margin-top: 10px;
+     }
+     .type2 p{
+     	margin-top: 10px;
+     	color: rgb(147,161,161);
+     }

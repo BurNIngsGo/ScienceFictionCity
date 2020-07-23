@@ -1,0 +1,24 @@
+*{
+	margin: 0;
+	padding: 0;
+	/*border: 1px solid red;*/
+}
+#main{
+	width: 1500px;
+	margin: 0 auto;
+}
+.a{
+	width: 200px;
+	height: 250px;
+	margin-left: 95px;
+	display: inline-block;
+	background-color: #000000;
+	
+}
+a{
+	text-decoration: none;
+}
+.center{
+	padding: 30px 100px 0 100px ;
+	width: 100%
+}
