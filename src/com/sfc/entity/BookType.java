@@ -1,5 +1,6 @@
 package com.sfc.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.sfc.dao.EntityClass;
 
 import java.awt.print.Book;
@@ -29,6 +30,7 @@ public class BookType implements EntityClass<BookType> {
     }
 
     @Override
+    @JSONField(serialize = false)
     public BookType getNew() {
         return new BookType();
     }

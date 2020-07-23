@@ -71,7 +71,28 @@
 		</div>
 		<div class="project-list-wrapper">
 			<div class="project-list">
-				<div class="project-list-item">
+				<div class="project-list-item" style="display: none">
+					<div class="project-list-item-img"></div>
+					<div class="project-list-item-detail">
+						<div class="project-list-item-title">三体</div>
+						<div class="project-list-item-time">
+							<span class="icon time-icon"></span>
+							作者：刘慈欣
+						</div>
+						<div class="project-list-item-address">
+							<span class="icon address-icon"></span>
+							<span class="venue-name-and-address">重庆出版社</span>
+						</div>
+						<div class="project-list-item-price" >
+							<div class="not-free">
+								<span class="price-symbol">￥</span>
+								<span class="price">30.6</span>
+								<span class="start">元</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="project-list-item" style="display: none">
 					<div class="project-list-item-img"></div>
 					<div class="project-list-item-detail">
 						<div class="project-list-item-title">三体</div>
@@ -92,7 +113,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="project-list-item">
+				<div class="project-list-item" style="display: none">
 					<div class="project-list-item-img"></div>
 					<div class="project-list-item-detail">
 						<div class="project-list-item-title">三体</div>
@@ -113,7 +134,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="project-list-item">
+				<div class="project-list-item" style="display: none">
 					<div class="project-list-item-img"></div>
 					<div class="project-list-item-detail">
 						<div class="project-list-item-title">三体</div>
@@ -134,7 +155,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="project-list-item">
+				<div class="project-list-item" style="display: none">
 					<div class="project-list-item-img"></div>
 					<div class="project-list-item-detail">
 						<div class="project-list-item-title">三体</div>
@@ -155,7 +176,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="project-list-item">
+				<div class="project-list-item" style="display: none">
 					<div class="project-list-item-img"></div>
 					<div class="project-list-item-detail">
 						<div class="project-list-item-title">三体</div>
@@ -176,7 +197,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="project-list-item">
+				<div class="project-list-item" style="display: none">
 					<div class="project-list-item-img"></div>
 					<div class="project-list-item-detail">
 						<div class="project-list-item-title">三体</div>
@@ -197,28 +218,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="project-list-item">
-					<div class="project-list-item-img"></div>
-					<div class="project-list-item-detail">
-						<div class="project-list-item-title">三体</div>
-						<div class="project-list-item-time">
-							<span class="icon time-icon"></span>
-							作者：刘慈欣
-						</div>
-						<div class="project-list-item-address">
-							<span class="icon address-icon"></span>
-							<span class="venue-name-and-address">重庆出版社</span>
-						</div>
-						<div class="project-list-item-price">
-							<div class="not-free">
-								<span class="price-symbol">￥</span>
-								<span class="price">30.6</span>
-								<span class="start">元</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="project-list-item">
+				<div class="project-list-item" style="display: none">
 					<div class="project-list-item-img"></div>
 					<div class="project-list-item-detail">
 						<div class="project-list-item-title">三体</div>
@@ -305,6 +305,7 @@
 					success:function(data){
 						var i = 0;
 						$(data).each(function(){
+							$(".project-list-item:eq("+i+")").fadeIn(100);
 							$(".project-list-wrapper .project-list-item:eq("+i+") .project-list-item-img").css("background-image","url(/ScienceFictionCity/image/"+this.bimg+")");
 							$(".project-list-wrapper .project-list-item:eq("+i+") .project-list-item-title").html(this.bName);
 							$(".project-list-wrapper .project-list-item:eq("+i+") .project-list-item-time").text(this.author);
@@ -327,17 +328,17 @@
 				var paegNo = 1;
 				$(".pageRight").click(function(){
 					if((paegNo < parseInt($(".pageNum:last-child").html()))) {
+						$(".project-list-item").fadeOut(300);
 						paegNo++;
 						pageFun(paegNo);
-						alert(paegNo);
 					}
 				})
 
 				$(".pageLeft").click(function(){
 					if(paegNo > 1) {
+						$(".project-list-item").fadeOut(300);
 						paegNo--;
 						pageFun(paegNo);
-						alert(paegNo);
 					}
 				})
 			})

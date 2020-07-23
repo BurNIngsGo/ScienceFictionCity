@@ -1,5 +1,6 @@
 package com.sfc.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.sfc.dao.EntityClass;
 
 import java.awt.print.Book;
@@ -8,10 +9,12 @@ import java.awt.print.Book;
  * 图书评论记录表
  */
 public class BookEva implements EntityClass<BookEva> {
+
     private int beId;       //评论编号
 
     private int bkStar;     //星级
 
+    @JSONField(serialize = false)
     private String bkEva;   //用户品论内容
 
     private int uId;        //评论者
@@ -70,6 +73,7 @@ public class BookEva implements EntityClass<BookEva> {
 
 
     @Override
+    @JSONField(serialize = false)
     public BookEva getNew() {
         return new BookEva();
     }

@@ -1,6 +1,8 @@
 package com.sfc.servlet;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.sfc.entity.BookInfo;
 import com.sfc.entity.BookType;
 import com.sfc.entity.Press;
@@ -69,20 +71,20 @@ public class Tests extends HttpServlet {
             strJson += "]";
             out.print(strJson);
         } else if("mainPai".equals(param)) {
-            String strJson = "[\n";
-            int i = 0;
-            for(BookInfo bookInfo : list){
-                strJson +=  "{\"url\":\""+bookInfo.getbImg()+"\"," +
-                        "\"name\":\""+bookInfo.getbName()+"\"," +
-                        "\"author\":\""+bookInfo.getbAuthor()+"\"," +
-                        "\"contxt\":\""+bookInfo.getbPresent()+"\"}";
-                if(i != list.size() - 1) {
-                    strJson += ",\n";
-                }
-                i++;
-            }
-            strJson += "]\n";
-            out.print(strJson);
+//            String strJson = "[\n";
+//            int i = 0;
+//            for(BookInfo bookInfo : list){
+//                strJson +=  "{\"url\":\""+bookInfo.getbImg()+"\"," +
+//                        "\"name\":\""+bookInfo.getbName()+"\"," +
+//                        "\"author\":\""+bookInfo.getbAuthor()+"\"," +
+//                        "\"contxt\":\""+bookInfo.getbPresent()+"\"}";
+//                if(i != list.size() - 1) {
+//                    strJson += ",\n";
+//                }
+//                i++;
+//            }
+//            strJson += "]\n";
+            out.print(JSON.toJSONString(list));
         } else if("shopType".equals(param)) {
             String strJson = "[";
             int i = 0;

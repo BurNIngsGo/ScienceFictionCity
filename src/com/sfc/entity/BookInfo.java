@@ -1,5 +1,6 @@
 package com.sfc.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.sfc.dao.EntityClass;
 
 import java.util.Date;
@@ -8,23 +9,6 @@ import java.util.Date;
  * 图书信息类
  */
 public class BookInfo implements EntityClass<BookInfo> {
-    @Override
-    public String toString() {
-        return "BookInfo{" +
-                "bId=" + bId +
-                ", bName='" + bName + '\'' +
-                ", bType=" + bType +
-                ", bPress=" + bPress +
-                ", bAuthor='" + bAuthor + '\'' +
-                ", bPrice=" + bPrice +
-                ", bPresent='" + bPresent + '\'' +
-                ", bImg='" + bImg + '\'' +
-                ", bSales=" + bSales +
-                ", bTime=" + bTime +
-                ", bCount=" + bCount +
-                ", bContent='" + bContent + '\'' +
-                '}';
-    }
 
     private int bId;            //图书编号
 
@@ -147,6 +131,7 @@ public class BookInfo implements EntityClass<BookInfo> {
     }
 
     @Override
+    @JSONField(serialize = false)
     public BookInfo getNew() {
         return new BookInfo();
     }
