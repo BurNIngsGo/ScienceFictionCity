@@ -1,5 +1,6 @@
 package com.sfc.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.sfc.dao.EntityClass;
 
 import java.util.Date;
@@ -59,6 +60,7 @@ public class ShoppingCart implements EntityClass<ShoppingCart> {
     }
 
     @Override
+    @JSONField(serialize = false)
     public ShoppingCart getNew() {
         return new ShoppingCart();
     }

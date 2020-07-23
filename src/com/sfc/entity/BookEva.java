@@ -14,7 +14,6 @@ public class BookEva implements EntityClass<BookEva> {
 
     private int bkStar;     //星级
 
-    @JSONField(serialize = false)
     private String bkEva;   //用户品论内容
 
     private int uId;        //评论者
