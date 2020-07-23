@@ -1,5 +1,6 @@
 package com.sfc.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.sfc.dao.EntityClass;
 
 /**
@@ -27,6 +28,7 @@ public class FriendRelation implements EntityClass<FriendRelation> {
     }
 
     @Override
+    @JSONField(serialize = false)
     public FriendRelation getNew() {
         return new FriendRelation();
     }

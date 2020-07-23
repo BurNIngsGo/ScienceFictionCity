@@ -1,5 +1,6 @@
 package com.sfc.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.sfc.dao.EntityClass;
 
 /**
@@ -28,6 +29,7 @@ public class ManageEva implements EntityClass<ManageEva> {
 
 
     @Override
+    @JSONField(serialize = false)
     public ManageEva getNew() {
         return new ManageEva();
     }

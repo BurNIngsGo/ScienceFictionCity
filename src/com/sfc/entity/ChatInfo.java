@@ -1,5 +1,6 @@
 package com.sfc.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.sfc.dao.EntityClass;
 
 import java.util.Date;
@@ -46,6 +47,7 @@ public class ChatInfo implements EntityClass<ChatInfo> {
     }
 
     @Override
+    @JSONField(serialize = false)
     public ChatInfo getNew() {
         return new ChatInfo();
     }

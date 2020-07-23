@@ -1,5 +1,6 @@
 package com.sfc.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.sfc.dao.EntityClass;
 
 /**
@@ -27,6 +28,7 @@ public class Press implements EntityClass<Press> {
     }
 
     @Override
+    @JSONField(serialize = false)
     public Press getNew() {
         return new Press();
     }

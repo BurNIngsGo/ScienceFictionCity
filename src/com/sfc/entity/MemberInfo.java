@@ -1,5 +1,6 @@
 package com.sfc.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.sfc.dao.EntityClass;
 
 import java.util.Date;
@@ -39,6 +40,7 @@ public class MemberInfo implements EntityClass<MemberInfo> {
     }
 
     @Override
+    @JSONField(serialize = false)
     public MemberInfo getNew() {
         return new MemberInfo();
     }
