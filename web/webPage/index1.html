@@ -30,20 +30,20 @@
 					</div>
 					<div class="TjBox">
 						<div class="top_div">
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
+							<div class="fla"></div>
+							<div class="fla"></div>
+							<div class="fla"></div>
+							<div class="fla"></div>
+							<div class="fla"></div>
+							<div class="fla"></div>
 						</div>
 						<div class="button_div">
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
+							<div class="fla"></div>
+							<div class="fla"></div>
+							<div class="fla"></div>
+							<div class="fla"></div>
+							<div class="fla"></div>
+							<div class="fla"></div>
 						</div>
 					</div>
 				</div>
@@ -87,16 +87,16 @@
 		<div class="menus">
 			<div id="menucon">
 				<div class="dianda">
-					<a class="ass" href="index1.html">首页</a>
+					<a class="ass" href="webPage/index1.html">首页</a>
 				</div>
 				<div class="dianda">
-					<a class="ass" href="index3.html">分类</a>
+					<a class="ass" href="webPage/index3.html">分类</a>
 				</div>
 				<div class="dianda">
-					<a class="ass" href="index4.html">排行</a>
+					<a class="ass" href="webPage/index4.html">排行</a>
 				</div>
 				<div class="dianda">
-					<a class="ass" href="#">最新科幻</a>
+					<a class="ass" href="webPage/newBook.html">最新科幻</a>
 				</div>
 				<div class="dianda">
 					<a class="ass" href="#">论坛</a>
@@ -120,22 +120,55 @@
 		<script type="text/javascript" src="javaScript/jquery-1.12.4.js"></script>
 		<script type="text/javascript" src="javaScript/index1.js"></script>
 		<script type="text/javascript">
-			$.ajax({
-				type:"get",
-				url:"Tests",
-				dataType:"json",
-				success:function(data){
-					alert(data);
-					var index = 0;
-					$(data).each(function(){
-						$(".top_div>div:eq("+index+")").css("background-image","url("+this.url+")");
-						index++;
-					})
-				},
-				error:function () {
-					alert(1);
-				}
-			});
+			function recFun(){
+				$.ajax({
+					type:"get",
+					url:"Tests",
+					data: {name:"mainNav"},
+					dataType:"json",
+					success:function(data){
+						var index = 0;
+						$(data).each(function(){
+							$(".TjBox .fla:eq("+index+")").css("background-image","url("+this.url+")");
+							index++;
+						})
+					},
+					error:function () {
+						alert("有错误1");
+					}
+				});
+			}
+
+			function topicFun(){
+				$.ajax({
+					type:"get",
+					url:"Tests",
+					data: {name:"mainPai"},
+					dataType:"json",
+					success:function(data){
+						var index = 0;
+						$(data).each(function(){
+							if(index == 0) {
+								$(".bookPaiImg").css("background-image","url(image/"+this.url+")");
+								$(".titTxt").html(this.name);
+								$(".athorTxt").html(this.author);
+								$(".conTxt").html(this.contxt);
+							}else {
+								$(".others>div:eq(" + index + ")").css("background-image", "url(image/" + this.url + ")");
+							}
+							index++;
+						})
+					},
+					error:function (a,b,c) {
+						alert("有错误2"+b);
+					}
+				});
+			}
+
+			$(function () {
+				recFun();
+				topicFun();
+			})
 		</script>
 	</body>
 

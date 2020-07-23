@@ -8,6 +8,24 @@ import java.util.Date;
  * 图书信息类
  */
 public class BookInfo implements EntityClass<BookInfo> {
+    @Override
+    public String toString() {
+        return "BookInfo{" +
+                "bId=" + bId +
+                ", bName='" + bName + '\'' +
+                ", bType=" + bType +
+                ", bPress=" + bPress +
+                ", bAuthor='" + bAuthor + '\'' +
+                ", bPrice=" + bPrice +
+                ", bPresent='" + bPresent + '\'' +
+                ", bImg='" + bImg + '\'' +
+                ", bSales=" + bSales +
+                ", bTime=" + bTime +
+                ", bCount=" + bCount +
+                ", bContent='" + bContent + '\'' +
+                '}';
+    }
+
     private int bId;            //图书编号
 
     private String bName;       //图书名
