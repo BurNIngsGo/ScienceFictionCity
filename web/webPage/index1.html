@@ -4,8 +4,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>解忧科幻书城</title>
-		<link rel="stylesheet" href="styleFile/viddw.css" type="text/css" />
-		<link rel="stylesheet" href="styleFile/magic.min.css" />
+		<link rel="stylesheet" href="/ScienceFictionCity/styleFile/viddw.css" type="text/css" />
+		<link rel="stylesheet" href="/ScienceFictionCity/styleFile/magic.min.css" />
 		<style>
 			body {
 				overflow-x: hidden;
@@ -16,7 +16,7 @@
 	<body>
 		<div class="vidbacking">
 			<video autoplay muted loop style="width: 100%; margin: 0 auto;">
-				<source src="video/KV-PC-final.mp4" type="video/mp4"></source>
+				<source src="/ScienceFictionCity/video/KV-PC-final.mp4" type="video/mp4"></source>
 			</video>
 			<div id="test">
 				<div class="tuijian">
@@ -87,22 +87,22 @@
 		<div class="menus">
 			<div id="menucon">
 				<div class="dianda">
-					<a class="ass" href="webPage/index1.html">首页</a>
+					<a class="ass" href="/ScienceFictionCity/webPage/index1.html">首页</a>
 				</div>
 				<div class="dianda">
-					<a class="ass" href="webPage/index3.html">分类</a>
+					<a class="ass" href="/ScienceFictionCity/webPage/index3.html">分类</a>
 				</div>
 				<div class="dianda">
-					<a class="ass" href="webPage/index4.html">排行</a>
+					<a class="ass" href="/ScienceFictionCity/webPage/index4.html">排行</a>
 				</div>
 				<div class="dianda">
-					<a class="ass" href="webPage/newBook.html">最新科幻</a>
+					<a class="ass" href="/ScienceFictionCity/webPage/newBook.html">最新科幻</a>
 				</div>
 				<div class="dianda">
 					<a class="ass" href="#">论坛</a>
 				</div>
 				<div id="marginbox">
-					<img src="../image/users.jpg" id="users">
+					<img src="" id="users">
 					<div id="userBox">
 						<div class="userlogin"><span>请登录</span></div>
 						<div class="userLv">等级6:<span>1600/20000</span></div>
@@ -117,19 +117,19 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript" src="javaScript/jquery-1.12.4.js"></script>
-		<script type="text/javascript" src="javaScript/index1.js"></script>
+		<script type="text/javascript" src="/ScienceFictionCity/javaScript/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="/ScienceFictionCity/javaScript/index1.js"></script>
 		<script type="text/javascript">
 			function recFun(){
 				$.ajax({
 					type:"get",
-					url:"Tests",
+					url:"/ScienceFictionCity/Tests",
 					data: {name:"mainNav"},
 					dataType:"json",
 					success:function(data){
 						var index = 0;
 						$(data).each(function(){
-							$(".TjBox .fla:eq("+index+")").css("background-image","url("+this.url+")");
+							$(".TjBox .fla:eq("+index+")").css("background-image","url(/ScienceFictionCity/"+this.url+")");
 							index++;
 						})
 					},
@@ -142,19 +142,19 @@
 			function topicFun(){
 				$.ajax({
 					type:"get",
-					url:"Tests",
+					url:"/ScienceFictionCity/Tests",
 					data: {name:"mainPai"},
 					dataType:"json",
 					success:function(data){
 						var index = 0;
 						$(data).each(function(){
 							if(index == 0) {
-								$(".bookPaiImg").css("background-image","url(image/"+this.url+")");
+								$(".bookPaiImg").css("background-image","url(/ScienceFictionCity/image/"+this.url+")");
 								$(".titTxt").html(this.name);
 								$(".athorTxt").html(this.author);
 								$(".conTxt").html(this.contxt);
 							}else {
-								$(".others>div:eq(" + index + ")").css("background-image", "url(image/" + this.url + ")");
+								$(".others>div:eq(" + index + ")").css("background-image", "url(/ScienceFictionCity/image/" + this.url + ")");
 							}
 							index++;
 						})

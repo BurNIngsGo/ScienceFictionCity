@@ -1,6 +1,7 @@
 package com.sfc.impl;
 
 
+import com.alibaba.fastjson.parser.deserializer.SqlDateDeserializer;
 import com.sfc.dao.BaseDao;
 import com.sfc.dao.UserInfoDao;
 import com.sfc.entity.UserInfo;
@@ -69,7 +70,7 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
      * @return UserInfo
      */
     public int userRegister(UserInfo ui) throws SQLException{
-        String strSql = "insert into userinfo(uName,uPwd,uSex) values(?,?,?)";
+        String strSql = "insert into userinfo(uName,uPwd) values(?,?)";
         Object[] param = {ui.getuName(),ui.getuPwd(),ui.getuSex()};
         try {
             return this.executeUpdate(strSql,param);
@@ -112,6 +113,18 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
         Object[] param = {ui.getuPwd(),ui.getuId()};
         try {
             return this.executeUpdate(strSql,param);
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+
+    @Override
+    public int checkUserName(String name) throws SQLException{
+        String strSql = "select count(1) form userinfo where name = ?";
+        Object[] param = {name};
+        try {
+            Number num = (Number)this.executeQuery(strSql,param).get(0);
+            return num.intValue();
         } catch (SQLException e) {
             throw e;
         }

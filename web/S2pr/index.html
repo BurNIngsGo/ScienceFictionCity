@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html>
-	<head>
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
 	<title>Home</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,8 +25,7 @@
 	<!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
 	<!-- web-fonts -->
-	<link href="http://maxcdn.bootstrapcdn.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-	<link href="http://maxcdn.bootstrapcdn.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
 	<!-- //web-fonts -->
 </head>
 
@@ -42,8 +42,8 @@
 	<!-- //title -->
 	<!-- content -->
 	<div class="sub-main-w3">
-		<form action="#" method="post">
-			<h2>注	册
+		<form action="#" method="get">
+			<h2>登	录
 				<i class="fas fa-level-down-alt"></i>
 			</h2>
 			<div class="form-style-agile">
@@ -51,27 +51,33 @@
 					<i class="fas fa-user"></i>
 					用户名
 				</label>
-				<input id = "uname" placeholder="Username" name="Name" type="text" required="">
-			</div>
-			<div class="form-style-agile">
-				<label>
-					<i class="fas fa-user"></i>
-					密码
-				</label>
-				<input id = "uname" placeholder="Password" name="Password" type="Password" required="">
+				<input id = "uname" placeholder="Username" name="name" type="text" required="">
 			</div>
 			<div class="form-style-agile">
 				<label>
 					<i class="fas fa-unlock-alt"></i>
-					确定密码
+					密码
 				</label>
-				<input id="upwd" placeholder="Password" name="Password" type="password" required="">
+				<input id="upwd" placeholder="Password" name="pwd" type="password" required="">
+				<input type="hidden" name = "action" value="login"/>
 			</div>
 			<!-- checkbox -->
-			
+			<div class="wthree-text">
+				<ul>
+					<li>
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>记住密码</span>
+						</label>
+					</li>
+					<li>
+						<a href="#">忘记密码?</a>
+					</li>
+				</ul>
+			</div>
 			<!-- //checkbox -->
-			
-			<input id="sub" type="button" value="Regist" >
+			<input id="sub" type="submit" value="Login"  onclick="">
+			<input id="sub1" type="button" value="Regist" >
 		</form>
 	</div>
 	<!-- //content -->
@@ -83,16 +89,39 @@
 	<!-- //copyright -->
 
 	<!-- Jquery -->
-	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="/ScienceFictionCity/S2pr/js/jquery-3.3.1.min.js"></script>
 	<!-- //Jquery -->
 
 	<!-- effect js -->
-	<script src="js/canva_moving_effect.js"></script>
+	<script src="/ScienceFictionCity/S2pr/js/canva_moving_effect.js"></script>
 	<!-- //effect js -->
 	<script type="text/javascript">
 		$("input[type=button]").click(function(){
-			window.location.href="index.html"
+			window.location.href="zc.html"
 		})
+		$(".sub-main-w3 form").submit(function(){
+			var uname = $("#uname").val();
+			var upwd = $("#upwd").val();
+			$.ajax({
+				url:"/ScienceFictionCity/Login",
+				type:"get",
+				data:{action:"login",name:uname,pwd:upwd},
+				dataType:"text",
+				success:function(data){
+					if(data == "1"){
+						window.location = "/ScienceFictionCity/webPage/index1.html"
+					}else{
+						alert("账号或密码错误");
+					}
+				},
+				error:function(){
+					alert();
+				}
+			})
+		})
+
+
 	</script>
 </body>
+
 </html>
