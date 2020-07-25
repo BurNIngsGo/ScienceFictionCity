@@ -3,9 +3,12 @@ package com.sfc.serviceImpl;
 import com.sfc.connpool.BaseDaoUtil;
 import com.sfc.dao.BookInfoDao;
 import com.sfc.entity.BookInfo;
+import com.sfc.entity.Press;
 import com.sfc.entitypage.Page;
 import com.sfc.impl.BookInfoDaoImpl;
 import com.sfc.service.BookInfoService;
+import com.sfc.service.BookTypeService;
+import com.sfc.service.PressService;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -224,6 +227,19 @@ public class BookInfoServiceImpl implements BookInfoService {
         BookInfoDao bookInfoDao = new BookInfoDaoImpl(conn);
         try {
             return bookInfoDao.getCount();
+        } catch(SQLException e) {
+            throw e;
+        }
+    }
+
+    @Override
+    public List getBookByTypeAndPressAndTime(String sType, String sPress, int bBeginTime, int bEndTime) throws SQLException {
+        Connection conn = BaseDaoUtil.getConnection();
+        BookTypeService bookTypeService = new BookTypeServiceImpl();
+        PressService pressService = new PressServiceImpl();
+        BookInfoDao bookInfoDao = new BookInfoDaoImpl(conn);
+        try {
+            return bookInfoDao.getBookByTypeAndPressAndTime(bookTypeService.getBookTypeIdByTypeName(sType),pressService.getPressIdByPressName(sPress),bBeginTime,bEndTime);
         } catch(SQLException e) {
             throw e;
         }

@@ -89,4 +89,15 @@ public interface BookInfoDao {
      * @throws SQLException
      */
     public int getCount() throws SQLException;
+
+    /**
+     * 根据多条件查询图书信息
+     * @param bType
+     * @param bPress
+     * @param bBeginTime
+     * @param bEndTime
+     * @return
+     * @throws SQLException
+     */
+    public List getBookByTypeAndPressAndTime(int bType, int bPress, int bBeginTime, int bEndTime) throws SQLException;
 }

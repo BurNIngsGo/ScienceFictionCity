@@ -90,4 +90,15 @@ public interface BookInfoService {
      * @throws SQLException
      */
     public int getCount() throws SQLException;
+
+    /**
+     * 根据多条件查询图书信息
+     * @param bType
+     * @param bPress
+     * @param bBeginTime
+     * @param bEndTime
+     * @return
+     * @throws SQLException
+     */
+    public List getBookByTypeAndPressAndTime(String sType, String sPress, int bBeginTime, int bEndTime) throws SQLException;
 }

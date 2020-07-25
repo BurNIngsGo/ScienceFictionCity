@@ -14,6 +14,12 @@
 				overflow-x: hidden;
 				background-color: #F1F3F5;
 			}
+			.selects{
+				width: 100px;
+				border-radius: 25px 25px 25px 25px;
+				outline: none;
+				margin-left: -15px;
+			}
 		</style>
 	</head>
 
@@ -47,6 +53,7 @@
 				</div>
 				<div class="selector-content">
 					<ul class="city-list">
+						<li class='first city-item'>全部</li>
 					</ul>
 				</div>
 			</div>
@@ -54,6 +61,7 @@
 				<div class="title">出版社</div>
 				<div class="selector-content">
 					<ul class="city-list">
+						<li class='first city-item'>全部</li>
 					</ul>
 				</div>
 			</div>
@@ -61,6 +69,7 @@
 				<div class="title">出版时间</div>
 				<div class="selector-content">
 					<ul class="city-list">
+						<li class="first city-item active">全部</li>
 						<li class="first city-item active">1990-1995</li>
 						<li class="first city-item">1995-2000</li>
 						<li class="first city-item active">2000-2005</li>
@@ -253,6 +262,7 @@
 		<script type="text/javascript">
 			var countP = 0;
 			function bookTypeFun(){
+				$(".city-list:eq(0)").append($("<select class='selects'></select>"));
 				$.ajax({
 					type:"get",
 					data:{name:"shopType"},
@@ -261,9 +271,10 @@
 					success:function(data) {
 						var i = 0;
 						$(data).each(function(){
-							if(i == 8)
-								return;
-							$(".city-list:eq(0)").append($("<li class='first city-item'>"+this.tname+"</li>"));
+							if(i >= 6)
+								$(".city-list:eq(0) .selects").append($("<option>"+this.tname+"</option>"));
+							else
+								$(".city-list:eq(0) .selects").before($("<li class='first city-item'>"+this.tname+"</li>"));
 							// $(".city-list:eq(2)").append($("<li class='first city-item'>"+data.tbtime+"</li>"));
 							i++;
 						})
@@ -275,6 +286,7 @@
 			}
 
 			function pressFun() {
+				$(".city-list:eq(1)").append($("<select class='selects'></select>"));
 				$.ajax({
 					type:"get",
 					data:{name:"shopPree"},
@@ -283,9 +295,10 @@
 					success:function(data) {
 						var i = 0;
 						$(data).each(function(){
-							if(i == 8)
-								return;
-							$(".city-list:eq(1)").append($("<li class='first city-item'>"+this.tpree+"</li>"));
+							if(i >= 6)
+								$(".city-list:eq(1) .selects").append($("<option>"+this.tpree+"</option>"));
+							else
+								$(".city-list:eq(1) .selects").before($("<li class='first city-item'>"+this.tpree+"</li>"));
 							i++;
 						})
 					},
@@ -343,7 +356,30 @@
 						alert("fbi waring!!");
 					}
 				})
+			}
 
+			function selectBook(bType,bPress,bTime,){
+				$.ajax({
+					type:"get",
+					url:"/ScienceFictionCity/Tests",
+					data:{type:bType,press:bPress,btime:bTime,etime:eTime,name:"selects"},
+					dataType:"json",
+					success:function(data){
+						var i = 0;
+						$(data).each(function(){
+							$(".project-list-item:eq("+i+")").fadeIn(100);
+							$(".project-list-wrapper .project-list-item:eq("+i+") .project-list-item-img").css("background-image","url(/ScienceFictionCity/image/"+this.bimg+")");
+							$(".project-list-wrapper .project-list-item:eq("+i+") .project-list-item-title").html(this.bName);
+							$(".project-list-wrapper .project-list-item:eq("+i+") .project-list-item-time").text(this.author);
+							$(".project-list-wrapper .project-list-item:eq("+i+") .project-list-item-address").html(this.press);
+							$(".project-list-wrapper .project-list-item:eq("+i+") .price").html(this.price);
+							i++;
+						})
+					},
+					error:function(){
+						alert("!!!")
+					}
+				})
 			}
 
 			$(function () {
@@ -378,15 +414,17 @@
 					}
 					if(countP >= 7) {
 						if(param - 1 < 4 || countP - param < 4){
-							if(param - 2 > 2){
-								for(var i = param - 2; i <= param + 2; i++){
-									if($(this).prevAll().length < 4 && param != 1){
-										$(this).after("<span class=\"pageNum\">" + (param + 1) + "</span>");
-									} else {
-
+							// if(param - 2 > 2){
+							// 	for(var i = param - 2; i <= param + 2; i++){
+									if($(this).prevAll().length < 4 && param != 1 && $(this).next().html() != "..." && $(".pagination span:last-child").prev().prevAll().length < 5){
+										$(".pagination span:last-child").prev().prev().after("<span class=\"pageNum\">" + (param + 2) + "</span>");
+									} else if($(this).next().html() == "..."){
+										for(var i = param+1; i <= param + 2; i++) {
+											$(".pagination span:last-child").prev().prev().after("<span class=\"pageNum\">" + i + "</span>");
+										}
 									}
-								}
-							}
+								// }
+							// }
 							if(param + 2 < countP){
 								for(var i = param - 2; i <= param + 2; i++){
 
@@ -398,6 +436,7 @@
 					paegNo = param;
 					pageFun(param);
 				})
+				$()
 			})
 		</script>
 	</body>

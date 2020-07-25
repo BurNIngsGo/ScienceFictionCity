@@ -47,4 +47,12 @@ public interface BookTypeService {
      * @return
      */
     public int updateBookTypeByTid(BookType bk) throws SQLException;
+
+    /**
+     * 根据图书类型名称获取类型id
+     * @param bName
+     * @return
+     * @throws SQLException
+     */
+    public int getBookTypeIdByTypeName(String bName) throws SQLException;
 }

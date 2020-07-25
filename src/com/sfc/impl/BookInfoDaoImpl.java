@@ -195,4 +195,15 @@ public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
             throw e;
         }
     }
+
+    @Override
+    public List<BookInfo> getBookByTypeAndPressAndTime(int bType, int bPress, int bBeginTime, int bEndTime) throws SQLException {
+        String strSql = "SELECT * FROM bookinfo WHERE bType = ? AND bPress = ?  AND (YEAR(bTime) > ? AND YEAR(bTime) < ?)";
+        Object[] param = {bType,bPress,bBeginTime,bEndTime};
+        try {
+            return this.getEntity(new BookInfo(), param, strSql);
+        } catch(SQLException e) {
+            throw e;
+        }
+    }
 }

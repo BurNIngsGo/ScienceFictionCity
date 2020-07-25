@@ -113,4 +113,17 @@ public class BookTypeServiceImpl implements BookTypeService {
             BaseDaoUtil.closeAll(null,null,conn);
         }
     }
+
+    @Override
+    public int getBookTypeIdByTypeName(String bName) throws SQLException {
+        Connection conn = BaseDaoUtil.getConnection();
+        BookTypeDao bookInfoDao = new BookTypeDaoImpl(conn);
+        try{
+            return bookInfoDao.getBookTypeIdByTypeName(bName);
+        } catch(SQLException e) {
+            throw e;
+        } finally {
+            BaseDaoUtil.closeAll(null,null,conn);
+        }
+    }
 }

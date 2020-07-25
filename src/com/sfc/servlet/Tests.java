@@ -131,6 +131,19 @@ public class Tests extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        } else if("selects".equals(param)) {
+            String bookType = request.getParameter("type");
+            String press = request.getParameter("press");
+            int begin = Integer.parseInt(request.getParameter("btime"));
+            int end = Integer.parseInt(request.getParameter("etime"));
+            List<BookInfo> blist = null;
+            try {
+                blist = bookInfoService.getBookByTypeAndPressAndTime(bookType,press,begin,end);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            String strJSON = JSON.toJSONString(blist);
+            out.print(strJSON);
         }
     }
 }
