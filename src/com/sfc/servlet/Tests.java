@@ -123,6 +123,14 @@ public class Tests extends HttpServlet {
             }
             strJson += "]";
             out.print(strJson);
+        } else if("pageNum".equals(param)){
+            try {
+                int count = bookInfoService.getCount();
+                double pco = count/8.0;
+                out.print(Math.ceil(pco));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

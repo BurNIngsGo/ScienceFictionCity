@@ -213,4 +213,19 @@ public class BookInfoServiceImpl implements BookInfoService {
             BaseDaoUtil.closeAll(null,null,conn);
         }
     }
+
+    /**
+     * 获取总数据量
+     * @return
+     * @throws SQLException
+     */
+    public int getCount() throws SQLException {
+        Connection conn = BaseDaoUtil.getConnection();
+        BookInfoDao bookInfoDao = new BookInfoDaoImpl(conn);
+        try {
+            return bookInfoDao.getCount();
+        } catch(SQLException e) {
+            throw e;
+        }
+    }
 }

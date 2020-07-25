@@ -245,14 +245,13 @@
 			<div class="pageSpanCenter">
 				<div class="pageLeft">&lt;</div>
 				<div class="pagination">
-					<span class="pageNum">1</span>
-					<span class="pageNum">2</span>
 				</div>
 				<div class="pageRight">&gt;</div>
 			</div>
 		</div>
 		<script src="/ScienceFictionCity/javaScript/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			var countP = 0;
 			function bookTypeFun(){
 				$.ajax({
 					type:"get",
@@ -313,7 +312,6 @@
 							$(".project-list-wrapper .project-list-item:eq("+i+") .price").html(this.price);
 							i++;
 						})
-
 					},
 					error:function(a,b,c){
 						alert("FBI WARING"+b+","+c);
@@ -321,10 +319,38 @@
 				})
 			}
 
+			function pageCountFun(){
+				$.ajax({
+					type: "get",
+					url: "/ScienceFictionCity/Tests",
+					data: {name: "pageNum"},
+					dataType: "text",
+					success: function (data) {
+						var pageCount = parseInt(data);
+						countP = pageCount;
+						if(pageCount >= 7) {
+							$(".pagination").append("<span class=\"pageNum\">" + 1 + "</span>");
+							for (var j = 1; j < 3; j++)
+								$(".pagination").append("<span class=\"pageNum\">" + (j + 1) + "</span>");
+							$(".pagination").append("<span class=\"pageNum\">" + "..." + "</span>");
+							$(".pagination").append("<span class=\"pageNum\">" + pageCount + "</span>");
+						}else{
+							for (var j = 0; j < pageCount; j++)
+								$(".pagination").append("<span class=\"pageNum\">" + (j + 1) + "</span>");
+						}
+					},
+					error:function () {
+						alert("fbi waring!!");
+					}
+				})
+
+			}
+
 			$(function () {
 				bookTypeFun();
 				pressFun();
 				pageFun(0);
+				pageCountFun();
 				var paegNo = 1;
 				$(".pageRight").click(function(){
 					if((paegNo < parseInt($(".pageNum:last-child").html()))) {
@@ -340,6 +366,37 @@
 						paegNo--;
 						pageFun(paegNo);
 					}
+				})
+
+				$(document).on("click",".pageNum",function () {
+					var num = $(this).html();
+					var param;
+					if($.isNumeric(num) && !(parseInt(num) == paegNo)) {
+						param = parseInt(num);
+					} else {
+						return ;
+					}
+					if(countP >= 7) {
+						if(param - 1 < 4 || countP - param < 4){
+							if(param - 2 > 2){
+								for(var i = param - 2; i <= param + 2; i++){
+									if($(this).prevAll().length < 4 && param != 1){
+										$(this).after("<span class=\"pageNum\">" + (param + 1) + "</span>");
+									} else {
+
+									}
+								}
+							}
+							if(param + 2 < countP){
+								for(var i = param - 2; i <= param + 2; i++){
+
+								}
+							}
+						}
+					}
+					$(".project-list-item").fadeOut(300);
+					paegNo = param;
+					pageFun(param);
 				})
 			})
 		</script>

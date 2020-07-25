@@ -83,4 +83,11 @@ public interface BookInfoService {
      * @return
      */
     public int updateBookByBid(BookInfo bi) throws SQLException;
+
+    /**
+     * 获取总数据量
+     * @return
+     * @throws SQLException
+     */
+    public int getCount() throws SQLException;
 }
