@@ -149,12 +149,12 @@
 						var index = 0;
 						$(data).each(function(){
 							if(index == 0) {
-								$(".bookPaiImg").css("background-image","url(image/"+this.bImg+")");
-								$(".titTxt").html(this.bName);
-								$(".athorTxt").html(this.bAuthor);
-								$(".conTxt").html(this.bPresent);
+								$(".bookPaiImg").css("background-image","url(image/"+this.url+")");
+								$(".titTxt").html(this.name);
+								$(".athorTxt").html(this.author);
+								$(".conTxt").html(this.contxt);
 							}else {
-								$(".others>div:eq(" + index + ")").css("background-image", "url(image/" + this.bImg + ")");
+								$(".others>div:eq(" + index + ")").css("background-image", "url(image/" + this.url + ")");
 							}
 							index++;
 						})

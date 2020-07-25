@@ -53,4 +53,11 @@ public interface UserInfoService {
      * @return
      */
     public int updateUserRePassword(UserInfo ui) throws SQLException;
+
+    /**
+     * 检查是否有该用户名
+     * @param name
+     * @return
+     */
+    public int checkUserName(String name) throws SQLException;
 }

@@ -120,7 +120,7 @@ public class ExpandToolDaoImpl implements ExpandToolDao {
                     (param)->((UserInfo)stu).setuPwd((String)param),
                     (param)->((UserInfo)stu).setuHeadImg((String)param),
                     (param)->((UserInfo)stu).setuLv((int)param),
-                    (param)->((UserInfo)stu).setuMember((int)param),
+                    (param)->((UserInfo)stu).setuMember((param == null) ? 0 : (int)param),
                     (param)->((UserInfo)stu).setuPost((int)param),
                     (param)->((UserInfo)stu).setuEmpirical((int)param)
 

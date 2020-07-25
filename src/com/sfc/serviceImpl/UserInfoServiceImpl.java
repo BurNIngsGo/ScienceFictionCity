@@ -130,4 +130,17 @@ public class UserInfoServiceImpl implements UserInfoService {
             BaseDaoUtil.closeAll(null,null,conn);
         }
     }
+
+    @Override
+    public int checkUserName(String name) throws SQLException {
+        Connection conn =  BaseDaoUtil.getConnection();
+        UserInfoDao userInfoDao = new UserInfoDaoImpl(conn);
+        try {
+            return userInfoDao.checkUserName(name);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            BaseDaoUtil.closeAll(null,null,conn);
+        }
+    }
 }

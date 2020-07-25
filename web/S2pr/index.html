@@ -19,9 +19,9 @@
 	</script>
 	<!-- Meta tag Keywords -->
 	<!-- css files -->
-	<link rel="stylesheet" href="css/style1.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="/ScienceFictionCity/S2pr/css/style1.css" type="text/css" media="all" />
 	<!-- Style-CSS -->
-	<link rel="stylesheet" href="css/fontawesome-all.css">
+	<link rel="stylesheet" href="/ScienceFictionCity/S2pr/css/fontawesome-all.css">
 	<!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
 	<!-- web-fonts -->
@@ -42,7 +42,7 @@
 	<!-- //title -->
 	<!-- content -->
 	<div class="sub-main-w3">
-		<form action="/ScienceFictionCity/Tests" method="post">
+		<form action="#" method="get">
 			<h2>登	录
 				<i class="fas fa-level-down-alt"></i>
 			</h2>
@@ -51,14 +51,15 @@
 					<i class="fas fa-user"></i>
 					用户名
 				</label>
-				<input id = "uname" placeholder="Username" name="Name" type="text" required="">
+				<input id = "uname" placeholder="Username" name="name" type="text" required="">
 			</div>
 			<div class="form-style-agile">
 				<label>
 					<i class="fas fa-unlock-alt"></i>
 					密码
 				</label>
-				<input id="upwd" placeholder="Password" name="Password" type="password" required="">
+				<input id="upwd" placeholder="Password" name="pwd" type="password" required="">
+				<input type="hidden" name = "action" value="login"/>
 			</div>
 			<!-- checkbox -->
 			<div class="wthree-text">
@@ -75,7 +76,7 @@
 				</ul>
 			</div>
 			<!-- //checkbox -->
-			<input id="sub" type="submit" value="Login" >
+			<input id="sub" type="submit" value="Login"  onclick="">
 			<input id="sub1" type="button" value="Regist" >
 		</form>
 	</div>
@@ -88,17 +89,39 @@
 	<!-- //copyright -->
 
 	<!-- Jquery -->
-	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="/ScienceFictionCity/S2pr/js/jquery-3.3.1.min.js"></script>
 	<!-- //Jquery -->
 
 	<!-- effect js -->
-	<script src="js/canva_moving_effect.js"></script>
+	<script src="/ScienceFictionCity/S2pr/js/canva_moving_effect.js"></script>
 	<!-- //effect js -->
 	<script type="text/javascript">
 		$("input[type=button]").click(function(){
-			window.location.href="zc.html"
+			window.location.href="/ScienceFictionCity//S2pr/zc.html"
 		})
-		$.ajax()
+		$(".sub-main-w3 form").submit(function(){
+			var uname = $("#uname").val();
+			var upwd = $("#upwd").val();
+			$.ajax({
+				url:"/ScienceFictionCity/Login",
+				type:"get",
+				sync:false,
+				data:{action:"login",name:uname,pwd:upwd},
+				dataType:"text",
+				success:function(data){
+					if(data == "1"){
+						window.location = "/ScienceFictionCity/webPage/index1.html"
+					}else{
+						alert("账号或密码错误");
+					}
+				},
+				error:function(a,b,c){
+					alert(a+b+c);
+				}
+			})
+		})
+
+
 	</script>
 </body>
 

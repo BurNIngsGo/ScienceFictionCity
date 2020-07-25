@@ -1,3 +1,4 @@
+
 var mainslider;
 
 $(document).ready(function(){
@@ -30,10 +31,10 @@ $(document).ready(function(){
         $(".slider .slide[data-index='"+newSlide+"'] .slidecontent").fadeIn();
     });
 
-    $(".slide#first").backstretch("img/bg1.jpg");
-    $(".slide#sec").backstretch("img/bg2.jpg");
-    $(".slide#thirth").backstretch("img/bg4.jpg");
-    $(".slide#fourth").backstretch("img/bg5.jpg");
+    $(".slide#first").backstretch("img/lun1.jpg");
+    $(".slide#sec").backstretch("img/lun2.jpg");
+    $(".slide#thirth").backstretch("img/lun.jpg");
+    $(".slide#fourth").backstretch("img/lun3.jpg");
 
     $('.slide .backstretch img').on('dragstart', function(event) { event.preventDefault(); });
 
