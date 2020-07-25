@@ -27,14 +27,16 @@ public class LoginServlet extends HttpServlet {
         UserInfoService userInfoService =new UserInfoServiceImpl();
         String action = req.getParameter("action");
 
-        UserInfo userInfo = null;
-        try {
-            userInfo = userInfoService.userLogin(req.getParameter("name"),req.getParameter("pwd"));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
+
 
         if ("login".equals(action)) {
+            UserInfo userInfo = null;
+            try {
+                userInfo = userInfoService.userLogin(req.getParameter("name"),req.getParameter("pwd"));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             if (userInfo!=null) {
                 out.print(1);
             }   else {
@@ -42,11 +44,11 @@ public class LoginServlet extends HttpServlet {
             }
         } else if ("regist".equals(action)) {
             UserInfo userInfo1 = new UserInfo();
-            userInfo.setuName("11");
-            userInfo.setuPwd("123");
-            System.out.println(userInfo.getuName()+","+userInfo.getuPwd());
+            userInfo1.setuName(req.getParameter("name"));
+            userInfo1.setuPwd(req.getParameter("pwd"));
+            System.out.println(userInfo1.getuName()+","+userInfo1.getuPwd());
             try {
-                if(userInfoService.userRegister(userInfo) > 0) {
+                if(userInfoService.userRegister(userInfo1) > 0) {
                     out.print(1);
                 } else {
                     out.print(0);
@@ -62,8 +64,8 @@ public class LoginServlet extends HttpServlet {
                 }else{
                     out.print("用户名可以注册");
                 }
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
 
