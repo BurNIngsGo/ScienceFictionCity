@@ -42,7 +42,7 @@
 	<!-- //title -->
 	<!-- content -->
 	<div class="sub-main-w3">
-		<form action="#" method="get">
+		<form>
 			<h2>登	录
 				<i class="fas fa-level-down-alt"></i>
 			</h2>
@@ -76,7 +76,7 @@
 				</ul>
 			</div>
 			<!-- //checkbox -->
-			<input id="sub" type="submit" value="Login"  onclick="">
+			<input id="sub" type="button" value="Login"  onclick="">
 			<input id="sub1" type="button" value="Regist" >
 		</form>
 	</div>
@@ -96,20 +96,21 @@
 	<script src="/ScienceFictionCity/S2pr/js/canva_moving_effect.js"></script>
 	<!-- //effect js -->
 	<script type="text/javascript">
-		$("input[type=button]").click(function(){
-			window.location.href="/ScienceFictionCity//S2pr/zc.html"
+		$("input[id = 'sub1']").click(function(){
+			window.location.href="/ScienceFictionCity/S2pr/zc.html"
 		})
-		$(".sub-main-w3 form").submit(function(){
+		$("#sub").click(function(){
 			var uname = $("#uname").val();
 			var upwd = $("#upwd").val();
 			$.ajax({
 				url:"/ScienceFictionCity/Login",
-				type:"get",
+				type:"post",
 				sync:false,
 				data:{action:"login",name:uname,pwd:upwd},
 				dataType:"text",
 				success:function(data){
 					if(data == "1"){
+						alert("登录成功")
 						window.location = "/ScienceFictionCity/webPage/index1.html"
 					}else{
 						alert("账号或密码错误");

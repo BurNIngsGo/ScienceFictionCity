@@ -291,21 +291,13 @@
 															<#if(self==0 ){#>
 																<a href="javascript: void(0)" class="avatar-upload-btn" style="display:none;" id="avatar-picker">上传图片</a>
 																<#}else{#>
-																	<a href="javascript: void(0)" class="avatar-upload-btn" id="avatar-picker">上传图片</a>
+																	<a href="javascript: void(0)" class="avatar-upload-btn" id="avatar-picker1">上传图片</a>
 																	<#}#>
 																		<a href="javascript: void(0)" class="btn-32-green dialog-btn avatar-confirm">确定</a>
 																		<a href="javascript: void(0)" class="btn-32-white dialog-btn avatar-reject">取消</a>
 														</div>
-					</script>
-					<script type="text/html" id="t:img-show">
-						<img id="jcrop-target" src="<#-__2ssl__(src)#>" alt="" style="width:<#=width#>px;height:<#=height#>px;">
-					</script>
-					<script type="text/html" id="t:pre1-show">
-						<img id="pre1-img" src="<#-__2ssl__(src)#>" alt="" style="width:<#=width#>px;height:<#=height#>px;top: <#=top#>; left: <#=left#>">
-					</script>
 					<script type="text/html" id="t:pre2-show">
-						<img id="pre2-img" src="<#-__2ssl__(src)#>" alt="" style="width:<#=width#>px;height:<#=height#>px;top: <#=top#>; left: <#=left#>" ">
-</script><script type="javascript/html " id="t:rec-tag ">
+						<img id="pre2-img" src="<#-__2ssl__(src)#>" alt="" style="" >
     <#for(var i = 0, len = list.length; i < len; i++){#>
         <#if(list[i] && list[i] != ''){#>
         <i class="set-item-tag rec grid " data-origin="<#:=encodeURIComponent(list[i])#>">

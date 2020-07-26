@@ -71,7 +71,7 @@
 			
 			<!-- //checkbox -->
 			
-			<input id="sub" type="submit" value="Regist" >
+			<input id="sub" type="button" value="Regist" >
 		</form>
 	</div>
 	<!-- //content -->
@@ -90,17 +90,18 @@
 	<script src="js/canva_moving_effect.js"></script>
 	<!-- //effect js -->
 	<script type="text/javascript">
-		$(".sub-main-w3 form").submit(function(){
+		$("#sub").click(function(){
 			$.ajax({
-				type:"get",
+				type:"post",
 				sync:false,
 				url:"/ScienceFictionCity/Login",
 				data:{name:$("#uname").val(),pwd:$("#pwd").val(),action:"regist"},
 				dataType:"text",
 				success:function(data){
-					alert("sss")
+					alert(data);
 					if(parseInt(data) == 1){
 						alert("注册成功");
+						window.location = "/ScienceFictionCity/S2pr/index.html";
 					} else {
 						alert("注册失败");
 					}
