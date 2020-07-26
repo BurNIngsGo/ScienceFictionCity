@@ -1,0 +1,351 @@
+*{
+	margin: 0;
+	padding: 0;
+	/*border: 1px solid red;*/
+}
+
+.content{
+	width: 100%;
+	height: 100%;
+	background: #E1E2E5;
+}
+
+.conContext{
+	width: 1200px;
+	height: 700px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.HeadTitle{
+	width: 100%;
+	height: 45px;
+}
+
+.MainContent{
+	width: 100%;
+	height: 100%;
+}
+
+.leftMain{
+	display: inline-block;
+	width: 250px;
+	height: 95%;
+}
+
+.top{
+	width: 100%;
+	height: 200px;
+	margin-top: 10px ;
+	border-radius: 5px;
+	overflow: hidden;
+	background: white;
+	border: 1px solid #c9ced2;
+}
+
+.midden{
+	width: 100%;
+	height: 200px;
+	margin-top: 10px ;
+	border-radius: 5px;
+	overflow: hidden;
+	background: white;
+	border: 1px solid #c9ced2;
+}
+
+.bottom{
+	width: 100%;
+	height: 200px;
+	margin-top: 10px ;
+	border-radius: 5px;
+	overflow: hidden;
+	background: white;
+	border: 1px solid #c9ced2;
+}
+
+.rightMain{
+	display: inline-block;
+	width: 940px;
+	height: 95%;
+}
+
+.rtop{
+	width: 100%;
+	height: 200px;
+	margin-top: 10px ;
+	border-radius: 5px;
+	overflow: hidden;
+	background: white;
+	border: 1px solid #c9ced2;
+}
+
+.rmidden{
+	width: 100%;
+	height: 200px;
+	margin-top: 10px ;
+	border-radius: 5px;
+	overflow: hidden;
+	background: white;
+	border: 1px solid #c9ced2;
+}
+
+.rbottom{
+	width: 100%;
+	height: 200px;
+	margin-top: 10px ;
+	border-radius: 5px;
+	overflow: hidden;
+	background: white;
+	border: 1px solid #c9ced2;
+}
+
+.userInfo{
+	width: 100%;
+	height: 65px;
+	position: relative;
+	top: 0;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.userImg{
+	width: 55px;
+	height: 55px;
+	background: url(../img/ZG.png) no-repeat;
+	background-position: center;
+	background-size: cover;
+	left: 20px;
+	top: 5px;
+	position: absolute;
+	border-radius: 50%;
+}
+
+.userName{
+	width: 140px;
+	height: 55px;
+	float: right;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 5px;
+	left: 75px;
+}
+
+.moneyCount{
+	width: 100%;
+	height: 70px;
+	position: relative;
+	top: 0;
+}
+
+.monLeft{
+	width: 49%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+}
+
+.monRight{
+	width: 50%;
+	height: 100%;
+	left: 49%;
+	
+	position: absolute;
+}
+
+.monTit{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	margin-left: 10px;
+	/*border-right: 1px solid #99A2AA;*/
+	/*border-bottom: 1px solid #99A2AA;*/
+	align-items: center;
+	justify-content: center;
+}
+
+.monCount{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*border-bottom: 1px solid #99A2AA;*/
+}
+
+.pinjia{
+	height: 48%;
+	text-align: center;
+	line-height: 36px;
+	/*border-bottom: 1px solid #99A2AA;*/
+}
+
+.result{
+	height: 48%;
+	text-align: center;
+	line-height: 36px;
+	/*border-bottom: 1px solid #99A2AA;*/
+}
+
+.progress{
+	position: absolute;
+	width: 250px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pro{
+	width: 90%;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	border: 1px solid black;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+.pro i{
+	height: 20px;
+	display: inline-block;
+	background: #FF0000;
+	width:0%;
+	transition:width 1s;
+}
+
+.pro:hover i{
+	width: 60%;
+}
+
+.ReadyB{
+	position: relative;
+}
+
+.readymon{
+	position: absolute;
+	display: block;
+	border-bottom: 1px solid #f2f2f2;
+	left: 10px;
+	width: 100%;
+	height: 35px;
+}
+
+.readyInfo{
+	position: absolute;
+	top: 30px;
+	border: none;
+	width: 100%;
+}
+
+.readyInfo2{
+	position: absolute;
+	top: 30px;
+	border: none;
+	width: 100%;
+}
+
+.readyInfo li{
+	list-style: none;
+	cursor: pointer;
+	height: 52px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.readyInfo2 li{
+	list-style: none;
+	cursor: pointer;
+	height: 52px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.readyInfo li:hover{
+	background: #eef2f5;
+	color: #00a1d6;
+}
+
+.readyInfo2 li:hover{
+	background: #eef2f5;
+	color: #00a1d6;
+}
+
+.modBox{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+
+.modBox1{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+
+.modBox2{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+
+.modBoxmi1{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+.modBoxmi{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+.modBoxmi2{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+
+.modInfo{
+	text-align: left;
+	margin-left: 10px;
+}
+
+.yve{
+	/*text-align: left;*/
+	display: flex;
+	align-items: center;
+	margin-left: 10px;
+	color: #00a1d6;
+}
+
+.yveValue{
+	font-size: 50px;
+}
+
+.recharge{
+	outline: none;
+	border: none;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+	background:#02a7e3;
+	margin-left: 70%;
+	width: 100px;
+	height: 40px;
+	border-radius: 7px;
+}
+
+.OverTitle{
+	height: 70px;
+	line-height: 70px;
+}
+
+.modTitle{
+	display: block;
+	height: 35px;
+	width: 100%;
+	border-bottom: 1px solid #f2f2f2;
+}

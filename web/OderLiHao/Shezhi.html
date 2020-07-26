@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>设置</title>
+		<link rel="stylesheet" type="text/css" href="css/Shezhi.css" />
+	</head>
+
+	<body class="layout-ihome" style="">
+
+		<section id="body" class="container line">
+
+			<div class="wgt-set-crumb">
+				<a href="/ihome">个人中心</a>
+				<span>&gt;</span>
+				<span>设置</span>
+			</div>
+			<section class="set-main container line">
+
+				<article class="set-article grid">
+
+					<ul class="wgt-set-tab line">
+						<li>
+							<a href="/ihome/set/profile" class="active">个人资料</a>
+						</li>
+						
+					</ul>
+					<div class="wgt-set-cont wgt-set-profile">
+						<div class="set-mod">
+							<div class="set-info-line line">
+								<div class="set-info-block grid">
+									<div class="set-mod-line line">
+										<div class="set-mod-info grid">
+											<div class="set-mod-label">用户名：</div>
+											<div class="set-mod-for" id="name-div">荔枝椰青味</div>
+										</div>
+										<div class="set-mod-btn grid">
+										</div>
+									</div>
+									<div class="set-mod-line line">
+										<div class="set-mod-info grid">
+											<div class="set-mod-label">性别：</div>
+											<div class="set-mod-for">
+												<label for="sex-01">
+<div class="custom-radio"><i class=""></i><input type="radio" class="sex-radio" id="sex-01" name="sex" value="1"></div><span>男</span>
+</label>
+												<label for="sex-02" class="checkbox-label">
+<div class="custom-radio"><i class="checked"></i><input type="radio" class="sex-radio" id="sex-02" name="sex" value="2" checked=""></div><span>女</span>
+</label>
+											</div>
+										</div>
+									</div>
+									<div class="set-mod-line line">
+										<div class="set-mod-info  grid">
+											<div class="set-mod-label">个人简介：</div>
+											<div class="set-mod-for show-tag-wp">
+												<div class="tag-tips-none" style="display:block">生活不只有眼前的苟且，还有诗和远方</div>
+											</div>
+										</div>
+										<div class="set-mod-btn edit-set-mod grid">
+											<div class="edit-toggle">
+												<a class="btn-26-black" id="tag-mdf" href="javascript:void(0);">
+													修改</a>
+											</div>
+											<div class="edit-btn-wp grid">
+												<a class="btn-26-black green" id="tag-confirm" href="javascript:void(0);">保存</a>
+												</div>
+										</div>
+										<div id="tag-warn"></div>
+									</div>
+									<div class="tag-mdf-wp">
+										<div class="set-mod-line tag-search-wp line">
+											<input type="text" id="tagSearch" placeholder="查找标签">
+										</div>
+										<div class="set-mod-line line rec-tag-wp">
+										</div>
+									</div>
+								</div>
+								<div class="set-image-block grid">
+									<div class="image-show-wp">
+										<img src="https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r6s2g1.gif">
+									</div>
+									<a class="btn-26-black avatar-mdf">修改头像</a>
+								</div>
+							</div>
+							<div class="set-sign-line line">
+								<div class="set-mod-info grid">
+									<div class="set-mod-label">实名认证：</div>
+									<div class="set-mod-for">
+										<div class="edit-sign line" id="sign-div">
+											<p class="show-sign">
+												431121377909876789</p>
+											<em class="sign-tips"><span class="sign-num"></span>/20</em>
+										</div>
+										<div class="edit-toggle">
+											</a>
+									</div>
+									</div>
+								</div>
+								<div class="set-mod-btn edit-set-mod grid">
+									<div class="edit-toggle">
+										<a class="btn-26-black" href="javascript:void(0);" id="sign-mdf">
+											修改</a>
+									</div>
+									<div class="edit-btn-wp">
+										<a class="btn-26-black green" id="sign-confirm" href="javascript:void(0);">保存</a>
+										<a class="btn-26-black no-border" id="sign-reject" href="javascript:void(0);">取消</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="set-bind-mod">
+							<div class="set-bind-line line">
+								<div class="set-mod-info grid">
+									<div class="set-mod-label">手机：</div>
+									<div class="set-mod-for">
+										185******06</div>
+								</div>
+								<div class="set-mod-btn grid">
+									<a class="btn-26-black" href="#;status=bind&amp;ctype=mobil" target="_blank">
+										修改</a>
+								</div>
+								<div class="set-input-wp">
+									<label for="mobileAnswer" class="checkbox-label"><div class="custom-checkbox" ><i></i><input type="checkbox" id="mobileAnswer" value="0"></div><span>通过短信接收答案</span></label>
+								</div>
+							</div>
+							<div class="set-bind-line line">
+								<div class="set-mod-info grid">
+									<div class="set-mod-label">邮箱：</div>
+									<div class="set-mod-for">
+										******</div>
+								</div>
+								<div class="set-mod-btn grid">
+									<a class="btn-26-black" href="#" target="_blank">
+										修改</a>
+								</div>
+								<div class="set-input-wp">
+									<label for="mailAnswer" class="checkbox-label"><div class="custom-checkbox"><i></i><input type="checkbox" id="mailAnswer" value="0"></div><span>通过邮箱接收答案</span></label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script type="text/html" id="t:upload-avatar">
+						<div class="avatar-wp line">
+							<div class="avatar-select-wp grid">
+								<div class="select-tab line">
+									<#if(self==0 ){#>
+										<div class="tab-item user grid" data-type="user">上传头像</div>
+										<div class="tab-item system choosed grid" data-type="system">使用知道头像上传</div>
+										<#}else{#>
+											<div class="tab-item user choosed grid" data-type="user">上传头像</div>
+											<div class="tab-item system grid" data-type="system">使用知道头像上传</div>
+											<#}#>
+								</div>
+								<div class="select-content-wp">
+									<#if(self==0 ){#>
+										<div class="user-define-con" style="display:none">
+											<img style="width: 110px;height: 110px; position: absolute; top: 50%;margin-top: -55px; left: 50%; margin-left: -55px;" class="origin" src="<#:=imId#>" />
+											<#}else{#>
+												<div class="user-define-con" style="display:block">
+													<img style="width: 110px;height: 110px; position: absolute; top: 50%;margin-top: -55px; left: 50%; margin-left: -55px;" class="origin" src="<#:=imId#>" />
+													<#}#>
+
+												</div>
+												<#if(self==1 ){#>
+													<div class="system-con" style="display:none">
+														<#}else{#>
+															<div class="system-con" style="display:block">
+																<#}#>
+																	<ul class="line">
+																		<li class="title-list grid">
+																			<p class="line">
+																				<label for="title-7">
+                                        <input class="title-radio" id="title-7" type="radio" name="title" value="7" />
+                                    </label>
+																			</p>
+																			<div class="sys-img-list">
+																				<img class="title-img" src="https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r7s2g1.gif" />
+																			</div>
+																			<div class="sys-img-title">
+																				<span>公司白领</span><i class="sep"></i><span class="title-7-1">实习生</span>
+																			</div>
+																		</li>
+																		<li class="title-list grid">
+																			<p class="line">
+																				<label for="title-8">
+                                        <input class="title-radio" id="title-8" type="radio" name="title" value="8" />
+                                    </label>
+																			</p>
+																			<div class="sys-img-list">
+																				<img class="title-img" src="https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r8s2g1.gif" />
+																			</div>
+																			<div class="sys-img-title">
+																				<span>魔法师</span><i class="sep"></i><span class="title-8-1">魔法学徒</span>
+																			</div>
+																		</li>
+																		<li class="title-list grid">
+																			<p class="line">
+																				<label for="title-9">
+                                        <input class="title-radio" id="title-9" type="radio" name="title" value="9" />
+                                    </label>
+																			</p>
+																			<div class="sys-img-list">
+																				<img class="title-img" src="https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r9s2g1.gif" />
+																			</div>
+																			<div class="sys-img-title">
+																				<span>科举夺魁</span><i class="sep"></i><span class="title-9-1">书童</span>
+																			</div>
+																		</li>
+																		<li class="title-list grid">
+																			<p class="line">
+																				<label for="title-10">
+                                        <input class="title-radio" id="title-10" type="radio" name="title" value="10" />
+                                    </label>
+																			</p>
+																			<div class="sys-img-list">
+																				<img class="title-img" src="https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r10s2g1.gif" />
+																			</div>
+																			<div class="sys-img-title">
+																				<span>武将</span><i class="sep"></i><span class="title-10-1">兵卒</span>
+																			</div>
+																		</li>
+																		<li class="title-list grid">
+																			<p class="line">
+																				<label for="title-11">
+                                        <input class="title-radio" id="title-11" type="radio" name="title" value="11" />
+                                    </label>
+																			</p>
+																			<div class="sys-img-list">
+																				<img class="title-img" src="https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r11s2g1.gif" />
+																			</div>
+																			<div class="sys-img-title">
+																				<span>江湖奇侠</span><i class="sep"></i><span class="title-11-1">初学弟子</span>
+																			</div>
+																		</li>
+																		<li class="title-list grid">
+																			<p class="line">
+																				<label for="title-12">
+                                        <input class="title-radio" id="title-12" type="radio" name="title" value="12" />
+                                    </label>
+																			</p>
+																			<div class="sys-img-list">
+																				<img class="title-img" src="https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r12s2g1.gif" />
+																			</div>
+																			<div class="sys-img-title">
+																				<span>军衔</span><i class="sep"></i><span class="title-12-1">新兵</span>
+																			</div>
+																		</li>
+																		<li class="title-list grid">
+																			<p class="line">
+																				<label for="title-6">
+                                        <input class="title-radio" id="title-6" type="radio" name="title" value="6" checked/>
+                                    </label>
+																			</p>
+																			<div class="sys-img-list">
+																				<img class="title-img" src="https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r6s2g1.gif" />
+																			</div>
+																			<div class="sys-img-title">
+																				<span>欧洲复古系列</span><i class="sep"></i><span class="title-6-1">平民</span>
+																			</div>
+																		</li>
+																	</ul>
+															</div>
+
+															<input type="file" id="avatar-file" style="display:none">
+													</div>
+										</div>
+										<div class="sep grid"></div>
+										<#if(self==0 ){#>
+											<div class="avatar-show-wp grid" style="display:none">
+												<#}else{#>
+													<div class="avatar-show-wp grid">
+														<#}#>
+															<p class="show-title">预览</p>
+															<div class="show-big"><img style="width: 120px;height: 120px;" src="<#:=imId#>" /></div>
+															<div class="show-small"><img style="width: 50px;height: 50px;" src="<#:=imId#>" /></div>
+													</div>
+
+													<#if(self==1 ){#>
+														<div class="system-show-wp grid" style="display:none">
+															<#}else{#>
+																<div class="system-show-wp grid">
+																	<#}#>
+																		<p class="show-title">预览</p>
+																		<div class="show-big"><img style="width: 120px;height: 120px;" src="https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r6s2g1.gif" /></div>
+																		<div class="show-small"><img style="width: 50px;height: 50px;" src="https://gss0.bdstatic.com/70cFsj3f_gcX8t7mm9GUKT-xh_/avatar/100/r6s2g1.gif" /></div>
+																</div>
+														</div>
+														<div class="button-group-wp">
+															<#if(self==0 ){#>
+																<a href="javascript: void(0)" class="avatar-upload-btn" style="display:none;" id="avatar-picker">上传图片</a>
+																<#}else{#>
+																	<a href="javascript: void(0)" class="avatar-upload-btn" id="avatar-picker">上传图片</a>
+																	<#}#>
+																		<a href="javascript: void(0)" class="btn-32-green dialog-btn avatar-confirm">确定</a>
+																		<a href="javascript: void(0)" class="btn-32-white dialog-btn avatar-reject">取消</a>
+														</div>
+					</script>
+					<script type="text/html" id="t:img-show">
+						<img id="jcrop-target" src="<#-__2ssl__(src)#>" alt="" style="width:<#=width#>px;height:<#=height#>px;">
+					</script>
+					<script type="text/html" id="t:pre1-show">
+						<img id="pre1-img" src="<#-__2ssl__(src)#>" alt="" style="width:<#=width#>px;height:<#=height#>px;top: <#=top#>; left: <#=left#>">
+					</script>
+					<script type="text/html" id="t:pre2-show">
+						<img id="pre2-img" src="<#-__2ssl__(src)#>" alt="" style="width:<#=width#>px;height:<#=height#>px;top: <#=top#>; left: <#=left#>" ">
+</script><script type="javascript/html " id="t:rec-tag ">
+    <#for(var i = 0, len = list.length; i < len; i++){#>
+        <#if(list[i] && list[i] != ''){#>
+        <i class="set-item-tag rec grid " data-origin="<#:=encodeURIComponent(list[i])#>">
+						<#=list[i]#>
+							</i>
+							<#}#>
+								<#}#>
+									<a href="javascript:void(0)" class="change-tag grid">换一组</a>
+					</script>
+					<script type="javascript/html" id="t:add-tag">
+						<div class="set-item-tag grid"><span class="item-tag" data-origin="<#:=encodeURIComponent(realtag)#>"><#:=tagname#></span><i class="tag-delete"></i></div>
+					</script>
+					<script type="javascript/html" id="t:new-tag">
+						<#for(var i=0 , len=o rigin.length; i < len; i++){#>
+							<div class="set-item-tag grid"><span class="item-tag" data-origin="<#:=encodeURIComponent(origin[i].origin)#>"><#=origin[i].origin#></span><i class="tag-delete"></i></div>
+							<#}#>
+					</script>
+				</article>
+				<aside class="set-aside grid-r">
+					<div class="wgt-ad">
+					</div>
+				</aside>
+
+			</section>
+		</section>
+
+		<div class="wgt-footer-new">
+			<div class="footer-wp">
+				<ul class="footer-list clearfix">
+					<li class="footer-list-item footer-list-guide">
+						<div class="footer-title"><span class="icon-guide"></span>新手帮助</div>
+						<ul class="footer-link clearfix">
+							<li>
+								<a href=";class=320&amp;id=1525" target="_blank">如何答题</a>
+							</li>
+							<li>
+								<a href=";class=320&amp;id=1526" target="_blank">获取采纳</a>
+							</li>
+							<li>
+								<a href=";class=337&amp;id=1513" target="_blank">使用财富值</a>
+							</li>
+						</ul>
+					</li>
+					<li class="footer-list-item footer-list-intro">
+						<div class="footer-title"><span class="icon-intro"></span>玩法介绍</div>
+						<ul class="footer-link clearfix">
+							<li>
+								<a href="/shop" target="_blank">知道商城</a>
+							</li>
+							<li>
+								<a href="#" target="_blank">知道团队</a>
+							</li>
+							<li>
+								<a href="/home/partnerhome" target="_blank">合伙人认证</a>
+							</li>
+							<li>
+								<a href="#" target="_blank">高质量问答</a>
+							</li>
+						</ul>
+					</li>
+					<li class="footer-list-item footer-list-sug">
+						<div class="user-tip" id="js-footer-user-tip" style="display: none;">
+							<p class="title">您的帐号状态正常</p>
+							<p class="desc">感谢您对我们的支持</p>
+						</div>
+						<div class="footer-title"><span class="icon-sug"></span>投诉建议</div>
+						<ul class="footer-link clearfix">
+							<li>
+								<a href="javascript:;" log="module:common,action:click,area:footer_feedback" target="_blank" id="footer-feedback">意见反馈</a>
+							</li>
+							<li>
+								<a href="/misc/appeal" log="module:common,action:click,area:footer_appeal" target="_blank" id="js-footer-appeal">账号申诉</a>
+							</li>
+							<li>
+								<a href="#" log="module:common,action:click,area:footer_report" target="_blank" id="js-footer-report">非法信息举报</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-new">
+				<p class="jt1128">
+					京ICP证030173号-1&nbsp;&nbsp;&nbsp;京网文【2013】0934-983号&nbsp;&nbsp;&nbsp;&nbsp; ©2020Baidu&nbsp;&nbsp;
+					<a rel="nofollow" href="#" target="_blank">使用百度前必读</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a rel="nofollow" href="#;class=325&amp;id=2760" target="_blank">知道协议</a>&nbsp;&nbsp;</p>
+			</div>
+		</div>
+
+		<div class="jump-top-box" style="right: 5px; visibility: hidden; top: 727px;">
+			<div class="jump-top">
+				<a href="#" target="_self">返回顶部</a>
+			</div>
+		</div>
+		<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+			<div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+		</div>
+	</body>
+
+</html>

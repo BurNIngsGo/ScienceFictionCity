@@ -1,0 +1,127 @@
+*{
+	border: 1px solid red;
+}
+.history-wrap{
+	border: 1px solid red;
+	width: 980px;
+	height: 1000px;
+	margin: 0 auto;
+	position: relative;
+	min-height: 460px;
+    padding: 30px 0 0;
+	font-size: 12px;
+}
+.newlist_info{
+	border: 1px solid blue;
+	width: 980px;
+	height: 60px;
+}
+.b-head-c{
+	border: 1px solid blue;
+	width: 112px;
+	height: 27px;
+}
+.b-icon-b-icon-history{
+	border: 1px solid red;
+	background: url(../img/11.png) no-repeat;;
+	width: 28px;
+    height: 28px;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    background-size: contain;
+}
+.b-head-clearfix{
+	overflow: hidden;
+	background: url(../img/科幻书城.png);
+}
+.history-wrap .history-btn{
+	float: right;
+	width: 188px;
+}
+.b-head-c{
+	float: left;
+}
+.history-wrap a{
+	border: 1px solid;
+	display: inline-block;
+	text-align: center;
+	padding: 5px 8px;
+	border-radius: 5px;
+	margin-right: 20px;
+}
+.history-wrap a8{
+	outline: 0;
+	color: #00a1d6;
+	text-decoration: none;
+	cursor: pointer;
+}
+.btn-cleanhsbtn{
+	margin-right: 0;
+	
+}
+.active{
+	
+}
+.history-list{
+	display: block;
+    position: relative;
+    padding: 8px 0 10px;
+    margin-top: 17px;
+}
+.history-list li{
+	list-style: none;
+}
+.history-record {
+	display: block;
+	position: relative;
+}
+.cover-contain{
+	border: 1px solid red;
+	width: 160px;
+	height: 100px;
+	margin-top: -10px;
+	margin-left: 100px;    
+   
+  
+    
+}
+
+.r-txt{
+	border: 1px solid red;
+	width: 585px;
+	height: 100px;
+	margin-left:300px ;
+	margin-bottom:20px ;
+}
+
+.bookInfo{
+	width: 170px;
+	height: 100px;
+	display: inline-flex;
+	align-items: center;
+	margin-left: 130px;
+}
+
+.times{
+	display: inline-flex;	
+}
+
+.bookImg{
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin-left: 20px;
+	background:url(../img/01.jpg)no-repeat center ;
+	background-size: contain;
+}
+.r-txt{
+	border: 1px solid red;
+	width: 585px;
+	margin-bottom: 0px;
+	margin-top: -102px;
+}
+.b-head-t{
+	color: white;
+	font-size:15px ;
+}

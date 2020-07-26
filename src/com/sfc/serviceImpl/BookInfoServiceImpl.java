@@ -238,8 +238,21 @@ public class BookInfoServiceImpl implements BookInfoService {
         BookTypeService bookTypeService = new BookTypeServiceImpl();
         PressService pressService = new PressServiceImpl();
         BookInfoDao bookInfoDao = new BookInfoDaoImpl(conn);
+
         try {
-            return bookInfoDao.getBookByTypeAndPressAndTime(bookTypeService.getBookTypeIdByTypeName(sType),pressService.getPressIdByPressName(sPress),bBeginTime,bEndTime);
+            if(sType.trim().equals("全部") && !sPress.trim().equals("全部")){
+                return bookInfoDao.getBookByTypeAndPressAndTime(0,pressService.getPressIdByPressName(sPress),bBeginTime,bEndTime);
+            }
+            if(sPress.trim().equals("全部") && !sType.trim().equals("全部")){
+                return bookInfoDao.getBookByTypeAndPressAndTime(bookTypeService.getBookTypeIdByTypeName(sType),0,bBeginTime,bEndTime);
+            }
+            if(sPress.trim().equals("全部") && sType.trim().equals("全部")) {
+                return bookInfoDao.getBookByTypeAndPressAndTime(0,0,bBeginTime,bEndTime);
+            }
+            if(!(sPress.trim().equals("全部") && sType.trim().equals("全部"))){
+                return bookInfoDao.getBookByTypeAndPressAndTime(bookTypeService.getBookTypeIdByTypeName(sType),pressService.getPressIdByPressName(sPress),bBeginTime,bEndTime);
+            }
+            return null;
         } catch(SQLException e) {
             throw e;
         }

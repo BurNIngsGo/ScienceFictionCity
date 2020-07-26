@@ -86,10 +86,10 @@ public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
 
     @Override
     public int getBookTypeIdByTypeName(String tName) throws SQLException {
-        String strSql = "select tid from booktype where tName = ?";
+        String strSql = "select * from booktype where tName = ?";
         Object[] param = {tName};
         try {
-            return ((BookType) this.executeQuery(strSql, param).get(0)).gettId();
+            return this.getEntity(new BookType(), param, strSql).get(0).gettId();
         } catch(SQLException e) {
             throw e;
         }

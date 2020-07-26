@@ -135,7 +135,7 @@ public class Tests extends HttpServlet {
             String bookType = request.getParameter("type");
             String press = request.getParameter("press");
             int begin = Integer.parseInt(request.getParameter("btime"));
-            int end = Integer.parseInt(request.getParameter("etime"));
+                int end = Integer.parseInt(request.getParameter("etime"));
             List<BookInfo> blist = null;
             try {
                 blist = bookInfoService.getBookByTypeAndPressAndTime(bookType,press,begin,end);

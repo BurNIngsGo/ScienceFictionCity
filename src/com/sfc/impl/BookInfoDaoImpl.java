@@ -198,9 +198,48 @@ public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
 
     @Override
     public List<BookInfo> getBookByTypeAndPressAndTime(int bType, int bPress, int bBeginTime, int bEndTime) throws SQLException {
-        String strSql = "SELECT * FROM bookinfo WHERE bType = ? AND bPress = ?  AND (YEAR(bTime) > ? AND YEAR(bTime) < ?)";
-        Object[] param = {bType,bPress,bBeginTime,bEndTime};
+        String strSql;
+        Object[] param;
         try {
+            if(bType == 0) {
+                strSql = "SELECT * FROM bookinfo WHERE bPress = ?";
+                Object[] params = {bPress};
+                param = params;
+            }
+            if(bPress == 0){
+                strSql = "SELECT * FROM bookinfo WHERE bType = ?";
+                Object[] params = {bType};
+                param = params;
+                return this.getEntity(new BookInfo(), param, strSql);
+            }
+            if(bBeginTime == 0 && bEndTime == 0) {
+                strSql = "SELECT * FROM bookinfo WHERE bType = ? AND bPress = ?";
+                Object[] params = {bType,bPress};
+                param = params;
+                return this.getEntity(new BookInfo(), param, strSql);
+            }
+            if(bType == 0 && bPress == 0) {
+                strSql = "SELECT * FROM bookinfo WHERE (YEAR(bTime) > ? AND YEAR(bTime) < ?)";
+                Object[] params = {bBeginTime,bEndTime};
+                param = params;
+                return this.getEntity(new BookInfo(), param, strSql);
+            }
+            if((bBeginTime == 0 && bEndTime == 0) && bType == 0) {
+                strSql = "SELECT * FROM bookinfo WHERE bPress = ?;";
+                Object[] params = {bPress};
+                param = params;
+                return this.getEntity(new BookInfo(), param, strSql);
+            }
+            if((bBeginTime == 0 && bEndTime == 0) && bPress == 0) {
+                strSql = "SELECT * FROM bookinfo WHERE bType = ?";
+                Object[] params = {bType};
+                param = params;
+                return this.getEntity(new BookInfo(), param, strSql);
+            }
+
+            strSql = "SELECT * FROM bookinfo WHERE bType = ? AND bPress = ?  AND (YEAR(bTime) > ? AND YEAR(bTime) < ?)";
+            Object[] params = {bType,bPress,bBeginTime,bEndTime};
+            param = params;
             return this.getEntity(new BookInfo(), param, strSql);
         } catch(SQLException e) {
             throw e;
