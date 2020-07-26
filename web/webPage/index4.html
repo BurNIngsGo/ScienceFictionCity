@@ -90,7 +90,7 @@
 						</li>
 						<li class="magictime puffIn">
 							<div class="Pnum">4</div>
-							<div class="coverInfo">	
+							<div class="coverInfo">
 								<div class="cImg">
 									<a href="#">
 										<img src="../image/eightimg.jpg"/>
@@ -161,5 +161,17 @@
 		<a href="javascript:;" class="next">&#62;</a>
 		<div id="navDiv"></div>
 	</div>
+		<script src = "/ScienceFictionCity/javaScript/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				url:"/ScienceFictionCity/PaiHangServlet",
+				dataType:"json",
+				success:function(data){
+
+				}
+			})
+		})
+	</script>
 	</body>
 </html>

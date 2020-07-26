@@ -93,12 +93,18 @@ public interface BookInfoService {
 
     /**
      * 根据多条件查询图书信息
-     * @param bType
-     * @param bPress
+     * @param sType
+     * @param sPress
      * @param bBeginTime
      * @param bEndTime
      * @return
      * @throws SQLException
      */
     public List getBookByTypeAndPressAndTime(String sType, String sPress, int bBeginTime, int bEndTime) throws SQLException;
+
+    /**
+     * 根据销量排序
+     * @return
+     */
+    public List<BookInfo> getBookAllDesc() throws SQLException;
 }

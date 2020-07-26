@@ -245,4 +245,14 @@ public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
             throw e;
         }
     }
+
+    @Override
+    public List<BookInfo> getBookAllDesc() throws SQLException{
+        String strSql = "select * from bookinfo order by bSales desc";
+        try {
+            return this.getEntity(new BookInfo(),null,strSql);
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
 }

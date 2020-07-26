@@ -100,4 +100,11 @@ public interface BookInfoDao {
      * @throws SQLException
      */
     public List getBookByTypeAndPressAndTime(int bType, int bPress, int bBeginTime, int bEndTime) throws SQLException;
+
+
+    /**
+     * 根据销量排序
+     * @return
+     */
+    public List<BookInfo> getBookAllDesc() throws SQLException;
 }
