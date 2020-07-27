@@ -31,8 +31,9 @@
   </div>
  <ul>
   <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>标题名称：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text"  class="col-xs-6"/></div></li>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text" class="col-xs-4"/></div></li>
-   <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>关&nbsp;键&nbsp;字：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text" class="col-xs-4"/><em class="Prompt"> 请用","分隔关键字</em></div></li>
+   <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>出版社：&nbsp;&nbsp;</label><div class="Add_content col-xs-11">
+       <span id="cityDanXuan0" class="width200px fl_hsCheckData"></span>
+   </div></li>
      <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>选择分类：&nbsp;&nbsp;</label><div class="Add_content col-xs-11">
      <span id="cityDanXuan" class="width200px fl_hsCheckData"></span></div>
      </li>
@@ -132,36 +133,67 @@
     <script type="text/javascript" charset="utf-8" src="js/utf8-jsp/ueditor.all.min.js"> </script>
     <script type="text/javascript" charset="utf-8" src="js/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
 <script>
-var cityData=[
-{
-		"2":"食品/保健/酒/饮料",
-		"childCity":[
-			{"201":"面包"},
-			{"202":"饼干"},
-			{"203":"白酒"},
-			{"204":"啤酒"},
-			{"205":"葡萄酒"},
-			{"206":"香肠"},
-			{"207":"火腿肠"},
-			{"208":"牛奶"},
-		]},
-	{
-		"3":"数码影像",
-		"childCity":[
-			{"301":"面包"},
-			{"302":"饼干"},
-			{"303":"白酒"},
-			{"304":"啤酒"},
-			{"305":"葡萄酒"},
-			{"306":"香肠"},
-			{"307":"火腿肠"},
-			{"308":"牛奶"},
-		]},
-];
+    var cityData = new Array();
+    var cityData1 = new Array();
+    $.ajax({
+        url:"/ScienceFictionCity/BookAdd",
+        async:false,
+        data:{action:"type"},
+        dataType:"json",
+        success:function(data){
+            var i = 0;
+            $(data).each(function(){
+                cityData[i++] = {i:this.tName,"childCity":[]};
+            })
+        }
+    })
+    $.ajax({
+        url:"/ScienceFictionCity/BookAdd",
+        async:false,
+        data:{action:"press"},
+        dataType:"json",
+        success:function(data){
+            var i = 0;
+            $(data).each(function(){
+                cityData1[i++] = {i:this.prName,"childCity":[]};
+            })
+        }
+    })
+// cityData=[
+// {
+// 		"1":"食品/保健/酒/饮料",
+// 		"childCity":[
+// 			{"201":"面包"},
+// 			{"202":"饼干"},
+// 			{"203":"白酒"},
+// 			{"204":"啤酒"},
+// 			{"205":"葡萄酒"},
+// 			{"206":"香肠"},
+// 			{"207":"火腿肠"},
+// 			{"208":"牛奶"}
+// 		]},
+// 	{
+// 		"2":"数码影像",
+// 		"childCity":[
+// 			{"301":"面包"},
+// 			{"302":"饼干"},
+// 			{"303":"白酒"},
+// 			{"304":"啤酒"},
+// 			{"305":"葡萄酒"},
+// 			{"306":"香肠"},
+// 			{"307":"火腿肠"},
+// 			{"308":"牛奶"}
+// 		]},
+// ];
 	$('#cityDanXuan').hsCheckData({
 		isShowCheckBox: false, //默认为false
 		data: cityData
 	});
+
+    $('#cityDanXuan0').hsCheckData({
+        isShowCheckBox: false, //默认为false
+        data: cityData1
+    })
 $(function(){
  var ue = UE.getEditor('editor');
 });
@@ -240,3 +272,30 @@ $("body").niceScroll({
 	cursorborderradius:"5px"  
 });
 </script>
+
+<script type="text/javascript">
+    $(function(){
+        $(".Button_operation:first-child").click(function(){
+            $.ajax({
+                url:"/ScienceFictionCity/BookAdd",
+                data:{action:"add"},
+                type:"post",
+                dataType:"text",
+                success:function(data){
+                    if(data == "1"){
+                        layer.alert('添加成功！',{
+                            title: '提示框',
+                            icon:1,
+                        });
+                    }else{
+                        layer.alert("添加失败，请联系BUG组组长",{
+                            title: '提示框',
+                            icon:0,
+                        });
+                    }
+                }
+            })
+        })
+    })
+</script>
+

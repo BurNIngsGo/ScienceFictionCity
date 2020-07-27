@@ -21,6 +21,7 @@
   <script src="js/html5shiv.js"></script>
   <script src="js/respond.min.js"></script>
   <script type="text/javascript" src="js/PIE/PIE_IE678.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
  <![endif]-->
 <body>
  <div class="Sellerber" id="Sellerber">
@@ -506,3 +507,16 @@ $('#Exit_system').on('click', function(){
 });
 </script>
 
+<script type="text/javascript">
+    $(function(){
+        $.ajax({
+            url:"/ScienceFictionCity/AdminLogin",
+            dataType:"json",
+            data:{action:"userInit"},
+            success:function(data){
+                $(".administrator img").attr("src","../image/"+data.uHeadImg);
+                $(".user-info").html("欢迎你,"+data.uName);
+            }
+        })
+    })
+</script>
