@@ -28,7 +28,7 @@
 		<div class="menus">
 			<div id="menucon">
 				<div class="dianda">
-					<a class="ass" href="/ScienceFictionCity/">首页</a>
+					<a class="ass" href="index1.html">首页</a>
 				</div>
 				<div class="dianda">
 					<a class="ass" href="index3.html">商城</a>
@@ -37,7 +37,7 @@
 					<a class="ass" href="index4.html">排行</a>
 				</div>
 				<div class="dianda">
-					<a class="ass" href="#">最新</a>
+					<a class="ass" href="/ScienceFictionCity/webPage/newBook.html">最新</a>
 				</div>
 				<div class="dianda">
 					<a class="ass" href="#">阅读</a>
@@ -416,17 +416,13 @@
 					}
 					if(countP >= 7) {
 						if(param - 1 < 4 || countP - param < 4){
-							// if(param - 2 > 2){
-							// 	for(var i = param - 2; i <= param + 2; i++){
-									if($(this).prevAll().length < 4 && param != 1 && $(this).next().html() != "..." && $(".pagination span:last-child").prev().prevAll().length < 5){
-										$(".pagination span:last-child").prev().prev().after("<span class=\"pageNum\">" + (param + 2) + "</span>");
-									} else if($(this).next().html() == "..."){
-										for(var i = param+1; i <= param + 2; i++) {
-											$(".pagination span:last-child").prev().prev().after("<span class=\"pageNum\">" + i + "</span>");
-										}
-									}
-								// }
-							// }
+							if($(this).prevAll().length < 4 && param != 1 && $(this).next().html() != "..." && $(".pagination span:last-child").prev().prevAll().length < 5){
+								$(".pagination span:last-child").prev().prev().after("<span class=\"pageNum\">" + (param + 2) + "</span>");
+							} else if($(this).next().html() == "..."){
+								for(var i = param+1; i <= param + 2; i++) {
+									$(".pagination span:last-child").prev().prev().after("<span class=\"pageNum\">" + i + "</span>");
+								}
+							}
 							if(param + 2 < countP){
 								for(var i = param - 2; i <= param + 2; i++){
 
@@ -440,7 +436,7 @@
 				})
 
 				$(document).on("click",".city-list li",function (){
-					selectBook($(this).html(),"全部",0,0);
+					// selectBook($(this).html(),"全部",0,0);
 				})
 			})
 		</script>

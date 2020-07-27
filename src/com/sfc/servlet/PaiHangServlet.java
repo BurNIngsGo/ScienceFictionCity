@@ -38,7 +38,6 @@ public class PaiHangServlet extends HttpServlet {
         }
 
         String jsonDesc = JSON.toJSONString(bookInfosList);
-        System.out.println(jsonDesc);
         out.print(jsonDesc);
     }
 }

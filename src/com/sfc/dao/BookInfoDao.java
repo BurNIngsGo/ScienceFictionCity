@@ -107,4 +107,5 @@ public interface BookInfoDao {
      * @return
      */
     public List<BookInfo> getBookAllDesc() throws SQLException;
+
 }

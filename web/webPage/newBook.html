@@ -55,7 +55,7 @@
 					<a class="ass" href="index4.html">排行</a>
 				</div>
 				<div class="dianda">
-					<a class="ass" href="#">最新</a>
+					<a class="ass" href="/ScienceFictionCity/webPage/newBook.html">最新</a>
 				</div>
 				<div class="dianda">
 					<a class="ass" href="#">阅读</a>
@@ -115,6 +115,17 @@
 		
 		<script type="text/javascript" src="../javaScript/jquery-3.4.1.min.js" ></script>
 		<script type="text/javascript" src="../javaScript/videoIn.js" ></script>
+	<script type="text/javascript">
+		$(function () {
+			$.ajax({
+				url:"/ScienceFictionCity/newBook",
+				dataType:"json",
+				success:function(data){
+
+				}
+			})
+		})
+	</script>
 	</body>
 
 </html>

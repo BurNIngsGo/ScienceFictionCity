@@ -74,7 +74,6 @@ public class LoginServlet extends HttpServlet {
         } else if("initUser".equals(action)) {
             UserInfo user = (UserInfo)session.getAttribute("name");
             String strJson = JSON.toJSONString(user);
-            System.out.println(strJson);
             out.print(strJson);
         }
 

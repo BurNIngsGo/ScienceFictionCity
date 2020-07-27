@@ -24,6 +24,26 @@
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>PaiHang</servlet-name>
+        <servlet-class>com.sfc.servlet.PaiHangServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PaiHang</servlet-name>
+        <url-pattern>/PaiHang</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>newBook</servlet-name>
+        <servlet-class>com.sfc.servlet.newBookServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>newBook</servlet-name>
+        <url-pattern>/newBook</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>S2pr/index.html</welcome-file>
         <welcome-file>webPage/index1.html</welcome-file>
