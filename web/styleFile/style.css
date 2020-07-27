@@ -11,7 +11,8 @@ ul {
 	POSITION: relative;
 	WIDTH: 1200px;
 	height: 360px;
-	margin: 100px auto auto;
+	top: 80px;
+	margin: auto auto;
 }
 .content {
 	position: absolute;

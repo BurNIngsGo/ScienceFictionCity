@@ -107,11 +107,11 @@
 				type:"post",
 				sync:false,
 				data:{action:"login",name:uname,pwd:upwd},
-				dataType:"text",
+				dataType:"json",
 				success:function(data){
-					if(data == "1"){
+					if(data.uId != 0){
 						alert("登录成功")
-						window.location = "/ScienceFictionCity/webPage/index1.html"
+						window.location = "/ScienceFictionCity/webPage/index1.html";
 					}else{
 						alert("账号或密码错误");
 					}

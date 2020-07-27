@@ -165,9 +165,22 @@
 				});
 			}
 
+			function initUser(){
+				$.ajax({
+					url:"/ScienceFictionCity/Login",
+					data:{action:"initUser"},
+					dataType:"json",
+					success:function(data) {
+						$("#users").attr("src","/ScienceFictionCity/image/"+data.uHeadImg);
+						$(".userlogin").html(data.uName);
+					}
+				})
+			}
+
 			$(function () {
 				recFun();
 				topicFun();
+				initUser();
 			})
 		</script>
 	</body>

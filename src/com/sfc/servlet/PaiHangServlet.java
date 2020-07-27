@@ -24,10 +24,11 @@ public class PaiHangServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BookInfoService bookInfoService = new BookInfoServiceImpl();
-        PrintWriter out = resp.getWriter();
+
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
         resp.setCharacterEncoding("utf-8");
+        PrintWriter out = resp.getWriter();
 
         List<BookInfo> bookInfosList = null;
         try {
@@ -37,6 +38,7 @@ public class PaiHangServlet extends HttpServlet {
         }
 
         String jsonDesc = JSON.toJSONString(bookInfosList);
+        System.out.println(jsonDesc);
         out.print(jsonDesc);
     }
 }

@@ -1,10 +1,25 @@
 window.onload=function(){                  		//网页加载时
+    var img1 = "../image/timg.jpg";
+    var img2 = "../image/timg.jpg";
+    var img3 = "../image/timg.jpg";
+    $.ajax({
+        url:"/ScienceFictionCity/PaiHang",
+        dataType:"json",
+        async:false,
+        success:function(data){
+            data = JSON.stringify(data);
+            img1 = $.parseJSON(data)[0].bImg;
+            img2 = $.parseJSON(data)[1].bImg;
+            img3 = $.parseJSON(data)[2].bImg;
+
+        }
+    })
     var imgArr=[
-        {"path":"../image/siximg.jpg"},
-        {"path":"../image/timg.jpg"},
-        {"path":"../image/eightimg.jpg"}
+        {"path":"../image/"+img1},
+        {"path":"../image/"+img2},
+        {"path":"../image/"+img3}
     ];                                          //利用数组对三张图片的路径进行保存
-    
+
     var size=[
         {"top":30,"left":150,"width":450,"height":300,"zIndex":3,"opacity":70},
         {"top":0,"left":290,"width":600,"height":360,"zIndex":4,"opacity":100},  

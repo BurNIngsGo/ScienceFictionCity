@@ -1620,9 +1620,9 @@
 .bookLv{
 	/*border: 1px solid red;*/
 	width: 120px;
-	position: absolute;
-	top: 40px;
-	left: 75%;
+	position: relative;
+	top: -120px;
+	left: 85%;
 }
 
 .MyContext li{

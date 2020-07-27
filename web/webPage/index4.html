@@ -25,111 +25,7 @@
 				</div>
 				<div class="main-Paihang">
 					<ul>
-						<li class="magictime puffIn">
-							<div class="Pnum">1</div>
-							<div class="coverInfo">	
-								<div class="cImg">
-									<a href="#">
-										<img src="../image/eightimg.jpg"/>
-									</a>	
-								</div>
 
-								<div class="bookInfo">
-									<a href="#" class="bookName">科幻</a>
-									<div class="author">作者:大刘</div>
-									<div class="press">重庆出版社</div>
-									<div class="sales">销量:100000</div>
-									
-									<div class="bookLv">
-										综合得分:10000
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="magictime puffIn">
-							<div class="Pnum">2</div>
-							<div class="coverInfo">	
-								<div class="cImg">
-									<a href="#">
-										<img src="../image/eightimg.jpg"/>
-									</a>	
-								</div>
-
-								<div class="bookInfo">
-									<a href="#" class="bookName">科幻</a>
-									<div class="author">作者:大刘</div>
-									<div class="press">重庆出版社</div>
-									<div class="sales">销量:100000</div>
-									
-									<div class="bookLv">
-										综合得分:10000
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="magictime puffIn">
-							<div class="Pnum">3</div>
-							<div class="coverInfo">	
-								<div class="cImg">
-									<a href="#">
-										<img src="../image/eightimg.jpg"/>
-									</a>	
-								</div>
-
-								<div class="bookInfo">
-									<a href="#" class="bookName">科幻</a>
-									<div class="author">作者:大刘</div>
-									<div class="press">重庆出版社</div>
-									<div class="sales">销量:100000</div>
-									
-									<div class="bookLv">
-										综合得分:10000
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="magictime puffIn">
-							<div class="Pnum">4</div>
-							<div class="coverInfo">
-								<div class="cImg">
-									<a href="#">
-										<img src="../image/eightimg.jpg"/>
-									</a>	
-								</div>
-
-								<div class="bookInfo">
-									<a href="#" class="bookName">科幻</a>
-									<div class="author">作者:大刘</div>
-									<div class="press">重庆出版社</div>
-									<div class="sales">销量:100000</div>
-									
-									<div class="bookLv">
-										综合得分:10000
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="magictime puffIn">
-							<div class="Pnum">5</div>
-							<div class="coverInfo">	
-								<div class="cImg">
-									<a href="#">
-										<img src="../image/eightimg.jpg"/>
-									</a>	
-								</div>
-
-								<div class="bookInfo">
-									<a href="#" class="bookName">科幻</a>
-									<div class="author">作者:大刘</div>
-									<div class="press">重庆出版社</div>
-									<div class="sales">销量:100000</div>
-									
-									<div class="bookLv">
-										综合得分:10000
-									</div>
-								</div>
-							</div>
-						</li>
 					</ul>
 				</div>
 			</div>
@@ -165,10 +61,34 @@
 	<script type="text/javascript">
 		$(function(){
 			$.ajax({
-				url:"/ScienceFictionCity/PaiHangServlet",
+				url:"/ScienceFictionCity/PaiHang",
 				dataType:"json",
 				success:function(data){
-
+					data = JSON.stringify(data);
+					var i = 1;
+					$($.parseJSON(data)).each(function(){
+						$(".main-Paihang ul").append("<li class=\"magictime puffIn\">\n" +
+								"\t\t\t\t\t\t\t<div class=\"Pnum\">"+(i++)+"</div>\n" +
+								"\t\t\t\t\t\t\t<div class=\"coverInfo\">\t\n" +
+								"\t\t\t\t\t\t\t\t<div class=\"cImg\">\n" +
+								"\t\t\t\t\t\t\t\t\t<a href=\"#\">\n" +
+								"\t\t\t\t\t\t\t\t\t\t<img src=\"/ScienceFictionCity/image/"+this.bImg+"\"/>\n" +
+								"\t\t\t\t\t\t\t\t\t</a>\t\n" +
+								"\t\t\t\t\t\t\t\t</div>\n" +
+								"\n" +
+								"\t\t\t\t\t\t\t\t<div class=\"bookInfo\">\n" +
+								"\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"bookName\">"+this.bName+"</a>\n" +
+								"\t\t\t\t\t\t\t\t\t<div class=\"author\">"+this.bAuthor+"</div>\n" +
+								"\t\t\t\t\t\t\t\t\t<div class=\"press\">"+this.bPress+"</div>\n" +
+								"\t\t\t\t\t\t\t\t\t<div class=\"sales\">销量:"+this.bSales+"</div>\n" +
+								"\t\t\t\t\t\t\t\t\t\n" +
+								"\t\t\t\t\t\t\t\t</div>\n" +
+								"\t\t\t\t\t\t\t\t\t<div class=\"bookLv\">\n" +
+								"\t\t\t\t\t\t\t\t\t\t综合得分:10000\n" +
+								"\t\t\t\t\t\t\t\t\t</div>\n" +
+								"\t\t\t\t\t\t\t</div>\n" +
+								"\t\t\t\t\t\t</li>");
+					})
 				}
 			})
 		})

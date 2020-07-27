@@ -1,5 +1,6 @@
 package com.sfc.servlet;
 
+import com.alibaba.fastjson.JSON;
 import com.sfc.entity.UserInfo;
 import com.sfc.service.UserInfoService;
 import com.sfc.serviceImpl.UserInfoServiceImpl;
@@ -8,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -26,21 +28,23 @@ public class LoginServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
         UserInfoService userInfoService =new UserInfoServiceImpl();
         String action = req.getParameter("action");
+        HttpSession session = req.getSession();
 
-
-
+        UserInfo userInfo = null;
 
         if ("login".equals(action)) {
-            UserInfo userInfo = null;
             try {
                 userInfo = userInfoService.userLogin(req.getParameter("name"),req.getParameter("pwd"));
+                session.setAttribute("name",userInfo);
+                session.setMaxInactiveInterval(60*10);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
             if (userInfo!=null) {
-                out.print(1);
+                String strJson = JSON.toJSONString(userInfo);
+                out.print(strJson);
             }   else {
-                out.print(0);
+                out.print("{uId:0}");
             }
         } else if ("regist".equals(action)) {
             UserInfo userInfo1 = new UserInfo();
@@ -67,6 +71,11 @@ public class LoginServlet extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        } else if("initUser".equals(action)) {
+            UserInfo user = (UserInfo)session.getAttribute("name");
+            String strJson = JSON.toJSONString(user);
+            System.out.println(strJson);
+            out.print(strJson);
         }
 
     }
