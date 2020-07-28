@@ -64,6 +64,16 @@
         <url-pattern>/BookAdd</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ReadMain</servlet-name>
+        <servlet-class>com.sfc.servlet.ReadMainServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReadMain</servlet-name>
+        <url-pattern>/ReadMain</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>S2pr/index.html</welcome-file>
         <welcome-file>webPage/index1.html</welcome-file>
