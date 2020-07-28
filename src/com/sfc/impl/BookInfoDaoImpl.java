@@ -80,9 +80,9 @@ public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
      * @return
      */
     public int insertBook(BookInfo bi) throws SQLException{
-        String strSql="insert bookInfo(bName,bType,bPress,bAuthor,bPrice,bImg,bSales,bTime,bCount,bContent)" +
-                "values(?,?,?,?,?,?,?,?,?,?)";
-        Object[] param={bi.getbName(),bi.getbType(),bi.getbPress(),bi.getbAuthor(),bi.getbPrice(),bi.getbImg(),bi.getbSales(),bi.getbTime(),bi.getbCount(),bi.getbContent()};
+        String strSql="insert bookInfo(bName,bType,bPress,bAuthor,bPrice,bImg,bCount,bPresent)" +
+                "values(?,?,?,?,?,?,?,?)";
+        Object[] param={bi.getbName(),bi.getbType(),bi.getbPress(),bi.getbAuthor(),bi.getbPrice(),bi.getbImg(),bi.getbCount(),bi.getbPresent()};
         try {
             return this.executeUpdate(strSql,param);
         } catch (SQLException e) {

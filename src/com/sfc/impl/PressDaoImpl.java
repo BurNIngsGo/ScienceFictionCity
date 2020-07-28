@@ -93,10 +93,10 @@ public class PressDaoImpl extends BaseDao implements PressDao {
 
     @Override
     public int getPressIdByPressName(String pName) throws SQLException {
-        String strSql = "select prId from press where prName = ?";
+        String strSql = "select * from press where prName = ?";
         Object[] param = {pName};
         try {
-            return ((Press)this.executeQuery(strSql,param).get(0)).getPrId();
+            return this.getEntity(new Press(),param,strSql).get(0).getPrId();
         } catch (SQLException e) {
             throw e;
         }

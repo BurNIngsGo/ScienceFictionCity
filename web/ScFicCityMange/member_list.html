@@ -464,3 +464,36 @@ $('table th input:checkbox').on('click' , function(){
 						
 });
 </script>
+
+<script type="text/javascript">
+   $(function(){
+
+       $.ajax({
+           url:"",
+           data:{},
+           dataType:"json",
+           success:function (data) {
+               var $userTr = $("<tr>\n" +
+                                   "     <td><label><input type=\"checkbox\" class=\"ace\"><span class=\"lbl\"></span></label></td>\n" +
+                                   "     <td>汇海天堂</td>\n" +
+                                   "     <td><a href=\"javascript:\" onClick=\"userinfo(this,121)\">张明珠</a></td>\n" +
+                                   "     <td>男</td>\n" +
+                                   "     <td>1345665656</td>\n" +
+                                   "     <td>4545455@qq.com</td>\n" +
+                                   "     <td>江苏南京雨花台区</td>\n" +
+                                   "     <td>2016-07-22 </td>\n" +
+                                   "     <td>普通用户</td>\n" +
+                                   "      <td class=\"td-status\"><span class=\"label label-success radius\">启用</span></td>\n" +
+                                   "        <td class=\"td-manage\">\n" +
+                                   "        <a onClick=\"member_stop(this,'10001')\"  href=\"javascript:;\" title=\"下架\"  class=\"btn btn-xs btn-status\">停用</a> \n" +
+                                   "        <a title=\"编辑\" onclick=\"member_edit('编辑','member-add.html','4','','510')\" href=\"javascript:;\"  class=\"btn btn-xs btn-info\" >编辑</a> \n" +
+                                   "        <a title=\"删除\" href=\"javascript:;\"  onclick=\"member_del(this,'1')\" class=\"btn btn-xs btn-delete\" >删除</a>\n" +
+                                   "       </td>\n" +
+                                   "    </tr>");
+           }
+       })
+
+
+
+   })
+</script>

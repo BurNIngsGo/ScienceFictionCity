@@ -51,7 +51,8 @@ public class BookAddServlet extends HttpServlet {
         }else if("press".equals(action)){
             String strJson = JSON.toJSONString(pressList);
             out.print(strJson);
-        }else if("add".equals("action")){
+        }else if("add".equals(action)){
+            System.out.println("sss");
             BookInfo bookInfo = new BookInfo();
             bookInfo.setbName(req.getParameter("bname"));
             try {
@@ -67,9 +68,11 @@ public class BookAddServlet extends HttpServlet {
             bookInfo.setbCount(Integer.parseInt(req.getParameter("bCount")));
             try {
                 if(bookInfoService.insertBook(bookInfo) > 0){
+                    System.out.println("yes");
                     out.print(1);
                 }else {
                     out.print(0);
+                    System.out.println("no");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
