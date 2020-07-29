@@ -47,4 +47,12 @@ public interface PressService {
      * @throws SQLException
      */
     public int getPressIdByPressName(String pName) throws SQLException;
+
+    /**
+     * 根据出版社名称出版社信息
+     * @param pName
+     * @return
+     * @throws SQLException
+     */
+    public List<Press> getAllByPrName(String pName) throws SQLException;
 }

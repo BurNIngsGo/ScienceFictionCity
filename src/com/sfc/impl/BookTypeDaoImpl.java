@@ -4,7 +4,9 @@ import com.sfc.dao.BaseDao;
 import com.sfc.dao.BookTypeDao;
 import com.sfc.entity.BookInfo;
 import com.sfc.entity.BookType;
+import com.sfc.entity.Press;
 
+import java.awt.print.Book;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -91,6 +93,17 @@ public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
         try {
             return this.getEntity(new BookType(), param, strSql).get(0).gettId();
         } catch(SQLException e) {
+            throw e;
+        }
+    }
+
+    @Override
+    public List<BookType> getAllByTypeName(String tName) throws SQLException {
+        String strSql = "select * from booktype where tName = \"%\"?\"%\"";
+        Object[] param = {tName};
+        try {
+            return this.getEntity(new BookType(),param,strSql);
+        } catch (SQLException e) {
             throw e;
         }
     }
