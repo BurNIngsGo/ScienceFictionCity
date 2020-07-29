@@ -1,5 +1,6 @@
 package com.sfc.service;
 
+import com.sfc.entity.BookType;
 import com.sfc.entity.UserInfo;
 
 import java.sql.SQLException;
@@ -68,7 +69,7 @@ public interface UserInfoService {
      * @return
      * @throws SQLException
      */
-    public int selectGetUserByName(String uname) throws SQLException;
+    public List<UserInfo> selectGetUserByName(String uname) throws SQLException;
 
     /**
      * 根据会员编号删除会员信息
@@ -77,4 +78,11 @@ public interface UserInfoService {
      * @throws SQLException
      */
     public int deleteUserById (int uid) throws SQLException;
+
+    /**
+     * 根据id获取用户信息
+     * @param id
+     * @return
+     */
+    public List<UserInfo> getUserById(int id) throws SQLException;
 }

@@ -1,10 +1,9 @@
 package com.sfc.serviceImpl;
 
 import com.sfc.connpool.BaseDaoUtil;
-import com.sfc.dao.AddressInfoDao;
 import com.sfc.dao.UserInfoDao;
+import com.sfc.entity.BookType;
 import com.sfc.entity.UserInfo;
-import com.sfc.impl.AddressInfoDaoImpl;
 import com.sfc.impl.UserInfoDaoImpl;
 import com.sfc.service.UserInfoService;
 
@@ -154,7 +153,7 @@ public class UserInfoServiceImpl implements UserInfoService {
      * @return
      * @throws SQLException
      */
-    public int selectGetUserByName(String uname) throws SQLException {
+    public List<UserInfo> selectGetUserByName(String uname) throws SQLException {
         Connection conn =  BaseDaoUtil.getConnection();
         UserInfoDao userInfoDao = new UserInfoDaoImpl(conn);
         try {
@@ -177,6 +176,23 @@ public class UserInfoServiceImpl implements UserInfoService {
         UserInfoDao userInfoDao = new UserInfoDaoImpl(conn);
         try {
             return userInfoDao.deleteUserById(uid);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            BaseDaoUtil.closeAll(null,null,conn);
+        }
+    }
+
+    /**
+     * 根据id获取用户信息
+     * @param id
+     * @return
+     */
+    public List<UserInfo> getUserById(int id) throws SQLException {
+        Connection conn =  BaseDaoUtil.getConnection();
+        UserInfoDao userInfoDao = new UserInfoDaoImpl(conn);
+        try {
+            return userInfoDao.getUserById(id);
         } catch (SQLException e) {
             throw e;
         } finally {
