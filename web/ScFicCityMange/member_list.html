@@ -97,7 +97,7 @@
         <li><label class="label_name">性别：</label><span class="add_name">
      <label><input name="form-field-radio" id="n" type="radio" checked="checked" class="ace" value="0"><span
              class="lbl">男</span></label>&nbsp;&nbsp;&nbsp;
-     <label><input name="form-field-radio" id="v" type="radio" class="ace"><span class="lbl" value="1">女</span></label>&nbsp;&nbsp;&nbsp;
+     <label><input name="form-field-radio" id="v" type="radio" class="ace" value="1"><span class="lbl" >女</span></label>&nbsp;&nbsp;&nbsp;
      </span>
             <div class="prompt r_f"></div>
         </li>
@@ -239,10 +239,7 @@
                 if (num > 0) {
                     return false;
                 } else {
-                    layer.alert('添加成功！', {
-                        title: '提示框',
-                        icon: 1,
-                    });
+
                     layer.close(index);
                 }
             }
@@ -367,6 +364,7 @@
                 success:function (data) {
                     if(data!=0){
                         alert("修改成功")
+                        window.location.reload();
                     }else {
                         alert("修改失败")
                     }
