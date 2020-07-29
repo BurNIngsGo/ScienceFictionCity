@@ -99,7 +99,7 @@ public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
 
     @Override
     public List<BookType> getAllByTypeName(String tName) throws SQLException {
-        String strSql = "select * from booktype where tName = \"%\"?\"%\"";
+        String strSql = "select * from booktype where tName like \"%\"?\"%\"";
         Object[] param = {tName};
         try {
             return this.getEntity(new BookType(),param,strSql);

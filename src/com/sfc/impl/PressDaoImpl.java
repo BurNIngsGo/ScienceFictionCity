@@ -104,7 +104,7 @@ public class PressDaoImpl extends BaseDao implements PressDao {
 
     @Override
     public List<Press> getAllByPrName(String pName) throws SQLException{
-        String strSql = "select * from press where PrName = \"%\"?\"%\"";
+        String strSql = "select * from press where PrName like \"%\"?\"%\"";
         Object[] param = {pName};
         try {
             return this.getEntity(new Press(),param,strSql);
