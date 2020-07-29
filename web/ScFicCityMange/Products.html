@@ -50,7 +50,7 @@
 <div class="operation clearfix mb15 searchs_style">
 <button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
 <span class="submenu">
-<a href="add_product.html" name="" class="btn button_btn bg-deep-blue" title="添加产品"><i class="fa  fa-edit"></i>&nbsp;添加分类</a>
+<a name="" class="btn button_btn bg-deep-blue" title="添加产品" onclick="member_edit('编辑','member-add.html','4','','510')" ><i class="fa  fa-edit"></i>&nbsp;添加分类</a>
 </span>
 <div class="search  clearfix">
 
@@ -74,6 +74,12 @@
 	</div>
    </div>
  </div>
+<div class="add_menber" id="add_menber_style" style="display:none">
+
+    <ul class=" page-content">
+        <li><label class="label_name">用&nbsp;&nbsp;户 &nbsp;名：</label><span class="add_name"><input value="" name="用户名" type="text"  class="text_add"/></span><div class="prompt r_f"></div></li>
+    </ul>
+</div>
 </body>
 </html>
 <script type="text/javascript">
@@ -190,6 +196,42 @@ var arr = [{
 	}
 
 ];
+
+    function member_edit(id){
+        layer.open({
+                       type: 1,
+                       title: '添加类型',
+                       maxmin: true,
+                       shadeClose:false, //点击遮罩关闭层
+                       area : ['800px' , ''],
+                       content:$('#add_menber_style'),
+                       btn:['提交','取消'],
+                       yes:function(index,layero){
+                           var num=0;
+                           var str="";
+                           $(".add_menber input[type$='text']").each(function(n){
+                               if($(this).val()=="")
+                               {
+
+                                   layer.alert(str+=""+$(this).attr("name")+"不能为空！\r\n",{
+                                       title: '提示框',
+                                       icon:0,
+                                   });
+                                   num++;
+                                   return false;
+                               }
+                           });
+                           if(num>0){  return false;}
+                           else{
+                               layer.alert('添加成功！',{
+                                   title: '提示框',
+                                   icon:1,
+                               });
+                               layer.close(index);
+                           }
+                       }
+                   });
+    }
 //树状图插件
 $(".tree").ProTree({
 	arr: arr,//数据
@@ -243,9 +285,7 @@ function member_start(obj,id){
 	});
 }
 /*产品-编辑*/
-function member_edit(title,url,id,w,h){
-	layer_show(title,url,w,h);
-}
+
 /*产品-删除*/
 function member_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
