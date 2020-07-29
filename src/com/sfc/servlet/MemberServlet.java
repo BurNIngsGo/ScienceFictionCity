@@ -64,7 +64,7 @@ public class MemberServlet extends HttpServlet {
             }
         }else if("delete".equals(action)){
             try {
-                if(userInfoService.deleteUserById(userInfo.getuId()) > 0){
+                if(userInfoService.deleteUserById(Integer.parseInt(req.getParameter("uId"))) > 0){
                     out.print(1);
                 } else {
                     out.print(0);
