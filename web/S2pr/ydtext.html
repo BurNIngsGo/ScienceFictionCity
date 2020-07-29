@@ -164,11 +164,9 @@
         });
         
         $(document).on("keyup", function(e) {
-            //var mis = endObj.x - moveObj.x;
               var pageCount = $page.turn("pages"); //总页数
               var currentPage = $page.turn("page"); //当前页
               if (e.keyCode == 37) {
-              	console.log("zuo")
                 if (currentPage > 1) {
                   $page.turn('page', currentPage - 1);
                 } else {
