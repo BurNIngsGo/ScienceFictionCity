@@ -268,7 +268,7 @@
     function member_edit(id) {
         layer.open({
                        type: 1,
-                       title: '添加类型',
+                       title: '添加出版社',
                        maxmin: true,
                        shadeClose: false, //点击遮罩关闭层
                        area: ['600px', ''],
@@ -293,7 +293,7 @@
                            } else {
                                    $.ajax({
                                         url:"/ScienceFictionCity/Press",
-                                        data:{tName:$(".text_add").val(),action:"add"},
+                                        data:{prName:$(".text_add").val(),action:"add"},
                                         dataType:"text",
                                         success:function(data){
                                             if(data != 0) {

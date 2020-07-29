@@ -29,10 +29,11 @@ public class PressServlet extends HttpServlet {
         String action = req.getParameter("action");
 
         PressService pressService = new PressServiceImpl();
-        Press press = new Press();
-        press.setPrName(req.getParameter("prName"));
+
 
         if("add".equals(action)) {
+            Press press = new Press();
+            press.setPrName(req.getParameter("prName"));
             try {
                 if (pressService.insertPress(press) > 0) {
                     out.print(1);
