@@ -118,13 +118,49 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
         }
     }
 
-    @Override
+    /**
+     * 检查是否有该用户名
+     * @param name
+     * @return
+     */
     public int checkUserName(String name) throws SQLException{
         String strSql = "select count(1) form userinfo where name = ?";
         Object[] param = {name};
         try {
             Number num = (Number)this.executeQuery(strSql,param).get(0);
             return num.intValue();
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+
+    /**
+     * 根据用户名查询会员信息
+     * @param uname
+     * @return
+     * @throws SQLException
+     */
+    public int selectGetUserByName(String uname) throws SQLException {
+        String strSql = "select * from userinfo where uName like \"%\"?\"%\"'";
+        Object[] param = {uname};
+        try {
+            return this.executeUpdate(strSql,param);
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+
+    /**
+     * 根据会员编号删除会员信息
+     * @param uid
+     * @return
+     * @throws SQLException
+     */
+    public int deleteUserById(int uid) throws SQLException {
+        String strSql ="delete from userinfo where uid=?";
+        Object[] param = {uid};
+        try {
+            return this.executeUpdate(strSql,param);
         } catch (SQLException e) {
             throw e;
         }

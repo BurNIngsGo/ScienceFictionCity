@@ -131,12 +131,52 @@ public class UserInfoServiceImpl implements UserInfoService {
         }
     }
 
-    @Override
+    /**
+     * 检查是否有该用户名
+     * @param name
+     * @return
+     */
     public int checkUserName(String name) throws SQLException {
         Connection conn =  BaseDaoUtil.getConnection();
         UserInfoDao userInfoDao = new UserInfoDaoImpl(conn);
         try {
             return userInfoDao.checkUserName(name);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            BaseDaoUtil.closeAll(null,null,conn);
+        }
+    }
+
+    /**
+     * 根据用户名查询会员信息
+     * @param uname
+     * @return
+     * @throws SQLException
+     */
+    public int selectGetUserByName(String uname) throws SQLException {
+        Connection conn =  BaseDaoUtil.getConnection();
+        UserInfoDao userInfoDao = new UserInfoDaoImpl(conn);
+        try {
+            return userInfoDao.selectGetUserByName(uname);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            BaseDaoUtil.closeAll(null,null,conn);
+        }
+    }
+
+    /**
+     * 根据会员编号删除会员信息
+     * @param uid
+     * @return
+     * @throws SQLException
+     */
+    public int deleteUserById(int uid) throws SQLException {
+        Connection conn =  BaseDaoUtil.getConnection();
+        UserInfoDao userInfoDao = new UserInfoDaoImpl(conn);
+        try {
+            return userInfoDao.deleteUserById(uid);
         } catch (SQLException e) {
             throw e;
         } finally {
