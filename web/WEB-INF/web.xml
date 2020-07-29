@@ -74,6 +74,26 @@
         <url-pattern>/ReadMain</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ReadSingle</servlet-name>
+        <servlet-class>com.sfc.servlet.ReadSingleServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReadSingle</servlet-name>
+        <url-pattern>/ReadSingle</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReadContents</servlet-name>
+        <servlet-class>com.sfc.servlet.ReadContentsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReadContents</servlet-name>
+        <url-pattern>ReadContents</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>S2pr/index.html</welcome-file>
         <welcome-file>webPage/index1.html</welcome-file>

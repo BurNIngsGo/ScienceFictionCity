@@ -43,11 +43,11 @@
 							<span id="strong">
 								哈利波特完整版
 							</span><br />
-							<span>评分：<a>100</a></span><br />
-							<span>作者：<a>某某某</a></span><br />
-							<span>出版社：<a>某出版社</a></span><br />
-							<span>类型：<a>某类型</a></span><br />
-							<span>价格：<i>￥</i><a class="price">99999</a></span>
+							<span>评分：<a></a></span><br />
+							<span>作者：<a></a></span><br />
+							<span>出版社：<a></a></span><br />
+							<span>类型：<a></a></span><br />
+							<span>价格：<i>￥</i><a class="price"></a></span>
 							<div class="beginButton">
 								<div class="viser">
 									<button class="buybook">
@@ -92,6 +92,23 @@
 			},function(){
 				$(this).find("img").attr("src","img/shoucang.png")
 			})
+
+			$.ajax({
+				type:"get",
+				url:"/ScienceFictionCity/ReadSingle",
+				data:{action:"getInfo"},
+				dataType:"json",
+				success:function (data) {
+					$(".bookimg img").attr("src","/ScienceFictionCity/image/"+data.bImg);
+					$("#strong").html(""+data.bName);
+					$(".bookinfo span:eq(1)").html("评分："+data.bSales);
+					$(".bookinfo span:eq(2)").html("作者："+data.bAuthor);
+					$(".bookinfo span:eq(3)").html("出版社："+data.bPress);
+					$(".bookinfo span:eq(4)").html("类型："+data.bType);
+					$(".bookinfo span:eq(5)").html("价格：￥"+data.bPrice);
+				}
+			})
+
 		</script>
 			
 		
