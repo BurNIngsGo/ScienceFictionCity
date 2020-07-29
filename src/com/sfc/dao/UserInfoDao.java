@@ -62,4 +62,20 @@ public interface UserInfoDao {
      * @return
      */
     public int checkUserName(String name) throws SQLException;
+
+    /**
+     * 根据用户名查询会员信息
+     * @param uname
+     * @return
+     * @throws SQLException
+     */
+    public int selectGetUserByName(String uname) throws SQLException;
+
+    /**
+     * 根据会员编号删除会员信息
+     * @param uid
+     * @return
+     * @throws SQLException
+     */
+    public int deleteUserById (int uid) throws SQLException;
 }
