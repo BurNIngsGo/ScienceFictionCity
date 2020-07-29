@@ -109,4 +109,17 @@ public class PressServiceImpl implements PressService {
             BaseDaoUtil.closeAll(null,null,conn);
         }
     }
+
+    @Override
+    public List<Press> getAllByPrName(String pName) throws SQLException {
+        Connection conn =  BaseDaoUtil.getConnection();
+        PressDao pressDao = new PressDaoImpl(conn);
+        try {
+            return pressDao.getAllByPrName(pName);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            BaseDaoUtil.closeAll(null,null,conn);
+        }
+    }
 }

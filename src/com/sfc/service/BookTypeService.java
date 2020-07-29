@@ -55,4 +55,12 @@ public interface BookTypeService {
      * @throws SQLException
      */
     public int getBookTypeIdByTypeName(String bName) throws SQLException;
+
+    /**
+     * 根据类型名称获取类型信息
+     * @param tName
+     * @return
+     * @throws SQLException
+     */
+    public List<BookType> getAllByTypeName(String tName) throws SQLException;
 }
