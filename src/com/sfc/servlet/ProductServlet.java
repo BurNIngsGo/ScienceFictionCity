@@ -47,7 +47,7 @@ public class ProductServlet extends HttpServlet {
             }
         } else if("del".equals(action)) {
             try {
-                if(bookTypeService.delBookTypeByTName(req.getParameter("tName")) > 0){
+                if(bookTypeService.delBookTypeByTId(Integer.parseInt(req.getParameter("tId"))) > 0){
                     out.print(1);
                 } else {
                     out.print(0);
