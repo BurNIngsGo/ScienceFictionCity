@@ -55,7 +55,7 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
      * @return int
      */
     public int updateUserByuId(UserInfo ui) throws SQLException{
-        String strSql = "update userinfo set uName = ?,uSex = ?,uEmail = ?,uCard = ?,uPhone = ?,uHeadImg where uId = ?";
+        String strSql = "update userinfo set uName = ?,uSex = ?,uEmail = ?,uCard = ?,uPhone = ?,uHeadImg = ? where uId = ?";
         Object[] param = {ui.getuName(),ui.getuSex(),ui.getuEmail(),ui.getuCard(),ui.getuPhone(),ui.getuHeadImg(),ui.getuId()};
         try {
             return this.executeUpdate(strSql,param);
@@ -140,11 +140,11 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
      * @return
      * @throws SQLException
      */
-    public int selectGetUserByName(String uname) throws SQLException {
-        String strSql = "select * from userinfo where uName like \"%\"?\"%\"'";
+    public List<UserInfo> selectGetUserByName(String uname) throws SQLException {
+        String strSql = "select * from userinfo where uName like \"%\"?\"%\"";
         Object[] param = {uname};
         try {
-            return this.executeUpdate(strSql,param);
+            return this.getEntity(new UserInfo(),param,strSql);
         } catch (SQLException e) {
             throw e;
         }
@@ -162,6 +162,21 @@ public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
         try {
             return this.executeUpdate(strSql,param);
         } catch (SQLException e) {
+            throw e;
+        }
+    }
+
+    /**
+     * 根据id获取用户信息
+     * @param id
+     * @return
+     */
+    public List<UserInfo> getUserById(int id) throws SQLException{
+        String strSql = "select * from  userinfo where uid = ?";
+        Object[] param = {id};
+        try {
+            return getEntity(new UserInfo(), param, strSql);
+        } catch (SQLException e){
             throw e;
         }
     }

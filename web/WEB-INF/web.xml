@@ -114,6 +114,16 @@
         <url-pattern>/Product</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Member</servlet-name>
+        <servlet-class>com.sfc.servlet.MemberServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Member</servlet-name>
+        <url-pattern>/Member</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>S2pr/index.html</welcome-file>
         <welcome-file>webPage/index1.html</welcome-file>
