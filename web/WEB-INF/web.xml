@@ -91,7 +91,7 @@
 
     <servlet-mapping>
         <servlet-name>ReadContents</servlet-name>
-        <url-pattern>ReadContents</url-pattern>
+        <url-pattern>/ReadContents</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

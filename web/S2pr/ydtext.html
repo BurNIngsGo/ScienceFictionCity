@@ -21,8 +21,15 @@
       var writeStr = ""
        
       //模拟请求文本数据
-      $.get("js/1.html",function(data){
-        initPage(data);
+      $.ajax({
+      		url:"/ScienceFictionCity/ReadContents",
+		  	data:{action:"context"},
+		  	dataType:"text",
+		  	success:function(data) {
+				$.get("data.html",function(data){
+					initPage(data);
+				})
+			}
       })
         
    
@@ -197,8 +204,8 @@
 			<a href="yueduxiangqing.html">退出阅读</a>
 		</div>
 		<div class="type2" style="height: 550px; position: absolute; left: 40px; top:180px; overflow: hidden;">
-			哈利波特完整版<br /><br />
-			<img src="img/yd1.png" /><br />
+			<span>哈利波特完整版</span><br /><br />
+			<img src="img/yd1.png" width="160px" height="210"/><br />
 			<a href="#"><button class="buy">立即购买</button></a>
 			<p>￥99999</p>
 			
@@ -225,6 +232,22 @@
 					}
 				})
 				
+			})
+
+			$.ajax({
+				type:"get",
+				url:"/ScienceFictionCity/ReadSingle",
+				data:{action:"getInfo"},
+				dataType:"json",
+				success:function (data) {
+					$(".type2 img").attr("src","/ScienceFictionCity/image/"+data.bImg);
+					$(".type2 span").html(data.bName);
+					$(".type2 p").html("￥"+data.bPrice);
+
+
+
+
+				}
 			})
 		</script>
 	</body>
