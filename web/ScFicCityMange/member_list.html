@@ -401,13 +401,34 @@
         });
 
     })
-    function batch_del() {
+    function batch_del(obj,id) {
         var ids = '';
         $("input:checkbox[class='aceb']").each(function () {
             if (this.checked == true) {
                 ids += $(this).parent().parent().next().html() + ',';
             }
         });
-        alert(ids);
+        alert(ids.substring(0,ids.length - 1));
+        var fl = window.confirm("确定要删?");
+        if(fl){
+            $.ajax({
+                url: "/ScienceFictionCity/Member",
+                data: {action: "deletes", ids: ids.substring(0,ids.length - 1)},
+                dataType: "json",
+                success: function (data) {
+                    if (data != 0) {
+                        $(obj).parents("tr").remove();
+                        layer.msg('已删除!', {icon: 1, time: 1000});
+                        window.location.reload();
+                    } else {
+                        $(obj).parents("tr").remove();
+                        layer.msg('删除失败，请联系程序员!', {icon: 0, time: 1000});
+                    }
+                }
+
+            })
+        }
     }
 </script>
+
+

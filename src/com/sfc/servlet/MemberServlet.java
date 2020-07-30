@@ -80,6 +80,23 @@ public class MemberServlet extends HttpServlet {
             }
             String strJson = JSON.toJSONString(userList);
             out.print(strJson);
+        } else if("deletes".equals(action)) {
+            String ids = req.getParameter("ids");
+            String[] uIdArr = ids.split(",");
+            boolean bFlag = false;
+            for(String str : uIdArr) {
+                try {
+                    if(userInfoService.deleteUserById(Integer.parseInt(str)) > 0){
+                        bFlag = true;
+                    } else {
+                        bFlag = false;
+                        break;
+                    }
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+            out.print(bFlag);
         }
     }
 }
