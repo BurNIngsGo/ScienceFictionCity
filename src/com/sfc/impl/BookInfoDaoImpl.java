@@ -255,4 +255,15 @@ public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
             throw e;
         }
     }
+
+    @Override
+    public List<BookInfo> getBookAllByBookName(String uName) throws SQLException {
+        String strSql = "select * from bookinfo where bName like \"%\"?\"%\"";
+        Object[] param = {uName};
+        try {
+            return this.getEntity(new BookInfo(), param, strSql);
+        } catch(SQLException e) {
+            throw e;
+        }
+    }
 }

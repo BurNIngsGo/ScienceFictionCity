@@ -20,6 +20,7 @@
 <script src="js/respond.min.js"></script>
 <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
   <![endif]-->
+
 <title>品牌管理</title>
 </head>
 
@@ -28,14 +29,10 @@
  <div class="operation clearfix mb15 same_module">
 <ul class="choice_search">
       <li class="clearfix col-xs-2 col-lg-3 col-ms-3 "><label class="label_name ">品牌名称：</label>
-      <input placeholder="输入品牌名称"  name="" type="text" class="form-control col-xs-8 col-lg-8 col-ms-8">
-      </li>
-      <li class="clearfix col-xs-2 col-lg-3 col-ms-3"><label class="label_name ">添加时间：</label>
-      <input class="inline laydate-icon form-control Select_Date" id="start">
+      <input placeholder="输入图书名称"  name="tushu" type="text" class="form-control col-xs-8 col-lg-8 col-ms-8">
       </li>
       <li class="clearfix col-xs-2 col-lg-3 col-ms-3 ">
-       <select name="" class="margin-right l_f select_style"><option  value="1">国内品牌</option><option value="2">国外品牌</option></select>
-       <button type="button" class="btn button_btn bg-deep-blue "><i class="icon-search"></i>查询</button></li>
+       <button type="button" class="btn button_btn bg-deep-blue " id="selectBtn"><i class="icon-search"></i>查询</button></li>
     </ul>
 	</div>
 <div class="h_products_list clearfix mb15" id="Sellerber">
@@ -55,12 +52,10 @@
     <div class="list_Exhibition list_show padding15">
       <div class="operation clearfix mb15  same_module">
        <span class="l_f">
-        <a href="Add_Brand.html"  title="添加品牌" class="btn button_btn bg-deep-blue"><i class="fa fa-plus"></i>添加品牌</a>
-        <a href="javascript:ovid()" class="btn  button_btn btn-danger"><i class="fa fa-trash"></i>批量删除</a>
-        <a href="javascript:ovid()" class="btn  button_btn btn-info">国内品牌</a>
-        <a href="javascript:ovid()" class="btn button_btn btn-Dark-success">国外品牌</a>
+        <a href="Add_Brand.html"  title="添加图书" class="btn button_btn bg-deep-blue"><i class="fa fa-plus"></i>添加图书</a>
+        <a href="javascript:void()" class="btn  button_btn btn-danger"><i class="fa fa-trash"></i>批量删除</a>
        </span>
-       <span class="r_f">共：<b>234</b>个品牌</span>
+       <span class="r_f">共：<b>234</b>本图书</span>
      </div>
       <div class=" datalist_show">
        <div class="datatable_height confirm">
@@ -139,7 +134,6 @@ function member_edit(title,url,id,w,h){
 /*产品-删除*/
 function member_del(obj,id){
     var bid = $(obj).parent().parent().children().next().html();
-    alert(bid);
 	layer.confirm('确认要删除吗？',function(index){
 	    $.ajax({
                    url:"/ScienceFictionCity/BookInfo",
@@ -184,7 +178,7 @@ laydate({
 			
 			option = {
     title : {
-        text: '国内国外品牌比例',
+        text: '软硬科幻比例',
         subtext: '',
         x:'center'
     },
@@ -196,7 +190,7 @@ laydate({
         y : 'bottom',
 		x:'center',
 		bottom:30,
-        data:['国内品牌','国外品牌']
+        data:['软科幻','硬科幻']
     },
     toolbox: {
         show : false,
@@ -222,13 +216,13 @@ laydate({
     calculable : true,
     series : [
         {
-            name:'品牌数量',
+            name:'分类数量',
             type:'pie',
             radius : '45%',
             center: ['50%', '50%'],
             data:[
-                {value:335, name:'国内品牌'},
-                {value:210, name:'国外品牌'},
+                {value:335, name:'软科幻'},
+                {value:210, name:'硬科幻'},
 
             ]
         }
@@ -242,18 +236,20 @@ laydate({
 </script>
 <script type="text/javascript">
     $(function(){
+        var count = 0;
         $.ajax({
             url:"/ScienceFictionCity/BookInfo",
             data: {action:"getall"},
             dataType:"json",
             success:function (data) {
                 $(data).each(function(){
+                    count ++;
                     $("tbody").append("<tr>\n" +
                                           "          <td><label><input type=\"checkbox\" class=\"ace\" ><span class=\"lbl\"></span></label></td>\n" +
                                           "          <td>"+this.bId+"</td>\n" +
                                           "          <td><img src=\"/ScienceFictionCity/image/"+this.bImg+"\"  width=\"130\"/></td>\n" +
                                           "          <td>"+this.bAuthor+"</td>\n" +
-                                          "          <td><"+this.bName+"</td>\n" +
+                                          "          <td>"+this.bName+"</td>\n" +
                                           "          <td>"+this.bCount+"</td>\n" +
                                           "      \n" +
                                           "          <td>"+this.bTime+"</td>\n" +
@@ -264,7 +260,33 @@ laydate({
                                           "          </td>\n" +
                                           "\t\t</tr>");
                 })
+                $(".r_f>b").html(count);
             }
+        })
+
+        $("#selectBtn").click(function(){
+            $("tbody tr").hide();
+            $.ajax({
+                url:"/ScienceFictionCity/BookInfo",
+                data:{action:"seach",bName:$("input[name='tushu']").val()},
+                dataType:"json",
+                success:function(data){
+                    $(data).each(function(){
+                        var i = 0;
+                        $(data).each(function(){
+                            $("tbody tr:eq("+i+")").show();
+                            $("tbody tr:eq("+i+") td:eq(1)").html(this.bId);
+                            $("tbody tr:eq("+i+") td:eq(2)").html(this.bImg);
+                            $("tbody tr:eq("+i+") td:eq(3)").html(this.bAuthor);
+                            $("tbody tr:eq("+i+") td:eq(4)").html(this.bName);
+                            $("tbody tr:eq("+i+") td:eq(5)").html(this.bCount);
+                            $("tbody tr:eq("+i+") td:eq(6)").html(this.bTime);
+                            $("tbody tr:eq("+i+") td:eq(7)").html(this.bPrice);
+                            i++;
+                        })
+                    })
+                }
+            })
         })
     })
 </script>

@@ -108,4 +108,11 @@ public interface BookInfoDao {
      */
     public List<BookInfo> getBookAllDesc() throws SQLException;
 
+    /**
+     * 模糊查询
+     * @return
+     * @throws SQLException
+     */
+    public List<BookInfo> getBookAllByBookName(String uName) throws SQLException;
+
 }

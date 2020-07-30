@@ -83,7 +83,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../软件包/fastjson-1.2.13.jar!/" />
+          <root url="jar://$MODULE_DIR$/../软件包/fastjson-1.2.13.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
