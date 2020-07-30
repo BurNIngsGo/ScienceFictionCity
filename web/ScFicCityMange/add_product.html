@@ -291,6 +291,7 @@ $("body").niceScroll({
                             title: '提示框',
                             icon:1,
                         });
+                        fileUpload(form);
                     }else{
                         layer.alert("添加失败，请联系BUG组组长",{
                             title: '提示框',
@@ -302,6 +303,25 @@ $("body").niceScroll({
                     alert(a+","+b+","+c)
                 }
             })
+
     })
+
+    function fileUpload(form) {
+        $.ajax({
+            type:"post",
+            async:false,
+            url:"/ScienceFictionCity/Upload",
+            data:form,
+            dataType:"text",
+            processData : false, // 使数据不做处理
+            contentType : false, // 不要设置Content-Type请求头
+            success:function (data) {
+                alert(data);
+            },
+             error:function(a,b,c){
+                alert(a+","+b+","+c)
+             }
+        })
+    }
 </script>
 

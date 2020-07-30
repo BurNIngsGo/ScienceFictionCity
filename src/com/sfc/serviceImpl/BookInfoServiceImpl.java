@@ -268,4 +268,15 @@ public class BookInfoServiceImpl implements BookInfoService {
             throw e;
         }
     }
+
+    @Override
+    public List<BookInfo> getBookAllByBookName(String uName) throws SQLException {
+        Connection conn = BaseDaoUtil.getConnection();
+        BookInfoDao bookInfoDao = new BookInfoDaoImpl(conn);
+        try {
+            return bookInfoDao.getBookAllByBookName(uName);
+        } catch(SQLException e) {
+            throw e;
+        }
+    }
 }

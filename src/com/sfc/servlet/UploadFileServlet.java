@@ -16,22 +16,23 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class Upload extends HttpServlet {
+public class UploadFileServlet extends HttpServlet {
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req,resp);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        this.doPost(request,response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("utf-8");
-        resp.setContentType("text/html;charset=utf-8");
-        resp.setCharacterEncoding("utf-8");
-        PrintWriter out = resp.getWriter();
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
         String uploadFileName = ""; //上传的文件名
         String fieldName = "";  //表单字段元素的name属性值
         //请求信息中的内容是否是multipart类型
-        boolean isMultipart = ServletFileUpload.isMultipartContent(req);
+        boolean isMultipart = ServletFileUpload.isMultipartContent(request);
         //上传文件的存储路径（服务器文件系统上的绝对文件路径）
         String path = "userImg";//上传图片目录名
         String uploadFilePath = "/ScienceFictionCity/image";
@@ -53,14 +54,14 @@ public class Upload extends HttpServlet {
             boolean flag = false;
             try {
                 //解析form表单中所有文件
-                items = upload.parseRequest(req);
+                items = upload.parseRequest(request);
                 Iterator<FileItem> iter = items.iterator();
                 while (iter.hasNext()) {   //依次处理每个文件
                     FileItem item = (FileItem) iter.next();
                     if (!item.isFormField()){  //文件表单字段
                         String fileName = item.getName();
                         //通过Arrays类的asList()方法创建固定长度的集合
-                        List<String> filType= Arrays.asList("gif","bmp","jpg");
+                        List<String> filType= Arrays.asList("gif","bmp","jpg","png");
                         String ext=fileName.substring(fileName.lastIndexOf(".")+1);
                         if(!filType.contains(ext))  //判断文件类型是否在允许范围内
                             out.print("上传失败，文件类型只能是gif、bmp、jpg");
@@ -71,9 +72,8 @@ public class Upload extends HttpServlet {
                                 item.write(saveFile);
                                 uploadFileName = fullFile.getName();
                                 //String strPath = uploadFilePath+"\\"+uploadFileName;
-                                String strPath ="userImg/"+uploadFileName;//上传到数据库里的路径
-                                out.print("上传成功后的文件名是："+uploadFileName+
-                                        "，文件大小是："+item.getSize()+"bytes!"+"路径是："+strPath);
+                                String strPath ="userImg/"+uploadFileName;
+                                out.print(1);
                                 flag = true;
                             }
                         }

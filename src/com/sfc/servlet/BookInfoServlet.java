@@ -51,6 +51,16 @@ public class BookInfoServlet extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        } else if("seach".equals(action)) {
+            String name = req.getParameter("bName");
+            List<BookInfo> bookInfos = null;
+            try {
+                bookInfos = bookInfoService.getBookAllByBookName(name);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            String strJson = JSON.toJSONString(bookInfos);
+            out.print(strJson);
         }
     }
 }
