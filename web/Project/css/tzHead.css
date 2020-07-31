@@ -1,0 +1,9 @@
+.conHead{width: 928px; height: 112px; background: #fff; padding: 42px 28px 0 44px; margin: 0 0 20px 0;}
+.content .headPic{width: 70px; height: 70px; border-radius: 50%; float: left; margin-right: 18px;}
+.content .headPic img{width: 100%; height: 100%; border-radius: 50%;}
+.conHead .inf{float: left; padding: 12px 0 0 0;}
+.conHead .inf .inf01 i{font-size: 16px; color: #212121; margin: 0 10px 0 0;}
+.conHead .inf .inf01 span{width: 46px; height: 16px; line-height: 16px; text-align: center; color: #fff; background: #d2d2d2;}
+.conHead .inf .inf02 i{margin: 10px 18px 0 0; float: left;}
+.conHead .inf .inf02 a{width: 60px; height: 26px; line-height: 26px; text-align: center; color: #fff; border-radius: 2px; background: #8bc34a; float: left; margin: 7px 0 0 7px;}
+.conHead .ewm{float: right; text-align: center;}

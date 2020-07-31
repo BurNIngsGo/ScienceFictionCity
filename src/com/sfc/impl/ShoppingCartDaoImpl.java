@@ -3,6 +3,7 @@ package com.sfc.impl;
 import com.sfc.dao.BaseDao;
 import com.sfc.dao.ShoppingCartDao;
 import com.sfc.entity.ShoppingCart;
+import com.sfc.entity.ShoppingInfo;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -18,11 +19,12 @@ public class ShoppingCartDaoImpl extends BaseDao implements ShoppingCartDao {
      * @param uId
      * @return
      */
-    public List<ShoppingCart> getShoppingCartByUId(int uId) throws SQLException{
-        String strSql = "select * from shoppingcart where uid = ?";
+    public List<ShoppingInfo> getShoppingCartByUId(int uId) throws SQLException{
+        String strSql = "SELECT sh.`shId`, b.`bImg`,b.`bName`,sh.`shDate`,sh.`shCount`,sh.`price`,b.`bPrice` FROM" +
+                " shoppingcart sh INNER JOIN bookinfo b ON sh.`bId` = b.`bId`  WHERE sh.`uId` = ?";
         Object[] param = {uId};
         try {
-            return this.getEntity(new ShoppingCart(),param,strSql);
+            return this.getEntity(new ShoppingInfo(),param,strSql);
         } catch (SQLException e) {
             throw e;
         }

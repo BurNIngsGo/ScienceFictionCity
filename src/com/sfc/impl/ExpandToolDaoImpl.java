@@ -125,8 +125,21 @@ public class ExpandToolDaoImpl implements ExpandToolDao {
                     (param)->((UserInfo)stu).setuEmpirical((int)param)
 
             };
-        } else{
-            return null;
+        } else if(stu instanceof ShoppingInfo){
+            arrayFun = new Function[]{
+                    (param)->((ShoppingInfo)stu).setShId((int)param),
+                    (param)->((ShoppingInfo)stu).setbImg((String)param),
+                    (param)->((ShoppingInfo)stu).setbName((String)param),
+                    (param)->((ShoppingInfo)stu).setShDate(((Date)param).toString()),
+                    (param)->((ShoppingInfo)stu).setShCount((int)param),
+                    (param)->((ShoppingInfo)stu).setbPrice(Double.parseDouble(param.toString())),
+                    (param)->((ShoppingInfo)stu).setPrice(Double.parseDouble(param.toString()))
+            };
+        } else if(stu instanceof Friend){
+            arrayFun = new Function[]{
+                    (param)->((Friend)stu).setHeadImg((String)param),
+                    (param)->((Friend)stu).setUserName((String)param)
+            };
         }
         return arrayFun;
     }

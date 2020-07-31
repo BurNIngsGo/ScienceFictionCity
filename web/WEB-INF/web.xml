@@ -144,6 +144,28 @@
         <url-pattern>/Upload</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Shopping</servlet-name>
+        <servlet-class>com.sfc.servlet.ShoppingServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Shopping</servlet-name>
+        <url-pattern>/Shopping</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Friends</servlet-name>
+        <servlet-class>com.sfc.servlet.FriendsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Friends</servlet-name>
+        <url-pattern>/Friends</url-pattern>
+    </servlet-mapping>
+
+
+
     <welcome-file-list>
         <welcome-file>S2pr/index.html</welcome-file>
         <welcome-file>webPage/index1.html</welcome-file>

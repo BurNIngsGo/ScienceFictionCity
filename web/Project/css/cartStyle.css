@@ -1,0 +1,200 @@
+body,ul,li,div,p,h1,h2,ol{margin:0;padding: 0;}
+body{margin: 5px 0 0 0}
+ul,li,ol{list-style: none;}
+.content{
+	
+	width: 1000px;
+	 margin:  auto; 
+	  font-family: "微软雅黑"; 
+	  border: solid 1px #cecece; 
+	  padding: 5px;}
+.logo{margin: 10px 0;}
+.logo span{
+    display: inline-block; 
+    float: right;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    background: #ff0000;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.cartList{
+    overflow: auto;
+    height: 400px;
+}
+.cartList ul{
+    clear: both;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px #c6c6c6 solid;
+    padding-top: 6px;
+}
+.cartList ul li img{width: 60px;
+}
+.cartList ul li{
+    font-family: "微软雅黑";
+    font-size: 12px;
+    color: #666666;
+    text-align: center;
+    line-height: 25px;
+    float: left;
+
+}
+.cartList ul li input[name="price"]{
+    border: none;
+    background: transparent;
+    width: 45px;
+    text-align: center;
+}
+.cartList ul li input[name="amount"]{
+    width: 45px;
+    text-align: center;
+    border: 1px solid #999999;
+    border-left: none;
+    border-right: none;
+    height: 21px;
+}
+.cartList ul li input[name="minus"],.cartList ul li input[name="plus"]{
+    height: 25px;
+    border: 1px #999999 solid;
+    width: 25px;
+    text-align: center;
+}
+.cartList ul li:nth-of-type(1){width: 130px;}
+.cartList ul li:nth-of-type(2){width: 100px;}
+.cartList ul li:nth-of-type(3){width: 130px;}
+.cartList ul li:nth-of-type(4){width: 100px;}
+.cartList ul li:nth-of-type(5){width: 130px;}
+.cartList ul li p{cursor: pointer;}
+ol{
+    float: right;
+    clear: both;
+}
+ol li{
+    float: left;
+    width: 200px;
+}
+ol li:nth-of-type(1) span{
+    color: #ff0000;
+}
+ol li:nth-of-type(2) span{display: inline-block;
+    float: right;
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    background: #ff0000;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 5px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-weight: bold;}
+    
+.cartPng{
+	width: 90px;
+	height: 90px;
+	display: ;
+}
+.bookType{
+	line-height: 28px;
+	font-size:18px ;
+	font-weight: 900;
+	margin: ;
+}
+.bgVideo{
+	position: absolute;
+	width: 100%;
+	z-index: -999;
+	left: 0;
+	top: 0;
+}
+*{
+	
+}
+.all{
+	
+}
+.hady{
+	width: 1000px;
+	height: 1000px;
+	 margin: 0 auto; 
+	  border: solid 1px solid; 
+	  padding: 5px;}
+}
+.context{
+	width: 2000px;
+	margin: 500px 500px 500px 500px;
+	  border: solid 1px red; 
+	  
+	  padding: 5px;
+}
+.ads_tab{
+	line-height: 36px;
+	height: 26px;
+	padding-left: 25px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #323232;
+	
+}
+body, ul, li, ol, p, dl, dd, h1, h2, h3, h4, h5, h6, img, iframe, form, div{
+	margin: 0;
+	list-style-type: none;
+	border: 0;
+}
+html, body, div, span, iframe, b, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, big, cite, code, em, font, img, q, s, samp, small, strike, strong, sub, sup, u, i, center, dl, dt, dd, ol, ul, li, form, label, table, tbody, tfoot, thead, tr, th, td{
+	outline: 0;
+	font-size: 100%;
+	background: transparent;
+	list-style: none;
+}
+.conone{
+	 margin: 50px auto 0px auto; 
+	width: 1010px;
+	height: 1000px;
+	border: 1px #000000 solid;
+}
+.ads_box{
+	position: relative;
+}
+
+#totalPrice{
+	margin-top: 10px;
+}
+
+.ads_shopping li{
+	border: 1px solid red;
+	list-style: none;
+	display: inline-block;
+	width: 180px;
+	height: 250px;
+	margin-right: 25px;
+	margin-top: 10px;
+}
+
+
+.ads_shopping{
+	width: 845px;
+	margin: 0 auto;
+}
+.ads_box .ads_shopping li .gpic{
+		position: relative;
+}
+.ads_box .ads_shopping li .gpic{
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	margin: 10px 0;
+}
+.ads_box .ads_shopping li a{
+	color: #323232;
+}

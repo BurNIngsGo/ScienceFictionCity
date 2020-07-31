@@ -4,6 +4,7 @@ import com.sfc.connpool.BaseDaoUtil;
 import com.sfc.dao.ShoppingCartDao;
 import com.sfc.dao.StoreDao;
 import com.sfc.entity.ShoppingCart;
+import com.sfc.entity.ShoppingInfo;
 import com.sfc.impl.ShoppingCartDaoImpl;
 import com.sfc.impl.StoreDaoImpl;
 import com.sfc.service.ShoppingCartService;
@@ -18,7 +19,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
      * @param uId
      * @return
      */
-    public List<ShoppingCart> getShoppingCartByUId(int uId) throws SQLException {
+    public List<ShoppingInfo> getShoppingCartByUId(int uId) throws SQLException {
         Connection conn =  BaseDaoUtil.getConnection();
         ShoppingCartDao shoppingCartDao = new ShoppingCartDaoImpl(conn);
         try {

@@ -1,5 +1,6 @@
 package com.sfc.service;
 
+import com.sfc.entity.Friend;
 import com.sfc.entity.FriendRelation;
 
 import java.sql.SQLException;
@@ -35,4 +36,6 @@ public interface FriendRelationService {
      * @return
      */
     public int initFriendList(int uId) throws SQLException;
+
+    public List<Friend> showFriend(int uId) throws SQLException;
 }

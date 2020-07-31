@@ -3,6 +3,7 @@ package com.sfc.impl;
 import com.sfc.dao.BaseDao;
 import com.sfc.dao.FriendRelationDao;
 import com.sfc.entity.ChatInfo;
+import com.sfc.entity.Friend;
 import com.sfc.entity.FriendRelation;
 
 import java.sql.Connection;
@@ -65,5 +66,20 @@ public class FriendRelationDaoImpl extends BaseDao implements FriendRelationDao 
     @Override
     public int initFriendList(int uId) {
         return 0;
+    }
+
+    /**
+     * 获取好友详细列表
+     * @return
+     */
+    public List<Friend> showFriend(int uId) throws SQLException{
+        String strSql="SELECT u.`uHeadImg`,u.`uName` FROM userinfo u\n" +
+                "WHERE u.`uId` IN (SELECT fid FROM `friendrelation` WHERE uid = ?)\n";
+        Object[] param = {uId};
+        try {
+            return this.getEntity(new Friend(), param, strSql);
+        } catch (SQLException e) {
+            throw e;
+        }
     }
 }
