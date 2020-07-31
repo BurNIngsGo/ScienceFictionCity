@@ -52,7 +52,7 @@
 	position:fixed;
 	top: 0;
 	display: inline-block;
-	z-index: 999;
+	z-index: 999999999;
 }
 
 
