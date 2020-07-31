@@ -59,7 +59,7 @@
 					密码
 				</label>
 				<input id="upwd" placeholder="Password" name="pwd" type="password" required="">
-				<input type="hidden" name = "action" value="login"/>
+				<input type="hidden" name = "action" value="login" />
 			</div>
 			<!-- checkbox -->
 			<div class="wthree-text">
@@ -76,7 +76,7 @@
 				</ul>
 			</div>
 			<!-- //checkbox -->
-			<input id="sub" type="button" value="Login"  onclick="">
+			<input id="sub" type="button" value="Login">
 			<input id="sub1" type="button" value="Regist" >
 		</form>
 	</div>
@@ -122,7 +122,31 @@
 			})
 		})
 
+			$(window).keydown(function (e) {
+				if(e.keyCode == 13){
+					var uname = $("#uname").val();
+					var upwd = $("#upwd").val();
+					$.ajax({
+						url:"/ScienceFictionCity/Login",
+						type:"post",
+						sync:false,
+						data:{action:"login",name:uname,pwd:upwd},
+						dataType:"json",
+						success:function(data){
+							if(data.uId != 0){
+								alert("登录成功")
+								window.location = "/ScienceFictionCity/webPage/index1.html";
+							}else{
+								alert("账号或密码错误");
+							}
+						},
+						error:function(a,b,c){
+							alert(a+b+c);
+						}
+					})
+				}
 
+			})
 	</script>
 </body>
 

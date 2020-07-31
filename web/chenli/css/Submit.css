@@ -1,0 +1,741 @@
+body {
+	font-family: 'Microsoft Yahei';
+	font-size: 12px;
+	color: #666;
+}
+
+html,
+body {
+	height: 100%;
+	background-image: url(../img/xiaoxibeijingtu.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+/* 顶部样式 */
+
+.header_con {
+	background-color: #f7f7f7;
+	height: 29px;
+	border-bottom: 1px solid #dddddd
+}
+
+.header {
+	width: 1200px;
+	height: 29px;
+	margin: 0 auto;
+}
+
+.welcome,
+.login_info,
+.login_btn,
+.user_link {
+	line-height: 29px;
+}
+
+.login_info {
+	display: none;
+}
+
+.login_info em {
+	color:#DCDCDC ;
+}
+
+.login_btn a,
+.user_link a {
+	color:  #6E9EFE ;
+}
+
+.login_btn a:hover,
+.user_link a:hover {
+	color:	#DCDCDC ;
+}
+
+.login_btn span,
+.user_link span {
+	color: #cecece;
+	margin: 0 10px;
+}
+
+.guest_cart .goods_count {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	background-color: 	#DCDCDC ;
+}
+
+.navbar .subnav_con:hover span {
+	transform: rotateZ(180deg)
+}
+
+.navbar .subnav_con .subnav {
+	position: absolute;
+	left: 0;
+	top: 40px;
+	display: none;
+	border-top: 2px solid #39a93e;
+}
+
+.navbar .subnav_con:hover .subnav {
+	display: block;
+}
+
+
+.subnav li .seafood {
+	background: url(../images/icons.png) 28px -43px no-repeat;
+}
+
+.subnav li .meet {
+	background: url(../images/icons.png) 28px -86px no-repeat;
+}
+
+.subnav li .egg {
+	background: url(../images/icons.png) 28px -132px no-repeat;
+}
+
+.subnav li .vegetables {
+	background: url(../images/icons.png) 28px -174px no-repeat;
+}
+
+.subnav li .ice {
+	background: url(../images/icons.png) 28px -220px no-repeat;
+}
+
+.list_title .subtitle a:hover,
+.goods_more:hover {
+	color: 	#DCDCDC ;
+}
+/* 页面底部样式 */
+
+
+
+
+.cart_list_td .col03 {
+	height: 48px;
+	text-align: left;
+	line-height: 24px;
+	margin-top: 38px;
+}
+
+.cart_list_td .col03 em {
+	color: #999
+}
+
+.cart_list_td .col08 a {
+	color: #666
+}
+
+.cart_list_td .col06 .num_add {
+	width: 98px;
+	height: 28px;
+	border: 1px solid #ddd;
+	margin: 40px auto 0;
+}
+
+.cart_list_td .col06 .num_add a {
+	width: 29px;
+	height: 28px;
+	line-height: 28px;
+	background-color: #f3f3f3;
+	font-size: 14px;
+	color: #666
+}
+
+.cart_list_td .col06 .num_add input {
+	width: 38px;
+	height: 28px;
+	text-align: center;
+	line-height: 30px;
+	border: 0px;
+	display: block;
+	float: left;
+	outline: none;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+
+.settlements {
+	width: 1198px;
+	height: 78px;
+	border: 1px solid #ddd;
+	background-color: #fff4e8;
+	margin: -1px auto 0;
+}
+
+.settlements li {
+	line-height: 78px;
+	float: left;
+}
+
+.settlements .col01 {
+	width: 4%;
+	text-align: center
+}
+
+.settlements .col02 {
+	width: 12%;
+}
+
+.settlements .col03 {
+	width: 69%;
+	height: 48px;
+	line-height: 28px;
+	text-align: right;
+	margin-top: 10px;
+}
+
+.settlements .col03 span {
+	color: #ff0000;
+	padding-right: 5px
+}
+
+.settlements .col03 em {
+	color: #ff3d3d;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.settlements .col03 span {
+	color: #ff0000;
+}
+
+.settlements .col03 b {
+	color: #ff0000;
+	font-size: 14px;
+	padding: 0 5px;
+}
+
+.settlements .col04 {
+	width: 14%;
+	text-align: center;
+	float: right;
+}
+
+.settlements .col04 a {
+	display: block;
+	height: 78px;
+	background-color: #ff3d3d;
+	text-align: center;
+	line-height: 78px;
+	color: #fff;
+	font-size: 24px
+}
+
+.common_title {
+	width: 1200px;
+	margin: 20px auto 0;
+	font-size: 14px;
+}
+
+.common_list_con {
+	width: 1200px;
+	border: 1px solid #dddddd;
+	border-top: 2px solid 	#DCDCDC ;
+	margin: 10px auto 0;
+	background-color: #f7f7f7;
+	position: relative;
+}
+
+.common_list_con dl {
+	margin: 20px;
+}
+
+.common_list_con dt {
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 10px
+}
+
+.common_list_con dd input {
+	vertical-align: bottom;
+	margin-right: 10px
+}
+
+.edit_site {
+	position: absolute;
+	right: 20px;
+	top: 30px;
+	width: 100px;
+	height: 30px;
+	background-color: #6E9EFE;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	
+}
+
+.pay_style_con {
+	margin: 20px;
+}
+
+.pay_style_con input {
+	float: left;
+	margin: 14px 7px 0 0;
+}
+
+.pay_style_con label {
+	float: left;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	padding: 10px 10px 10px 40px;
+	margin-right: 25px
+}
+
+.pay_style_con .cash {
+	background: url(../images/pay_icons.png) 8px top no-repeat #fff;
+}
+
+.pay_style_con .weixin {
+	background: url(../images/pay_icons.png) 6px -36px no-repeat #fff;
+}
+
+.pay_style_con .zhifubao {
+	background: url(../images/pay_icons.png) 12px -72px no-repeat #fff;
+	width: 50px;
+	height: 16px
+}
+
+.pay_style_con .bank {
+	background: url(../images/pay_icons.png) 6px -108px no-repeat #fff;
+}
+
+.goods_list_th {
+	height: 40px;
+	border-bottom: 1px solid #ccc
+}
+.sub_page_namefl{
+	font-size: 24px;
+	padding-left: 160px;
+	width: 300px;
+
+}
+div{
+	color: rgb();
+}
+.goods_list_th li {
+	float: left;
+	line-height: 40px;
+	text-align: center;
+}
+
+.goods_list_th .col01 {
+	width: 25%
+}
+
+.goods_list_th .col02 {
+	width: 20%
+}
+
+.goods_list_th .col03 {
+	width: 25%
+}
+
+.goods_list_th .col04 {
+	width: 15%
+}
+
+.goods_list_th .col05 {
+	width: 15%
+}
+
+.goods_list_td {
+	height: 80px;
+	border-bottom: 1px solid #eeeded
+}
+
+.goods_list_td li {
+	float: left;
+	line-height: 80px;
+	text-align: center;
+}
+
+.goods_list_td .col01 {
+	width: 4%
+}
+
+.goods_list_td .col02 {
+	width: 6%
+}
+
+.goods_list_td .col03 {
+	width: 15%
+}
+
+.goods_list_td .col04 {
+	width: 20%
+}
+
+.goods_list_td .col05 {
+	width: 25%
+}
+
+.goods_list_td .col06 {
+	width: 15%
+}
+
+.goods_list_td .col07 {
+	width: 15%
+}
+
+.goods_list_td .col02 {
+	text-align: right
+}
+
+.goods_list_td .col02 img {
+	width: 63px;
+	height: 63px;
+	border: 1px solid #ddd;
+	display: block;
+	margin: 7px 0;
+	float: right;
+}
+
+.goods_list_td .col03 {
+	text-align: left;
+	text-indent: 20px
+}
+
+.settle_con {
+	margin: 10px
+}
+
+.total_goods_count,
+.transit,
+.total_pay {
+	line-height: 24px;
+	text-align: right
+}
+
+.total_goods_count em,
+.total_goods_count b,
+.transit b,
+.total_pay b {
+	font-size: 14px;
+	color: #6E9EFE;
+	padding: 0 5px;
+}
+
+.order_submit {
+	width: 1200px;
+	margin: 20px auto;
+}
+
+.order_submit a {
+	width: 160px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #6E9EFE;
+	color: #fff;
+	font-size: 16px;
+	display: block;
+	float: right
+}
+
+
+.popup_con {
+	display: none;
+}
+
+.popup {
+	width: 300px;
+	height: 150px;
+	border: 1px solid #dddddd;
+	border-top: 2px solid 	#DCDCDC ;
+	background-color: #f7f7f7;
+	position: fixed;
+	left: 50%;
+	margin-left: -150px;
+	top: 50%;
+	margin-top: -75px;
+	z-index: 1000;
+}
+
+.popup p {
+	height: 150px;
+	line-height: 150px;
+	text-align: center;
+	font-size: 18px;
+}
+
+.mask {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: #000;
+	opacity: 0.3;
+	z-index: 999;
+}
+
+.main_con {
+	width: 1200px;
+	margin: 0 auto;
+	background: url(../images/left_bg.jpg) repeat-y;
+}
+
+.left_menu_con {
+	width: 200px;
+	float: left;
+}
+
+.left_menu_con h3 {
+	font-size: 16px;
+	line-height: 40px;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.left_menu_con ul li {
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.left_menu_con ul li a {
+	color: #666;
+}
+
+.left_menu_con ul li .active {
+	color:  	#DCDCDC ;
+	font-weight: bold;
+}
+
+.right_content {
+	width: 980px;
+	float: right;
+	min-height: 500px;
+}
+
+.w980 {
+	width: 980px;
+}
+
+.w978 {
+	width: 978px;
+}
+
+.common_title2 {
+	height: 20px;
+	line-height: 20px;
+	font-size: 16px;
+	margin: 10px 0;
+}
+
+.user_info_list {
+	background-color: #f9f9f9;
+	margin: 10px 0 15px;
+	padding: 10px 0;
+	height: 90px;
+}
+
+.user_info_list li {
+	line-height: 30px;
+	text-indent: 30px;
+	font-size: 14px;
+}
+
+.user_info_list li span {
+	width: 100px;
+	float: left;
+	text-align: right;
+}
+
+.info_con {
+	width: 980px;
+}
+
+.info_l {
+	width: 600px;
+	float: left;
+}
+
+.info_r {
+	width: 360px;
+	float: right;
+}
+
+.site_con {
+	background-color: #f9f9f9;
+	padding: 10px 0;
+	margin-bottom: 20px;
+}
+
+.site_con dt {
+	font-size: 14px;
+	line-height: 30px;
+	text-indent: 30px;
+	font-weight: bold;
+}
+
+.site_con dd {
+	font-size: 14px;
+	line-height: 30px;
+	text-indent: 30px;
+}
+
+.site_con .form_group {
+	height: 40px;
+	line-height: 40px;
+	margin-top: 10px;
+}
+
+.site_con .form_group label {
+	width: 100px;
+	float: left;
+	text-align: right;
+	font-size: 14px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.site_con .form_group input {
+	width: 300px;
+	height: 25px;
+	border: 1px solid #ddd;
+	float: left;
+	outline: none;
+	margin-top: 7px;
+	text-indent: 10px;
+}
+
+.site_con .form_group2 {
+	height: 90px;
+}
+
+.site_area {
+	width: 280px;
+	height: 60px;
+	border: 1px solid #ddd;
+	outline: none;
+	padding: 10px;
+}
+
+.info_submit {
+	width: 80px;
+	height: 30px;
+	background-color: 	#DCDCDC ;
+	border: 0px;
+	color: #fff;
+	margin: 10px 0 10px 100px;
+	cursor: pointer;
+	font-family: 'Microsoft Yahei'
+}
+
+.info_address {
+	width: 80px;
+	height: 30px;
+	background-color: 	#DCDCDC ;
+	border: 0px;
+	color: #fff;
+	margin: 10px 0 10px 30px;
+	cursor: pointer;
+	font-family: 'Microsoft Yahei'
+}
+
+.stress {
+	color:  	#DCDCDC ;
+}
+
+
+/* 把标签默认的间距设为0 */
+
+body,
+ul,
+ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dd,
+select,
+input,
+textarea,
+form {
+	margin: 0;
+	padding: 0
+}
+
+
+/* 让h标签文字大小继承body的文字设置 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+
+/* 去掉列表默认的图标 */
+
+ul,
+ol {
+	list-style: none;
+}
+
+
+/* 去掉em默认的斜体 */
+
+em {
+	font-style: normal;
+}
+
+
+/* 去掉a标签默认的下划线 */
+
+a {
+	text-decoration: none;
+}
+
+
+/* 去掉加链接时产生的框线 */
+
+img {
+	border: 0;
+}
+
+
+/* 清除浮动 */
+
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	zoom: 1
+}
+
+
+/* 浮动 */
+
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+.clearfix{
+	background: rgba(232,245,253,0.7);
+}

@@ -1,0 +1,694 @@
+/*!common:widget/css/base.css*/
+
+*{
+	margin: 0;
+	padding: 0
+}
+
+a{
+	text-decoration: none;
+}
+ul,
+ol,
+li {
+	list-style: none
+}
+.line:after,
+.clearfix:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden
+}
+
+.grid {
+	display: inline;
+	float: left
+}
+
+.wgt-footer-new {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	min-width: 1070px
+}
+
+.wgt-footer-new .footer-wp {
+	width: 1100px;
+	margin: 0 auto
+}
+
+.wgt-footer-new .footer-wp .footer-list {
+	width: 821px;
+	margin: 0 auto;
+	padding: 54px 0
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-item {
+	float: left
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-item .footer-title {
+	font-family: PingFangSC-Medium;
+	font-size: 20px;
+	line-height: 24px;
+	color: #666
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-item .icon-guide {
+	float: left;
+	width: 22px;
+	height: 22px;
+	margin: 1px 8px 0 0;
+	background: url(https://iknowpc.bdimg.com/static/common/widget/footer-new/img/icon-guide.85b90bf.svg) no-repeat
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-item .icon-intro {
+	float: left;
+	width: 23px;
+	height: 23px;
+	margin: 3px 12px 0 2px;
+	background: url(https://iknowpc.bdimg.com/static/common/widget/footer-new/img/icon-intro.0d38eed.svg) no-repeat
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-item .icon-sug {
+	float: left;
+	width: 21px;
+	height: 22px;
+	margin-right: 8px;
+	background: url(https://iknowpc.bdimg.com/static/common/widget/footer-new/img/icon-sug.8b9ee2c.svg) no-repeat
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-item .footer-link {
+	margin-top: 12px
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-item .footer-link li {
+	float: left;
+	width: 107px
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-item .footer-link li a {
+	font-family: PingFangSC-Regular;
+	font-size: 14px;
+	color: #666
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-guide {
+	width: 217px;
+	padding-left: 38px;
+	border-right: 1px solid #dadada
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-intro {
+	width: 224px;
+	padding-left: 66px;
+	border-right: 1px solid #dadada
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-sug {
+	position: relative;
+	width: 214px;
+	padding-left: 60px
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-sug>.user-tip {
+	position: absolute;
+	bottom: 55px;
+	left: 67px;
+	width: 251px;
+	height: 141px;
+	text-align: center;
+	background-image: url(https://iknowpc.bdimg.com/static/common/widget/footer-new/img/dialog.4e8771c.png?__sprite);
+	background-repeat: no-repeat;
+	letter-spacing: 0;
+	overflow: auto
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-sug>.user-tip>.title {
+	font-size: 18px;
+	color: #333;
+	margin-top: 35px
+}
+
+.wgt-footer-new .footer-wp .footer-list .footer-list-sug>.user-tip>.desc {
+	margin-top: 15px;
+	font-size: 14px;
+	color: #666
+}
+
+.wgt-footer-new .footer-new {
+	height: 66px;
+	line-height: 66px;
+	text-align: center;
+	font-size: 13px;
+	color: #929293;
+	
+}
+
+
+
+
+/*设置*/
+
+ 
+
+.wgt-banner .wgt-banner-wp .wgt-banner-container .circle-wp .circle-s {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 690px;
+	height: 700px;
+	padding: 0 60px;
+	margin-top: -350px;
+	margin-left: -405px;
+	border-radius: 600px;
+	background: url(https://iknowpc.bdimg.com/static/ihome/widget/banner/img/bg-circle-s.c8a81a4.png) no-repeat center bottom;
+	background: rgba(247, 247, 247, .65);
+	opacity: 0;
+	filter: alpha(opacity=0)
+}
+ 
+ 
+.wgt-banner .wgt-banner-wp .wgt-banner-container .circle-wp .bannerActiveDays:hover .signInTip span {
+	color: #4ACA6D
+}
+ 
+ 
+
+.wgt-banner .user-avatar-wp .user-name.animation {
+	animation: username 1.2s linear 1s 1 normal both;
+	-moz-animation: username 1.2s linear 1s 1 normal both;
+	-webkit-animation: username 1.2s linear 1s 1 normal both;
+	-o-animation: username 1.2s linear 1s 1 normal both;
+	-ms-animation: username 1.2s linear 1s 1 normal both
+}
+
+
+
+
+ 
+
+
+/*!ihome:widget/crumb/crumb.less*/
+
+.wgt-set-crumb {
+	padding-top: 20px;
+	line-height: 32px;
+	font-size: 14px;
+	color: #8b8b8b
+}
+ 
+ 
+.btn-32-black:hover,
+.btn-32-black:active {
+	text-decoration: none
+}
+
+.btn-32-black:hover {
+	border-color: #c4c4c4;
+	-webkit-box-shadow: 0 2px 2px #d6d6d6;
+	-moz-box-shadow: 0 2px 2px #d6d6d6;
+	box-shadow: 0 2px 2px #d6d6d6
+}
+
+
+.btn-26-black {
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	border: 1px solid transparent;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	padding: 0 10px;
+	border: 1px solid #d1d1d1;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #505050!important;
+	-webkit-box-shadow: 0 2px 2px #dcdcdc;
+	-moz-box-shadow: 0 2px 2px #dcdcdc;
+	box-shadow: 0 2px 2px #dcdcdc;
+	outline: 0;
+	height: 24px;
+	line-height: 24px
+}
+
+.btn-26-black:hover,
+.btn-26-black:active {
+	text-decoration: none
+}
+
+/*!ihome:widget/css/layout.less*/
+
+html,
+body {
+	min-width: 1240px
+}
+
+body.layout-ihome {
+	font-size: 15px;
+	font-family: "Microsoft YaHei", SimSun, arial, "\5b8b\4f53";
+	background-color: #f3f3f3
+}
+
+body.layout-ihome .container {
+	width: 1100px;
+	margin: 0 auto
+}
+
+body.layout-ihome section.container {
+	position: relative;
+	z-index: 1
+}
+
+body.layout-ihome .ihome-atricle,
+body.layout-ihome .ihome-aside {
+	position: relative;
+	z-index: 20;
+	top: -50px
+}
+
+body.layout-ihome .ihome-atricle {
+	left: 0;
+	width: 821px
+}
+
+body.layout-ihome .ihome-aside {
+	right: 0;
+	width: 265px
+}
+
+body.layout-ihome .ihome-content {
+	background-color: #fff;
+	overflow: hidden;
+	border: solid 1px #dcdcdc;
+	border-top: 0;
+	margin-top: -1px
+}
+
+body.layout-ihome section.set-main {
+	border: 1px solid #d1d1d1;
+	border-top: 1px solid #ececec;
+	background-color: #fff
+}
+
+/*!ihome:widget/js/custom-style/custom-style.less*/
+
+.custom-radio {
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: inline;
+	cursor: default;
+	position: relative;
+	width: 19px;
+	height: 19px;
+	margin-right: 4px
+}
+
+.custom-radio i {
+	width: 19px;
+	height: 19px;
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: inline;
+	vertical-align: top;
+	overflow: hidden;
+	background: url(https://iknowpc.bdimg.com/static/ihome/widget/js/custom-style/img/i-radio.40ca6e0.png?__sprite) no-repeat
+}
+
+.custom-radio i.hovered {
+	background: url(https://iknowpc.bdimg.com/static/ihome/widget/js/custom-style/img/i-radio-hover.8b8185e.png?__sprite) no-repeat
+}
+
+.custom-radio i.checked {
+	background: url(https://iknowpc.bdimg.com/static/ihome/widget/js/custom-style/img/i-radio-check.0e137f0.png?__sprite) no-repeat
+}
+
+.custom-radio i.disabled {
+	background: url(https://iknowpc.bdimg.com/static/ihome/widget/js/custom-style/img/i-radio-disable.37ff1e8.png?__sprite) no-repeat
+}
+
+.custom-radio input {
+	width: 19px;
+	height: 19px;
+	filter: alpha(opacity=0);
+	-khtml-opacity: 0;
+	-moz-opacity: 0;
+	opacity: 0;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0
+}
+
+.custom-checkbox {
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: inline;
+	cursor: default;
+	position: relative;
+	width: 19px;
+	height: 19px;
+	margin-right: 3px
+}
+
+	
+/*!ihome:widget/js/editor/editor.less*/
+
+body .mini-editor {
+	box-shadow: none;
+	border: 1px solid #ddd;
+	padding: 1px;
+	background-color: #f4f4f4;
+	position: relative;
+	z-index: 0;
+	overflow: inherit;
+	margin-bottom: 60px
+}
+
+body .mini-editor .addons {
+	position: absolute;
+	z-index: 2000;
+	bottom: -60px;
+	left: -2px;
+	width: 693px;
+	height: 36px;
+	padding-top: 13px;
+	background-color: #f4fef6
+}
+
+
+
+/*!ihome:widget/set/profile/profile.less*/
+
+.user-define-con .jcrop-holder {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	line-height: 330px;
+	vertical-align: middle
+}
+
+.wgt-set-cont {
+	padding: 42px 40px 82px
+}
+
+#tagSearch {
+	box-sizing: border-box;
+	width: 362px;
+	height: 34px;
+	line-height: 32px;
+	border: 1px solid #DDD;
+	color: #333;
+	outline: 0;
+	padding: 0 10px;
+	font-size: 12px
+}
+
+#tagSearch:focus {
+	border-color: #4BCA6D
+}
+
+:-moz-placeholder {
+	color: #9EACB6
+}
+
+::-moz-placeholder {
+	color: #9EACB6
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+	color: #9EACB6
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+	color: #9EACB6
+}
+
+.webuploader-element-invisible {
+	opacity: 0
+}
+
+.wgt-set-profile .tag-mdf-wp {
+	margin-left: 80px;
+	display: none
+}
+
+.wgt-set-profile .btn-26-black:active {
+	background: #FFF
+}
+
+.wgt-set-profile .set-mod-btn {
+	position: relative
+}
+
+.wgt-set-profile .set-mod-btn.edit-set-mod .edit-toggle {
+	display: block
+}
+
+.wgt-set-profile .set-mod-btn.edit-set-mod .edit-btn-wp {
+	position: absolute;
+	top: 0;
+	left: 0;
+	white-space: nowrap;
+	width: 120px;
+	display: none
+}
+
+.wgt-set-profile .set-mod-btn.edit-set-mod .edit-btn-wp .btn-26-black.green {
+	border: 1px solid #4DC86F;
+	background: #4DC86F;
+	color: #FFF!important
+}
+
+
+
+.wgt-set-profile .set-bind-mod {
+	border: 0;
+	padding: 32px 10px 0
+}
+
+
+.wgt-set-profile .set-mod .set-mod-line {
+	width: 440px;
+	line-height: 30px;
+	min-height: 30px;
+	margin-bottom: 39px
+}
+
+
+
+.wgt-set-profile .set-mod .set-mod-line.editing #tag-warn {
+	color: red;
+	font-size: 12px;
+	line-height: 20px;
+	position: absolute;
+	left: 80px;
+	bottom: 4px;
+	display: none
+}
+
+.wgt-set-profile .set-mod .set-mod-line.editing i.tag-delete {
+	display: block
+}
+
+.wgt-set-profile .set-mod .set-mod-line.tag-search-wp {
+	margin-bottom: 20px
+}
+
+.wgt-set-profile .set-mod .set-mod-line.rec-tag-wp .change-tag {
+	font-size: 12px;
+	line-height: 20px;
+	margin-top: 6px;
+	color: #3F88BF
+}
+
+.wgt-set-profile .set-bind-mod .set-bind-line {
+	margin-bottom: 24px
+}
+
+.wgt-set-profile .set-mod-info {
+	width: 390px
+}
+
+.wgt-set-profile .set-mod-info .set-mod-label {
+	width: 70px;
+	float: left;
+	margin-right: 10px;
+	white-space: nowrap;
+	overflow: visible
+}
+
+.wgt-set-profile .set-mod-info .set-mod-for {
+	overflow: hidden;
+	word-wrap: break-word;
+	line-height: 30px;
+	min-height: 30px;
+	color: #333;
+	margin-right: 20px;
+	outline: 0
+}
+
+
+
+.wgt-set-profile .set-sign-line .set-mod-info {
+	width: 690px
+}
+
+.wgt-set-profile .set-image-block.grid {
+	float: right;
+	width: 124px;
+	height: 160px;
+	text-align: center;
+	line-height: 1;
+	font-size: 0
+}
+
+.wgt-set-profile .set-image-block.grid .image-show-wp {
+	position: relative;
+	width: 122px;
+	height: 122px;
+	border: 1px solid #DDD;
+	margin-bottom: 10px
+}
+
+.wgt-set-profile .set-image-block.grid .image-show-wp img {
+	width: 100%;
+	height: 100%;
+	border: 0
+}
+
+.wgt-set-profile .edit-sign p {
+	outline: 0
+}
+
+.wgt-set-profile .edit-sign input {
+	outline: 0;
+	border: 0;
+	display: block;
+	width: 100%;
+	line-height: 30px;
+	font-size: 14px;
+	font-family: "Microsoft YaHei", tahoma
+}
+
+.wgt-set-profile .edit-sign .sign-tips {
+	float: right;
+	position: relative;
+	bottom: 0;
+	margin-left: 10px;
+	display: none;
+	font-size: 12px;
+	color: #9EACB6
+}
+
+.wgt-set-profile .edit-sign .sign-tips.red {
+	color: red;
+	animation: tada .3s 1
+}
+
+.wgt-set-profile .edit-sign.editing .sign-tips {
+	display: block
+}
+
+.wgt-set-profile #name-div.editing:focus,
+.wgt-set-profile #name-div.editing,
+.wgt-set-profile .edit-sign.editing,
+.wgt-set-profile .edit-sign.editing:focus {
+	position: relative;
+	padding: 0 10px;
+	border: 1px solid #4BCA6D;
+	outline: 0
+}
+
+.wgt-set-profile #name-div.editing:focus p,
+.wgt-set-profile #name-div.editing p,
+.wgt-set-profile .edit-sign.editing p,
+.wgt-set-profile .edit-sign.editing:focus p {
+	display: none
+}
+
+.wgt-set-profile .btn-26-black {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	font-size: 14px
+}
+
+ 
+
+.wgt-set-profile .set-tip {
+	margin-left: 12px;
+	font-size: 12px;
+	color: #dfdfdf
+}
+
+.wgt-set-profile .checkbox-label {
+	margin-left: 60px
+}
+
+
+ 
+/*!ihome:widget/set/profile/tpl/avatar-dialog.less*/
+.ui-dialog.ihome-set-avatar .button-group-wp .btn-32-green {
+	background: #4DC86F;
+	border: 1px solid #4DC86F;
+	color: #FFF;
+	margin-right: 7px
+}
+
+.ui-dialog.ihome-set-avatar .button-group-wp .btn-32-green:hover {
+	background: #35B558
+}
+
+.ui-dialog.ihome-set-avatar .button-group-wp .btn-32-white {
+	background: #FFF;
+	border: 1px solid #DAE0E4;
+	color: #333;
+	margin-right: 7px
+}
+
+
+/**1*/
+/*!ihome:widget/set/tab/tab.less*/
+
+
+.wgt-set-tab li {
+	float: left;
+	margin-right: 50px
+}
+
+.wgt-set-tab li a {
+	display: block;
+	height: 42px;
+	padding: 0 14px;
+	border-bottom: 4px solid #fcfcfc;
+	line-height: 42px;
+	font-size: 18px;
+	color: #8b8b8b
+}
+
+.wgt-set-tab li a.active {
+	color: #35b558;
+	border-bottom-color: #4aca6d
+}
+/*!ihome:widget/set/verify/verify.less*/
