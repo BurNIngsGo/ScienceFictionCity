@@ -1,6 +1,7 @@
 package com.sfc.service;
 
 import com.sfc.entity.ShoppingCart;
+import com.sfc.entity.ShoppingInfo;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -11,7 +12,7 @@ public interface ShoppingCartService {
      * @param uId
      * @return
      */
-    public List<ShoppingCart> getShoppingCartByUId(int uId) throws SQLException;
+    public List<ShoppingInfo> getShoppingCartByUId(int uId) throws SQLException;
 
     /**
      * 添加商品到购物车

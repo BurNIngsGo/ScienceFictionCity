@@ -3,6 +3,7 @@ package com.sfc.serviceImpl;
 import com.sfc.connpool.BaseDaoUtil;
 import com.sfc.dao.FriendRelationDao;
 import com.sfc.dao.ManageEvaDao;
+import com.sfc.entity.Friend;
 import com.sfc.entity.FriendRelation;
 import com.sfc.impl.FriendRelationDaoImpl;
 import com.sfc.impl.ManageEvaDaoImpl;
@@ -76,6 +77,19 @@ public class FriendRelationServiceImpl implements FriendRelationService {
         FriendRelationDao friendRelationDao = new FriendRelationDaoImpl(conn);
         try {
             return friendRelationDao.initFriendList(uId);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            BaseDaoUtil.closeAll(null,null,conn);
+        }
+    }
+
+    @Override
+    public List<Friend> showFriend(int uId) throws SQLException {
+        Connection conn =  BaseDaoUtil.getConnection();
+        FriendRelationDao friendRelationDao = new FriendRelationDaoImpl(conn);
+        try {
+            return friendRelationDao.showFriend(uId);
         } catch (SQLException e) {
             throw e;
         } finally {

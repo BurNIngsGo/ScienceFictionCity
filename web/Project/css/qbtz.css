@@ -1,0 +1,179 @@
+.content{
+		/*background-color:black ;*/
+}
+
+body{
+	overflow:hidden ;
+}
+/**{
+	border: 1px solid red;
+	margin: 0;
+	padding: 0;
+}*/
+
+
+img{
+	border: none;	
+}
+
+/**
+ * 主要内容
+ */
+.sqCon{
+	width: 920px;
+	margin: 0 auto;
+	background-color:rgba(42,59,85,0.7) ;
+	/*border: 1px solid red;*/
+	margin-top:40px ;
+}
+.conHead{
+	width: 920px;
+	height: 130px;
+	background: white;
+	opacity: 0.7;
+	/*padding: 42px 28px 0px 44px;*/
+	margin: 0 auto;
+	/*border: 1px solid red;*/
+	text-align: center;
+	
+}
+
+/**{
+	list-style: none;
+}*/
+
+.headPic{
+	width: 100px;
+	height: 100px;
+	
+	margin: 14px 800px 10px 25px;
+	background:url(../images/22.png);
+	background-position: center;
+	background-size: cover;
+	background-color: darkred
+	
+}
+.imgsyan{
+	
+}
+.inf{
+	width: 280px;
+	height: 100px;
+	
+	margin: -98px 800px 10px 145px;
+}
+
+.inf01{
+	width: 100px;
+	height: 18px;
+	margin: 22px 10px 10px 4px;
+	color: #000;
+}
+.bb{
+	font-size: 14px;
+	color: #A1A1A1;
+}
+.inf02{
+	width: 180px;
+	height: 18px;
+	margin: 5px 10px 10px 6px;
+}
+
+.inf03{
+	width: 60px;
+	height: 27px;
+	line-height: 27px;
+	margin: -33px 10px 10px 200px;
+	background-color: limegreen;
+	color: #FFFFFF;
+	font-size:15px ;
+	font-weight: 900;
+	
+}
+#title{
+	width: 620px;
+	height: 110px;
+	display: inline-block;
+	/*border: 1px solid red;*/
+	float: left;
+}
+#aaaa{
+	margin: 10px 10px 20px 50px;
+	line-height: 62px;
+}
+#rcon{
+	width: 296px; 
+	display: inline-block;
+	/*border: 1px solid red;*/
+
+	
+	
+}
+#con01{
+	width: 65px;
+	height: 20px;
+	font-size:15px ;
+	font-weight: 900;
+	margin: 45px 10px 10px 50px;
+	color: red;
+}
+#con02{
+	width: 103px;
+	height: 24px;
+	/*border: 1px solid red;*/
+	margin: -30px 10px 10px 450px;
+	line-height: 24px;
+	font-size:15px ;
+	font-weight: 900;
+	background-color:red ;
+	color: #FFFFFF;
+	
+}
+
+.litHead{
+	display: inline-block;
+	width: 620px;
+	height: 60px;
+	/*border: 1px solid red;*/
+}
+.paixu{
+	width: 80px;
+	height: 20px;
+	/*border: 1px solid red;*/
+	margin: -42px 10px 10px 450px;
+}
+
+#tzshow{
+	width: 620px;
+	height: 1021px;
+	/*border: 1px solid red;*/
+}
+
+.allCom{
+	width: 590px;
+	height: 200px;
+	border: 1px solid red;
+}
+
+.vicon{
+	width: 100%;
+	background: white;
+	opacity: 0.2;
+	height: 115px;
+}
+.bgVideos{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -999;
+	left: 0;
+	top: 0;
+}
+.bgVideos video{
+	width: 100%;
+}
+.voerScllo{
+	overflow-y: scroll;
+	height: 600px;
+	width: 622px;
+}
