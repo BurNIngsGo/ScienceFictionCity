@@ -20,7 +20,7 @@ public class ShoppingCartDaoImpl extends BaseDao implements ShoppingCartDao {
      * @return
      */
     public List<ShoppingInfo> getShoppingCartByUId(int uId) throws SQLException{
-        String strSql = "SELECT sh.`shId`, b.`bImg`,b.`bName`,sh.`shDate`,sh.`shCount`,sh.`price`,b.`bPrice` FROM" +
+        String strSql = "SELECT sh.`shId`, b.`bImg`,b.`bName`,sh.`shDate`,sh.`shCount`,sh.`shPrice`,b.`bPrice` FROM" +
                 " shoppingcart sh INNER JOIN bookinfo b ON sh.`bId` = b.`bId`  WHERE sh.`uId` = ?";
         Object[] param = {uId};
         try {

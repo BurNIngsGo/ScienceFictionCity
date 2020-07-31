@@ -118,16 +118,32 @@
 			})
 		</script>
 	<script type="text/javascript">
+		function userId(){
+			$.ajax({
+				url:"/ScienceFictionCity/Login",
+				data:{action:"initUser"},
+				dataType:"json",
+				success:function(data) {
+					if(data != null){
+						return data;
+					}else{
+						alert("请登录");
+						window.open("/ScienceFictionCity/");
+					}
+				}
+			})
+		}
 		$(function () {
 
 			var $tbody = $(".checkout__summary tbody");
 			$.ajax({
 				url:"/ScienceFictionCity/Shopping",
-				data:{userId:1,action:"show"},
+				data:{userId:userId().uId,action:"show"},
 				dataType:"JSON",
 				success:function(data){
 					data = JSON.stringify(data);
 					var avg = 0;
+					var i = 0;
 					$(jQuery.parseJSON(data)).each(function () {
 						str = "/ScienceFictionCity/image/"+this.bImg;
 						$div = $("<div class=\"dummy-grid__item\" style = \"background-image: url("+str+");background-size: contain\"> </div>");
@@ -139,9 +155,13 @@
 						$tbody.append($shp);
 						 avg +=sum;
 						$("#tatalPrice").text("$"+avg);
-						var $length = $(".checkout__summary tbody tr").length;
-						$(".checkout__count").html($length);
+						// var $length = $(".checkout__summary tbody tr").length;
+						// $(".checkout__count").html($length);
+						i++;
 					})
+					if(i == 0) {
+						$tbody.append("<h1>购物车空空如也</h1>");
+					}
 				},
 				error:function (a,b,c) {
 					alert(a+","+b+","+c);
