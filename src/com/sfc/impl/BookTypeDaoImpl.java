@@ -16,7 +16,10 @@ public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
         super(conn);
     }
 
-    @Override
+    /**
+     * 获取所有图书类型
+     * @return
+     */
     public List<BookType> getBookTypeAll() throws SQLException{
         String strSql="select * from bookType";
         try {
@@ -26,7 +29,11 @@ public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
         }
     }
 
-    @Override
+    /**
+     * 根据类型id获取类型
+     * @param tId
+     * @return
+     */
     public BookInfo getBookTypeByTId(int tId) throws SQLException{
         String strSql="select * from bookType where  tid=?";
         Object[] param ={tId};
@@ -42,7 +49,11 @@ public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
         }
     }
 
-    @Override
+    /**
+     * 根据类型id删除类型
+     * @param tId
+     * @return
+     */
     public int delBookTypeByTId(int tId) throws SQLException{
         String strSql="delete  from bookType where tid=?";
         Object[] param ={tId};
@@ -53,7 +64,11 @@ public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
         }
     }
 
-    @Override
+    /**
+     * 根据类型名称删除类型
+     * @param tId
+     * @return
+     */
     public int delBookTypeByTName(String tId) throws  SQLException{
         String strSql="delete from bookType where tName=?";
         Object[] param ={tId};
@@ -64,7 +79,11 @@ public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
         }
     }
 
-    @Override
+    /**
+     * 添加类型信息
+     * @param bk
+     * @return
+     */
     public int insertBookType(BookType bk) throws  SQLException{
         String strSql="insert  bookType(tName) values(?)";
         Object[] param ={bk.gettName()};
@@ -75,7 +94,11 @@ public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
         }
     }
 
-    @Override
+    /**
+     * 更新图书类型信息
+     * @param bk
+     * @return
+     */
     public int updateBookTypeByTid(BookType bk) throws  SQLException{
         String strSql="update  from bookType set tName=? where tid=?";
         Object[] param ={bk.gettName(),bk.gettId()};
@@ -86,7 +109,12 @@ public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
         }
     }
 
-    @Override
+    /**
+     * 根据图书类型名称获取类型id
+     * @param tName
+     * @return
+     * @throws SQLException
+     */
     public int getBookTypeIdByTypeName(String tName) throws SQLException {
         String strSql = "select * from booktype where tName = ?";
         Object[] param = {tName};
@@ -97,7 +125,12 @@ public class BookTypeDaoImpl extends BaseDao implements BookTypeDao{
         }
     }
 
-    @Override
+    /**
+     * 根据类型名称获取类型信息
+     * @param tName
+     * @return
+     * @throws SQLException
+     */
     public List<BookType> getAllByTypeName(String tName) throws SQLException {
         String strSql = "select * from booktype where tName like \"%\"?\"%\"";
         Object[] param = {tName};

@@ -114,7 +114,12 @@ public class BookTypeServiceImpl implements BookTypeService {
         }
     }
 
-    @Override
+    /**
+     * 根据图书类型名称获取类型id
+     * @param bName
+     * @return
+     * @throws SQLException
+     */
     public int getBookTypeIdByTypeName(String bName) throws SQLException {
         Connection conn = BaseDaoUtil.getConnection();
         BookTypeDao bookInfoDao = new BookTypeDaoImpl(conn);
@@ -127,12 +132,17 @@ public class BookTypeServiceImpl implements BookTypeService {
         }
     }
 
-    @Override
-    public List<BookType> getAllByTypeName(String tName) throws SQLException {
+    /**
+     * 根据类型名称获取类型信息
+     * @param bName
+     * @return
+     * @throws SQLException
+     */
+    public List<BookType> getAllByTypeName(String bName) throws SQLException {
         Connection conn = BaseDaoUtil.getConnection();
         BookTypeDao bookInfoDao = new BookTypeDaoImpl(conn);
         try{
-            return bookInfoDao.getAllByTypeName(tName);
+            return bookInfoDao.getAllByTypeName(bName);
         } catch(SQLException e) {
             throw e;
         } finally {

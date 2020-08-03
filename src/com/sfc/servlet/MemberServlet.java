@@ -33,7 +33,7 @@ public class MemberServlet extends HttpServlet {
         UserInfoService userInfoService = new UserInfoServiceImpl();
 
         List<UserInfo> userList = null;
-        UserInfo userInfo = new UserInfo();
+//        UserInfo userInfo = new UserInfo();
         if ("select".equals(action)){
             try {
                 userList = userInfoService.selectGetUserByName(req.getParameter("tName"));

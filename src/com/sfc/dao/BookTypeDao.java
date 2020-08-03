@@ -51,11 +51,11 @@ public interface BookTypeDao {
 
     /**
      * 根据图书类型名称获取类型id
-     * @param bName
+     * @param tName
      * @return
      * @throws SQLException
      */
-    public int getBookTypeIdByTypeName(String bName) throws SQLException;
+    public int getBookTypeIdByTypeName(String tName) throws SQLException;
 
     /**
      * 根据类型名称获取类型信息
