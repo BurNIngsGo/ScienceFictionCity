@@ -232,7 +232,15 @@ public class BookInfoServiceImpl implements BookInfoService {
         }
     }
 
-    @Override
+    /**
+     * 根据多条件查询图书信息
+     * @param sType
+     * @param sPress
+     * @param bBeginTime
+     * @param bEndTime
+     * @return
+     * @throws SQLException
+     */
     public List getBookByTypeAndPressAndTime(String sType, String sPress, int bBeginTime, int bEndTime) throws SQLException {
         Connection conn = BaseDaoUtil.getConnection();
         BookTypeService bookTypeService = new BookTypeServiceImpl();
@@ -258,7 +266,10 @@ public class BookInfoServiceImpl implements BookInfoService {
         }
     }
 
-    @Override
+    /**
+     * 根据销量排序
+     * @return
+     */
     public List<BookInfo> getBookAllDesc() throws SQLException {
         Connection conn = BaseDaoUtil.getConnection();
         BookInfoDao bookInfoDao = new BookInfoDaoImpl(conn);
@@ -269,7 +280,12 @@ public class BookInfoServiceImpl implements BookInfoService {
         }
     }
 
-    @Override
+    /**
+     * 模糊查询
+     * @param uName
+     * @return
+     * @throws SQLException
+     */
     public List<BookInfo> getBookAllByBookName(String uName) throws SQLException {
         Connection conn = BaseDaoUtil.getConnection();
         BookInfoDao bookInfoDao = new BookInfoDaoImpl(conn);

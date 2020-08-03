@@ -8,7 +8,11 @@ import java.util.Date;
 
 public class ExpandToolDaoImpl implements ExpandToolDao {
 
-    @Override
+    /**
+     *
+     * @param stu
+     * @return
+     */
     public Function[] newArrayFunc(Object stu) {
         Function[] arrayFun = null;
         if(stu instanceof AddressInfo){

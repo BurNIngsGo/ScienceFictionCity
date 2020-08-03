@@ -37,6 +37,11 @@ public interface FriendRelationDao {
      */
     public int initFriendList(int uId) throws SQLException;
 
+    /**
+     * 获取好友详细列表
+     * @param uId
+     * @return
+     */
     public List<Friend> showFriend(int uId) throws SQLException;
 
 }

@@ -63,13 +63,18 @@ public class FriendRelationDaoImpl extends BaseDao implements FriendRelationDao 
         }
     }
 
-    @Override
+    /**
+     * 初始化好友列表是否有好友请求
+     * @param uId
+     * @return
+     */
     public int initFriendList(int uId) {
         return 0;
     }
 
     /**
      * 获取好友详细列表
+     * @param uId
      * @return
      */
     public List<Friend> showFriend(int uId) throws SQLException{

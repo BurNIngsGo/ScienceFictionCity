@@ -185,7 +185,11 @@ public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
         }
     }
 
-    @Override
+    /**
+     * 获取总数据量
+     * @return
+     * @throws SQLException
+     */
     public int getCount() throws SQLException {
         String strSql = "select count(1) from bookInfo";
         try {
@@ -196,7 +200,15 @@ public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
         }
     }
 
-    @Override
+    /**
+     * 根据多条件查询图书信息
+     * @param bType
+     * @param bPress
+     * @param bBeginTime
+     * @param bEndTime
+     * @return
+     * @throws SQLException
+     */
     public List<BookInfo> getBookByTypeAndPressAndTime(int bType, int bPress, int bBeginTime, int bEndTime) throws SQLException {
         String strSql;
         Object[] param;
@@ -246,7 +258,10 @@ public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
         }
     }
 
-    @Override
+    /**
+     * 根据销量排序
+     * @return
+     */
     public List<BookInfo> getBookAllDesc() throws SQLException{
         String strSql = "select * from bookinfo order by bSales desc";
         try {
@@ -256,7 +271,12 @@ public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
         }
     }
 
-    @Override
+    /**
+     * 模糊查询
+     * @param uName
+     * @return
+     * @throws SQLException
+     */
     public List<BookInfo> getBookAllByBookName(String uName) throws SQLException {
         String strSql = "select * from bookinfo where bName like \"%\"?\"%\"";
         Object[] param = {uName};

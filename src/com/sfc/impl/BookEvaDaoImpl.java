@@ -88,7 +88,12 @@ public class BookEvaDaoImpl extends BaseDao implements BookEvaDao {
         }
     }
 
-    @Override
+    /**
+     * 对评论分页
+     * @param currentPage
+     * @param curTotalSize
+     * @return
+     */
     public List<BookEva> getEvaPage(int currentPage, int curTotalSize) {
         return null;
     }

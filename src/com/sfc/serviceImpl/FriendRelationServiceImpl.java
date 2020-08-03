@@ -84,7 +84,11 @@ public class FriendRelationServiceImpl implements FriendRelationService {
         }
     }
 
-    @Override
+    /**
+     * 获取好友详细列表
+     * @param uId
+     * @return
+     */
     public List<Friend> showFriend(int uId) throws SQLException {
         Connection conn =  BaseDaoUtil.getConnection();
         FriendRelationDao friendRelationDao = new FriendRelationDaoImpl(conn);

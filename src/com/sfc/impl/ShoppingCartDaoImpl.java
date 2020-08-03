@@ -75,7 +75,12 @@ public class ShoppingCartDaoImpl extends BaseDao implements ShoppingCartDao {
         }
     }
 
-    @Override
+    /**
+     * 获取每页信息
+     * @param currentPage
+     * @param curtotalSize
+     * @return
+     */
     public List<ShoppingCart> getShoppingCartPage(int currentPage, int curtotalSize) {
         return null;
     }

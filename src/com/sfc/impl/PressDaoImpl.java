@@ -91,7 +91,12 @@ public class PressDaoImpl extends BaseDao implements PressDao {
         }
     }
 
-    @Override
+    /**
+     * 根据出版社名称获取出版社名称
+     * @param pName
+     * @return
+     * @throws SQLException
+     */
     public int getPressIdByPressName(String pName) throws SQLException {
         String strSql = "select * from press where prName = ?";
         Object[] param = {pName};
@@ -102,7 +107,12 @@ public class PressDaoImpl extends BaseDao implements PressDao {
         }
     }
 
-    @Override
+    /**
+     * 根据出版社名称出版社信息
+     * @param pName
+     * @return
+     * @throws SQLException
+     */
     public List<Press> getAllByPrName(String pName) throws SQLException{
         String strSql = "select * from press where PrName like \"%\"?\"%\"";
         Object[] param = {pName};
