@@ -5,7 +5,13 @@ import com.sfc.entity.UserInfo;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:用户信息业务逻辑接口
+ * @InterfaceName :UserInfoService
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:30
+ * @Version:1.0
+ */
 public interface UserInfoService {
     /**
      * 实现用户登录

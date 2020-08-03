@@ -13,14 +13,18 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-
+/**
+ * @Description:用户登录注册操作
+ * @ClassName :LoginServlet
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:55
+ * @Version:1.0
+ */
 public class LoginServlet extends HttpServlet {
-    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,resp);
     }
 
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");

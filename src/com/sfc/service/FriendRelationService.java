@@ -5,7 +5,13 @@ import com.sfc.entity.FriendRelation;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:好友信息业务逻辑接口
+ * @InterfaceName :FriendRelationService
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:22
+ * @Version:1.0
+ */
 public interface FriendRelationService {
     /**
      * 获取好友列表

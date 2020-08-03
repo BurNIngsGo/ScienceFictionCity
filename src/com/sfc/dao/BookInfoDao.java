@@ -4,7 +4,13 @@ import com.sfc.entity.BookInfo;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:图书信息
+ * @InterfaceName :BookInfoDao
+ * @Author: AiGuo
+ * @DATE:2020/8/3 18:01
+ * @Version:1.0
+ */
 public interface BookInfoDao {
     /**
      * 获取所有图书信息

@@ -7,7 +7,13 @@ import com.sfc.entity.MemberInfo;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:管理员实现类
+ * @ClassName :MemberInfoDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:32
+ * @Version:1.0
+ */
 public class MemberInfoDaoImpl extends BaseDao implements MemberInfoDao {
     public MemberInfoDaoImpl(Connection conn) {
         super(conn);

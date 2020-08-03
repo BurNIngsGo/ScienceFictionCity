@@ -9,7 +9,13 @@ import com.sfc.entity.FriendRelation;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:好友关系实现
+ * @ClassName :FriendRelationDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:30
+ * @Version:1.0
+ */
 public class FriendRelationDaoImpl extends BaseDao implements FriendRelationDao {
 
     public FriendRelationDaoImpl(Connection conn) {

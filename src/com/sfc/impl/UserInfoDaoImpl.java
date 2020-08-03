@@ -9,7 +9,13 @@ import com.sfc.entity.UserInfo;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:用户表实现类
+ * @ClassName :UserInfoDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:35
+ * @Version:1.0
+ */
 public class UserInfoDaoImpl extends BaseDao implements UserInfoDao {
     public UserInfoDaoImpl(Connection conn) {
         super(conn);

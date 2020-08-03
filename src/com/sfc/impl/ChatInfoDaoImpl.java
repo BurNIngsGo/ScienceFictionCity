@@ -9,7 +9,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * @Description:聊天信息实现
+ * @ClassName :ChatInfoDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:29
+ * @Version:1.0
+ */
 public class ChatInfoDaoImpl extends BaseDao implements ChatInfoDao {
     public ChatInfoDaoImpl(Connection conn) {
         super(conn);

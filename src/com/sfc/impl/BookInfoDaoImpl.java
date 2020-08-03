@@ -8,7 +8,13 @@ import java.awt.print.Book;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:图书信息实现
+ * @ClassName :BookInfoDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:28
+ * @Version:1.0
+ */
 public class BookInfoDaoImpl extends BaseDao implements BookInfoDao {
     public BookInfoDaoImpl(Connection conn) {
         super(conn);

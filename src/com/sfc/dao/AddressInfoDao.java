@@ -4,7 +4,13 @@ import com.sfc.entity.AddressInfo;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:地址
+ * @InterfaceName :AddressInfoDao
+ * @Author: AiGuo
+ * @DATE:2020/8/3 18:00
+ * @Version:1.0
+ */
 public interface AddressInfoDao {
 
     /**

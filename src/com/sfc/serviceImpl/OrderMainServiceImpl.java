@@ -11,7 +11,13 @@ import com.sfc.service.OrderMainService;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:订单主要信息业务逻辑实现
+ * @ClassName :OrderMainServiceImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:45
+ * @Version:1.0
+ */
 public class OrderMainServiceImpl implements OrderMainService {
     /**
      * 获取用户的订单信息

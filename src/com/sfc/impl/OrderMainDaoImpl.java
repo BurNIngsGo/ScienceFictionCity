@@ -7,7 +7,13 @@ import com.sfc.entity.OrderMain;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:订单实现
+ * @ClassName :OrderMainDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:33
+ * @Version:1.0
+ */
 public class OrderMainDaoImpl extends BaseDao implements OrderMainDao {
     public OrderMainDaoImpl(Connection conn) {
         super(conn);

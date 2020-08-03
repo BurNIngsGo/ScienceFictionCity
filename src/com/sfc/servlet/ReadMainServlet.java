@@ -13,14 +13,18 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:阅读主页操作
+ * @ClassName :ReadMainServlet
+ * @Author: AiGuo
+ * @DATE:2020/8/3 20:01
+ * @Version:1.0
+ */
 public class ReadMainServlet extends HttpServlet {
-    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req, resp);
     }
 
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");

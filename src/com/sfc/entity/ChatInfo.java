@@ -4,7 +4,9 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.sfc.dao.EntityClass;
 
 import java.util.Date;
-
+/**
+ * 聊天信息类
+ */
 public class ChatInfo implements EntityClass<ChatInfo> {
     private int uId;            //用户编号
 

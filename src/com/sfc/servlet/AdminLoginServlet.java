@@ -13,15 +13,19 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-
+/**
+ * @Description:管理员登录实现
+ * @ClassName :AdminLoginServlet
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:50
+ * @Version:1.0
+ */
 public class AdminLoginServlet extends HttpServlet {
 
-    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,resp);
     }
 
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");

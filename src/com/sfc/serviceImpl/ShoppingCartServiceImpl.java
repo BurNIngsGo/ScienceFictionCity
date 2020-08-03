@@ -12,7 +12,13 @@ import com.sfc.service.ShoppingCartService;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:购物车信息业务逻辑实现
+ * @ClassName :ShoppingCartServiceImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:47
+ * @Version:1.0
+ */
 public class ShoppingCartServiceImpl implements ShoppingCartService {
     /**
      * 根据用户id获取该用户的购物车信息

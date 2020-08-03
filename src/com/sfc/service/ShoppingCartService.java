@@ -5,7 +5,13 @@ import com.sfc.entity.ShoppingInfo;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:购物车信息业务逻辑接口
+ * @InterfaceName :ShoppingCartService
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:28
+ * @Version:1.0
+ */
 public interface ShoppingCartService {
     /**
      * 根据用户id获取该用户的购物车信息

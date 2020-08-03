@@ -7,7 +7,13 @@ import com.sfc.entity.OrderDetailed;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:订单详情实现类
+ * @ClassName :OrdereDetailedDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:32
+ * @Version:1.0
+ */
 public class OrdereDetailedDaoImpl extends BaseDao implements OrderDetailedDao {
     public OrdereDetailedDaoImpl(Connection conn) {
         super(conn);

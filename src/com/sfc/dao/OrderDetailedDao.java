@@ -4,6 +4,13 @@ import com.sfc.entity.OrderDetailed;
 
 import java.sql.SQLException;
 
+/**
+ * @Description:订单详细信息
+ * @InterfaceName :OrderDetailedDao
+ * @Author: AiGuo
+ * @DATE:2020/8/3 18:07
+ * @Version:1.0
+ */
 public interface OrderDetailedDao {
     /**
      * 根据订单编号获取订单信息

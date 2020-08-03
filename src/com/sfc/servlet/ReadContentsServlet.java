@@ -13,15 +13,21 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-
+/**
+ * @Description:阅读类型操作
+ * @ClassName :ReadContentsServlet
+ * @Author: AiGuo
+ * @DATE:2020/8/3 20:00
+ * @Version:1.0
+ */
 public class ReadContentsServlet extends HttpServlet {
 
-    @Override
+
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req, resp);
     }
 
-    @Override
+
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");

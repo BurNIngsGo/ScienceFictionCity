@@ -10,7 +10,13 @@ import com.sfc.service.OrdereDetailedService;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-
+/**
+ * @Description:订单详细信息业务逻辑实现
+ * @ClassName :OrdereDetailedServiceImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:44
+ * @Version:1.0
+ */
 public class OrdereDetailedServiceImpl implements OrdereDetailedService {
     /**
      * 根据订单编号获取订单信息

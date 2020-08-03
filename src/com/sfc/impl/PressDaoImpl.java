@@ -7,7 +7,13 @@ import com.sfc.entity.Press;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:出版社实现类
+ * @ClassName :PressDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:34
+ * @Version:1.0
+ */
 public class PressDaoImpl extends BaseDao implements PressDao {
     public PressDaoImpl(Connection conn) {
         super(conn);

@@ -7,7 +7,13 @@ import com.sfc.entity.ManageEva;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:管理评论实现类
+ * @ClassName :ManageEvaDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:31
+ * @Version:1.0
+ */
 public class ManageEvaDaoImpl extends BaseDao implements ManageEvaDao {
     public ManageEvaDaoImpl(Connection conn) {
         super(conn);

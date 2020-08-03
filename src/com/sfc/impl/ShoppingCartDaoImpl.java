@@ -8,7 +8,13 @@ import com.sfc.entity.ShoppingInfo;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:购物车实现类
+ * @ClassName :ShoppingCartDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:34
+ * @Version:1.0
+ */
 public class ShoppingCartDaoImpl extends BaseDao implements ShoppingCartDao {
     public ShoppingCartDaoImpl(Connection conn) {
         super(conn);

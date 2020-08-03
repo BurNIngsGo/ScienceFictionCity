@@ -4,7 +4,13 @@ import com.sfc.entity.ManageEva;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:管理评论
+ * @InterfaceName :ManageEvaDao
+ * @Author: AiGuo
+ * @DATE:2020/8/3 18:07
+ * @Version:1.0
+ */
 public interface ManageEvaDao {
     /**
      * 根据管理者id获取该管理者操作的评论

@@ -2,7 +2,9 @@ package com.sfc.entity;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.sfc.dao.EntityClass;
-
+/**
+ * 好友类
+ */
 public class Friend implements EntityClass<Friend> {
     public String getHeadImg() {
         return headImg;

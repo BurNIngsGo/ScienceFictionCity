@@ -17,15 +17,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * @Description:最新图书信息
+ * @ClassName :newBookServlet
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:57
+ * @Version:1.0
+ */
 public class newBookServlet extends HttpServlet {
 
-    @Override
+
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,resp);
     }
 
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BookInfoService bookInfoService = new BookInfoServiceImpl();
 

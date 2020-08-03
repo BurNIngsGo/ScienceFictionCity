@@ -3,7 +3,13 @@ package com.sfc.service;
 import com.sfc.entity.OrderDetailed;
 
 import java.sql.SQLException;
-
+/**
+ * @Description:订单详情业务逻辑接口
+ * @InterfaceName :OrdereDetailedService
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:25
+ * @Version:1.0
+ */
 public interface OrdereDetailedService {
     /**
      * 根据订单编号获取订单信息

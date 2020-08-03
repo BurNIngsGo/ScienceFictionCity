@@ -10,7 +10,13 @@ import com.sfc.service.MemberInfoService;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-
+/**
+ * @Description:会员信息业务逻辑实现
+ * @ClassName :MemberInfoServiceImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:43
+ * @Version:1.0
+ */
 public class MemberInfoServiceImpl implements MemberInfoService {
     /**
      * 根据会员id获取会员信息

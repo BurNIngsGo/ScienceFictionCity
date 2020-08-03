@@ -4,7 +4,13 @@ import com.sfc.entity.UserInfo;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:用户信息接口
+ * @InterfaceName :UserInfoDao
+ * @Author: AiGuo
+ * @DATE:2020/8/3 18:12
+ * @Version:1.0
+ */
 public interface UserInfoDao {
     /**
      * 实现用户登录

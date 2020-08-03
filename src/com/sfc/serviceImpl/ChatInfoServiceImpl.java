@@ -10,7 +10,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * @Description:聊天信息业务逻辑实现
+ * @ClassName :ChatInfoServiceImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:41
+ * @Version:1.0
+ */
 public class ChatInfoServiceImpl implements ChatInfoService {
     /**
      * 获取聊天信息

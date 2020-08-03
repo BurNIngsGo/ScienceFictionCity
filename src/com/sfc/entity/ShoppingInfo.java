@@ -4,7 +4,9 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.sfc.dao.EntityClass;
 
 import java.util.Date;
-
+/**
+ * 购物车类
+ */
 public class ShoppingInfo implements EntityClass<ShoppingInfo> {
     private int shId;
     private String bImg;

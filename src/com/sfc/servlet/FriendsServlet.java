@@ -15,15 +15,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * 好友
+ * @Description:好友操作
+ * @ClassName :FriendsServlet
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:53
+ * @Version:1.0
  */
 public class FriendsServlet extends HttpServlet {
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
 
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");

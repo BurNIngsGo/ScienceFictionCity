@@ -10,7 +10,13 @@ import com.sfc.service.UserInfoService;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:用户信息业务逻辑实现
+ * @ClassName :UserInfoServiceImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:49
+ * @Version:1.0
+ */
 public class UserInfoServiceImpl implements UserInfoService {
     /**
      * 实现用户登录

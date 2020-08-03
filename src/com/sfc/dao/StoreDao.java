@@ -4,7 +4,13 @@ import com.sfc.entity.Store;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:收藏信息
+ * @InterfaceName :StoreDao
+ * @Author: AiGuo
+ * @DATE:2020/8/3 18:10
+ * @Version:1.0
+ */
 public interface StoreDao {
     /**
      * 根据用户id获取收藏夹

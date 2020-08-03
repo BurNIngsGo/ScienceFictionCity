@@ -7,6 +7,13 @@ import com.sfc.entity.BookType;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * @Description:图书类型
+ * @InterfaceName :BookTypeDao
+ * @Author: AiGuo
+ * @DATE:2020/8/3 18:00
+ * @Version:1.0
+ */
 public interface BookTypeDao {
     /**
      * 获取所有图书类型

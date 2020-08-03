@@ -8,6 +8,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * @Description:地址Dao层实现类
+ * @ClassName :AddressInfoDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:27
+ * @Version:1.0
+ */
 public class AddressInfoDaoImpl extends BaseDao implements AddressInfoDao {
     public AddressInfoDaoImpl(Connection conn) {
         super(conn);

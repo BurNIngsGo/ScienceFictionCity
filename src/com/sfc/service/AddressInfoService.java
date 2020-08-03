@@ -4,7 +4,13 @@ import com.sfc.entity.AddressInfo;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:地址业务逻辑接口
+ * @InterfaceName :AddressInfoService
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:20
+ * @Version:1.0
+ */
 public interface AddressInfoService {
     /**
      * 根据用户id获取地址

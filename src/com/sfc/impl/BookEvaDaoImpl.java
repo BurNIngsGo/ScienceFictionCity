@@ -7,7 +7,13 @@ import com.sfc.entity.BookEva;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:图书评价实现
+ * @ClassName :BookEvaDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:27
+ * @Version:1.0
+ */
 public class BookEvaDaoImpl extends BaseDao implements BookEvaDao {
     public BookEvaDaoImpl(Connection conn) {
         super(conn);

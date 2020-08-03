@@ -8,7 +8,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * @Description:收藏实现类
+ * @ClassName :StoreDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:34
+ * @Version:1.0
+ */
 public class StoreDaoImpl extends BaseDao implements StoreDao {
     public StoreDaoImpl(Connection conn) {
         super(conn);

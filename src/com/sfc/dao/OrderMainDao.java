@@ -5,6 +5,13 @@ import com.sfc.entity.OrderMain;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * @Description:订单主要信息
+ * @InterfaceName :OrderMainDao
+ * @Author: AiGuo
+ * @DATE:2020/8/3 18:08
+ * @Version:1.0
+ */
 public interface OrderMainDao {
     /**
      * 获取用户的订单信息

@@ -14,7 +14,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @Description:图书信息业务逻辑实现
+ * @ClassName :BookInfoServiceImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:41
+ * @Version:1.0
+ */
 public class BookInfoServiceImpl implements BookInfoService {
     /**
      * 获取所有图书信息

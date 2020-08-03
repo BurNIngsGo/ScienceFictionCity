@@ -15,7 +15,13 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-
+/**
+ * @Description:文件上传
+ * @ClassName :UploadFileServlet
+ * @Author: AiGuo
+ * @DATE:2020/8/3 20:09
+ * @Version:1.0
+ */
 public class UploadFileServlet extends HttpServlet {
 
     @Override

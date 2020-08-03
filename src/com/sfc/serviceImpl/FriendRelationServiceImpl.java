@@ -12,7 +12,13 @@ import com.sfc.service.FriendRelationService;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:好友信息业务逻辑实现
+ * @ClassName :FriendRelationServiceImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:42
+ * @Version:1.0
+ */
 public class FriendRelationServiceImpl implements FriendRelationService {
     /**
      * 获取好友列表

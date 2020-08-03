@@ -4,7 +4,13 @@ import com.sfc.entity.Store;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:收藏信息业务逻辑接口
+ * @InterfaceName :StoreService
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:29
+ * @Version:1.0
+ */
 public interface StoreService {
     /**
      * 根据用户id获取收藏夹

@@ -5,11 +5,17 @@ import com.sfc.dao.Function;
 import com.sfc.entity.*;
 
 import java.util.Date;
-
+/**
+ * @Description:统一实体类设值实现
+ * @ClassName :ExpandToolDaoImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:30
+ * @Version:1.0
+ */
 public class ExpandToolDaoImpl implements ExpandToolDao {
 
     /**
-     *
+     *统一实体类设值方法
      * @param stu
      * @return
      */

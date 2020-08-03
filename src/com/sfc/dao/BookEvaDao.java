@@ -4,7 +4,13 @@ import com.sfc.entity.BookEva;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:图书评论
+ * @InterfaceName :BookEvaDao
+ * @Author: AiGuo
+ * @DATE:2020/8/3 18:00
+ * @Version:1.0
+ */
 public interface BookEvaDao {
     /**
      * 根据用户id获取评论信息

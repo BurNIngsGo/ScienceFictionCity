@@ -5,7 +5,13 @@ import com.sfc.entity.BookType;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:图书类型业务逻辑接口
+ * @InterfaceName :BookTypeService
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:21
+ * @Version:1.0
+ */
 public interface BookTypeService {
     /**
      * 获取所有图书类型

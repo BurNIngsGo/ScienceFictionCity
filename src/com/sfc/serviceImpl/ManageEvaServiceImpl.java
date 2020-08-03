@@ -11,7 +11,13 @@ import com.sfc.service.ManageEvaService;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
+/**
+ * @Description:管理评论业务逻辑实现
+ * @ClassName :ManageEvaServiceImpl
+ * @Author: AiGuo
+ * @DATE:2020/8/3 19:43
+ * @Version:1.0
+ */
 public class ManageEvaServiceImpl implements ManageEvaService {
     /**
      * 根据管理者id获取该管理者操作的评论
