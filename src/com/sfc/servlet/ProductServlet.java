@@ -27,12 +27,17 @@ public class ProductServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //设置请求编码
         req.setCharacterEncoding("utf-8");
+        //设置请求编码
         resp.setContentType("text/html;charset=utf-8");
+        //设置请求编码
         resp.setCharacterEncoding("utf-8");
+        //输出对象
         PrintWriter out = resp.getWriter();
+        //通过请求对象获取action
         String action = req.getParameter("action");
-
+        //创建BookInfoService对象
         BookTypeService bookTypeService = new BookTypeServiceImpl();
 
         BookType bookType = new BookType();
