@@ -23,16 +23,15 @@ public class ChatInfoDaoImpl extends BaseDao implements ChatInfoDao {
 
     /**
      * 获取聊天信息
-     *
      * @param uId
      * @param fId
      * @return
      */
     public List<ChatInfo> getChatInfoByUId(int uId, int fId) throws SQLException {
-        String strSql = "select * from chatInfo where uid=? and fid = ?";
-        Object[] param = {uId, fId};
+        String strSql = "select * from chatInfo where uid=? and fid = ?";//根据图书的用户id跟好友id获取聊天信息
+        Object[] param = {uId, fId};//创建存储参数的数组
         try {
-            return this.getEntity(new ChatInfo(), param, strSql);
+            return this.getEntity(new ChatInfo(), param, strSql);//返回执行更新方法的返回值
         } catch (SQLException e) {
             throw e;
         }
@@ -46,10 +45,10 @@ public class ChatInfoDaoImpl extends BaseDao implements ChatInfoDao {
      * @throws SQLException
      */
     public int delChatInfoByDate(Date date) throws SQLException {
-        String strSql = "delete from chatInfo where date=?";
-        Object[] param = {date};
+        String strSql = "delete from chatInfo where date=?";//根据时间删除聊天信息
+        Object[] param = {date};//创建存储参数的数组
         try {
-            return this.executeUpdate(strSql, param);
+            return this.executeUpdate(strSql, param);//返回执行更新方法的返回值
         } catch (SQLException e) {
             throw e;
         }

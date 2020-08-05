@@ -58,6 +58,7 @@ body{
       body {
         height: 100%;
         width: 100%;
+		  overflow: hidden;
       }
  
       #magazine {
@@ -164,3 +165,9 @@ body{
      	margin-top: 10px;
      	color: rgb(147,161,161);
      }
+	 .btn-next{
+		 position: absolute;
+		 top: 680px;
+		 left: 1200px;
+		 z-index: 9999;
+	 }
